@@ -1,0 +1,145 @@
+body {
+    background: linear-gradient(135deg, #fef2f2 0%, #f8fafc 100%);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+}
+
+.preview-paper {
+    background: white;
+    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+}
+
+.border-style-simple {
+    border: 2px solid #e2e8f0;
+    border-radius: 0px;
+}
+
+.border-style-double {
+    border: 6px double #cbd5e1;
+    border-radius: 0px;
+}
+
+.border-style-floral {
+    border: 12px solid transparent;
+    border-image: repeating-linear-gradient(45deg, #fbcfe8, #fbcfe8 20px, #f9a8d4 20px, #f9a8d4 40px) 30 stretch;
+    border-image-slice: 1;
+    background-clip: padding-box;
+}
+
+.border-style-golden {
+    border: 8px solid #d4af37;
+    border-radius: 24px;
+    box-shadow: 0 0 0 4px #fff8e7, 0 0 0 8px #d4af37;
+}
+
+.border-style-ornate {
+    border: 10px double #b91c1c;
+    border-radius: 32px 8px 32px 8px;
+    background: linear-gradient(#fff, #fff) padding-box, repeating-linear-gradient(135deg, #fee2e2, #fee2e2 15px, #fecaca 15px, #fecaca 30px) border-box;
+}
+
+.preview-paper.traditional {
+    font-family: 'Playfair Display', serif;
+    background: #fffef7;
+}
+
+.preview-paper.modern {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    border-radius: 24px;
+}
+
+.section-card {
+    transition: all 0.2s;
+    border: 1px solid #e9eef3;
+    background: #ffffff;
+}
+
+.section-card:hover {
+    border-color: #f472b6;
+    box-shadow: 0 4px 12px rgba(244, 114, 182, 0.1);
+}
+
+.drag-handle {
+    cursor: grab;
+}
+
+.drag-handle:active {
+    cursor: grabbing;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #previewContainer,
+    #previewContainer * {
+        visibility: visible;
+    }
+
+    #previewContainer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .preview-paper {
+        box-shadow: none;
+        margin: 0;
+        border: 1px solid #ccc !important;
+    }
+}
+
+.faq-question {
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.faq-answer.active {
+    max-height: 300px;
+    transition: max-height 0.4s ease-in;
+}
+
+.custom-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+    background: #f9a8d4;
+    border-radius: 10px;
+}
+
+.back-home-btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.back-home-btn:hover {
+    transform: translateX(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
