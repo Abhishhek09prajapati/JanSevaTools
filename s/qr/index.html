@@ -505,15 +505,7 @@
                 </div>
             </div>
         </div>
-        <script async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6791318178265120"
-            crossorigin="anonymous"></script>
-        <!-- Banner Ads -->
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6791318178265120"
-            data-ad-slot="7017392570" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+        
         <!-- How to Use Section -->
         <div class="mt-12 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8">
             <h2 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
@@ -625,10 +617,11 @@
     <!-- Toast Container -->
     <div id="toast-container" class="fixed bottom-5 right-5 z-50 space-y-2"></div>
 
-   
+
 
     <!-- Footer -->
     <footer class="bg-white/80 backdrop-blur-sm mt-12 py-6 border-t">
+        <div id="footer"></div>
         <div class="container mx-auto px-4 text-center text-gray-600">
             <p>&copy; 2026 JanSevva Kendra Tools. All rights reserved. |
                 <a href="/privacy.html" class="text-indigo-600 hover:underline">Privacy Policy</a> |
@@ -638,5 +631,13 @@
         </div>
     </footer>
 </body>
+<script>
+    async function loadComponent(id, file) {
+        const response = await fetch(file);
+        const data = await response.text();
+        document.getElementById(id).innerHTML = data;
+    }
+    loadComponent("footer", "../footer.html");
+</script>
 
 </html>
