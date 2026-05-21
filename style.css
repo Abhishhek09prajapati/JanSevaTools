@@ -23,7 +23,7 @@
 .tool-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
-    border-color: #ab183d;
+    border-color: #8810f1;
 }
 
 .feature-card {
