@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+* {
+    font-family: "Inter", sans-serif;
+}
+
+.gradient-bg {
+    background: #ab183d;
+}
+
+.gradient-text {
+    background: #ab183d;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tool-card {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.tool-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+    border-color: #ab183d;
+}
+
+.feature-card {
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+}
+
+.sidebar-active {
+    background-color: #ab183d;
+    color: white;
+}
+
+.filter-btn {
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background-color: #ab183d;
+    color: white;
+}
+
+.hero-pattern {
+    background-color: #ab183d;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.scroll-smooth {
+    scroll-behavior: smooth;
+}
+
+#sidebar {
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    #sidebar.hidden-mobile {
+        transform: translateX(-100%);
+    }
+}
+
+.stats-counter {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.bg-indigo-600 {
+    background-color: #ab183d !important;
+}
+
+#mobileMenu {
+    transition: transform 0.3s ease;
+}
+
+#mobileMenu.hidden {
+    transform: translateX(-100%);
+}
+
+#mobileMenu:not(.hidden) {
+    transform: translateX(0);
+}
+
+/* Custom Animations */
+@keyframes blink-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(251, 191, 36, 0.7);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(251, 191, 36, 0.9), 0 0 40px rgba(251, 191, 36, 0.6);
+        transform: scale(1.02);
+    }
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animation Classes */
+.animate-blink-glow {
+    animation: blink-glow 2s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 1s ease-out both;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float 6s ease-in-out 2s infinite;
+}
+
+.animate-spin-slow {
+    animation: spin-slow 3s linear infinite;
+}
+
+/* Delay Utilities */
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+/* Enhanced Hover Effects */
+.new-tool-label:hover {
+    animation: blink-glow 0.5s ease-in-out infinite;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .new-tool-label {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .new-tool-label span {
+        font-size: 0.6rem;
+    }
+}
+
+/* Ensure proper z-index */
+.relative.z-10 {
+    position: relative;
+    z-index: 10;
+}
