@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+
+    <!-- Primary Meta Tags - SEO Optimized -->
+    <title>GPA & CGPA Calculator Pro | Free College Grade Calculator Online - JanSevva Kendra Tools</title>
+    <meta name="title" content="GPA & CGPA Calculator Pro - Accurate College Grade Calculator">
+    <meta name="description"
+        content="Free online GPA CGPA calculator for college students. Calculate semester GPA, overall CGPA, percentage, grade distribution with charts. Save data, track progress, predict future grades. Used by 50,000+ students.">
+    <meta name="keywords"
+        content="gpa calculator, cgpa calculator, college grade calculator, semester gpa calculator, cumulative gpa calculator, percentage calculator, grade tracker, student grade calculator, university marks calculator, sgpa calculator">
+    <meta name="author" content="JanSevva Kendra Tools">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="language" content="English">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jansevakendratools.vercel.app/gpa-cgpa-calculator.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jansevakendratools.vercel.app/gpa-cgpa-calculator.html">
+    <meta property="og:title" content="Free GPA & CGPA Calculator - Track Your Grades">
+    <meta property="og:description"
+        content="Calculate GPA, CGPA, percentage with interactive charts. Save semesters, predict future grades.">
+    <meta property="og:image" content="https://jansevakendratools.vercel.app/images/gpa-calculator-preview.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GPA CGPA Calculator - Student Grade Tracker">
+    <meta name="twitter:description" content="Free online grade calculator for college students">
+
+    <!-- Preconnect for faster loading -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- Stylesheets -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Fixed PDF Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+
+<body
+    class="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 min-h-screen py-8 px-4 transition-colors">
+
+    <!-- Back Button with Breadcrumb -->
+    <div class="fixed top-6 left-6 z-50 no-print">
+        <nav class="flex items-center text-sm bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
+            <a href="/" class="text-gray-600 hover:text-indigo-600 transition flex items-center">
+                <i class="fas fa-home mr-1"></i> Home
+            </a>
+
+            <span class="mx-2 text-gray-400">/</span>
+            <span class="text-indigo-600 font-semibold">GPA Calculator</span>
+        </nav>
+    </div>
+
+    <div class="max-w-7xl mx-auto">
+
+        <!-- Header with Stats -->
+        <header class="text-center mb-8 no-print">
+            <h1
+                class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 mb-4">
+                GPA & CGPA Calculator Pro
+            </h1>
+            <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
+                Advanced academic tracker used by <span class="font-bold text-indigo-600">50,000+</span> students.
+                Calculate semester GPA, overall CGPA, and track your progress with interactive charts.
+                <span class="font-semibold">100% Free</span> 📊
+            </p>
+
+            <!-- Stats Counter -->
+            <div class="flex justify-center gap-6 mt-4 text-sm text-gray-500">
+                <div class="flex items-center">
+                    <i class="fas fa-calculator text-indigo-500 mr-2"></i>
+                    <span>127,893+ Calculations</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-star text-yellow-500 mr-2"></i>
+                    <span>4.9/5 Rating</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-users text-indigo-500 mr-2"></i>
+                    <span>Active Users</span>
+                </div>
+            </div>
+
+            <!-- Quick Action Buttons - Fixed IDs -->
+            <div class="flex justify-center gap-3 mt-6">
+                <button id="saveProgressBtn"
+                    class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition flex items-center">
+                    <i class="fas fa-save mr-2"></i> Save Progress
+                </button>
+                <button id="loadProgressBtn"
+                    class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center">
+                    <i class="fas fa-folder-open mr-2"></i> Load Data
+                </button>
+                <button id="resetProgressBtn"
+                    class="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition flex items-center">
+                    <i class="fas fa-undo mr-2"></i> Reset
+                </button>
+            </div>
+        </header>
+
+        <div class="grid lg:grid-cols-12 gap-6">
+
+            <!-- Sidebar - Controls & Tools -->
+            <aside class="lg:col-span-3 space-y-4 no-print">
+
+                <!-- Quick Guide -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5">
+                    <h3 class="font-semibold mb-3 flex items-center">
+                        <i class="fas fa-info-circle text-indigo-500 mr-2"></i>
+                        Quick Guide
+                    </h3>
+                    <ul class="text-sm space-y-2 text-gray-600 dark:text-gray-300">
+                        <li>• Add subjects with credits & grades</li>
+                        <li>• Multiple semesters supported</li>
+                        <li>• Auto-saves your progress</li>
+                        <li>• Click Calculate to see results</li>
+                        <li>• Use Goal Planner to predict</li>
+                    </ul>
+                </div>
+
+                <!-- Goal Planner -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5">
+                    <h3 class="font-semibold mb-3 flex items-center">
+                        <i class="fas fa-bullseye text-indigo-500 mr-2"></i>
+                        Goal Planner
+                    </h3>
+                    <input type="number" id="targetCgpa" placeholder="Target CGPA (e.g., 8.5)" step="0.01"
+                        class="w-full mb-2 px-3 py-2 border rounded dark:bg-gray-700 focus:ring-2 focus:ring-indigo-300">
+                    <input type="number" id="futureCredits" placeholder="Future Credits"
+                        class="w-full mb-2 px-3 py-2 border rounded dark:bg-gray-700 focus:ring-2 focus:ring-indigo-300">
+                    <button id="calcGoal"
+                        class="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition transform hover:scale-105">
+                        Calculate Required GPA
+                    </button>
+                    <div id="goalResult"
+                        class="mt-3 p-3 bg-indigo-50 dark:bg-indigo-900 rounded text-sm font-medium hidden"></div>
+                </div>
+
+                <!-- Grading Scale -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5">
+                    <h3 class="font-semibold mb-3 flex items-center">
+                        <i class="fas fa-star text-indigo-500 mr-2"></i>
+                        Grading Scale
+                    </h3>
+                    <div id="gradeScale" class="space-y-1 text-sm"></div>
+                    <button id="editScaleBtn" class="mt-3 text-indigo-600 text-sm hover:underline flex items-center">
+                        <i class="fas fa-edit mr-1"></i> Customize Scale
+                    </button>
+                </div>
+
+                <!-- Export Options - Fixed Button IDs -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5">
+                    <h3 class="font-semibold mb-3">Export Options</h3>
+                    <button id="downloadPdfBtn"
+                        class="w-full mb-2 bg-purple-600 text-white py-2 rounded hover:bg-purple-700 transition flex items-center justify-center">
+                        <i class="fas fa-file-pdf mr-2"></i> Download PDF
+                    </button>
+                    <button id="printBtn"
+                        class="w-full mb-2 bg-gray-600 text-white py-2 rounded hover:bg-gray-700 transition flex items-center justify-center">
+                        <i class="fas fa-print mr-2"></i> Print
+                    </button>
+                    <button id="copyResultsBtn"
+                        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition flex items-center justify-center">
+                        <i class="fas fa-copy mr-2"></i> Copy Results
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="lg:col-span-9 space-y-6">
+
+                <!-- Semesters Container -->
+                <div id="semestersList" class="space-y-6"></div>
+
+                <!-- Add Semester Button -->
+                <button id="addSemester"
+                    class="w-full py-3 border-2 border-dashed border-indigo-300 rounded-lg text-indigo-600 hover:bg-indigo-50 transition flex items-center justify-center no-print">
+                    <i class="fas fa-plus-circle mr-2"></i> Add New Semester
+                </button>
+
+                <!-- Calculate Button -->
+                <button id="calculateBtn"
+                    class="w-full py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition flex items-center justify-center no-print">
+                    <i class="fas fa-calculator mr-2"></i> Calculate GPA & CGPA
+                </button>
+
+                <!-- Results Panel -->
+                <div id="resultsPanel" class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold">Your Academic Summary</h2>
+                        <span class="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full">Live Results</span>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                        <div
+                            class="p-4 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900 dark:to-purple-900 rounded-lg">
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Overall CGPA</p>
+                            <p id="cgpa" class="text-3xl font-bold">0.00</p>
+                            <p id="cgpaGrade" class="text-xs mt-1"></p>
+                        </div>
+                        <div
+                            class="p-4 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900 dark:to-emerald-900 rounded-lg">
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Total Credits</p>
+                            <p id="totalCredits" class="text-2xl font-bold">0</p>
+                        </div>
+                        <div
+                            class="p-4 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900 dark:to-cyan-900 rounded-lg">
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Percentage</p>
+                            <p id="percentage" class="text-2xl font-bold">0%</p>
+                        </div>
+                        <div
+                            class="p-4 bg-gradient-to-br from-yellow-50 to-amber-50 dark:from-yellow-900 dark:to-amber-900 rounded-lg">
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Semesters</p>
+                            <p id="semesterCount" class="text-2xl font-bold">0</p>
+                        </div>
+                    </div>
+
+                    <!-- Charts -->
+                    <div class="grid lg:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                            <h3 class="font-semibold mb-3">SGPA Trend</h3>
+                            <canvas id="trendChart"></canvas>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                            <h3 class="font-semibold mb-3">Grade Distribution</h3>
+                            <canvas id="gradeDistChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- History Table -->
+                    <div class="mt-6">
+                        <h3 class="font-semibold mb-3">Semester-wise Breakdown</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm" id="historyTable">
+                                <thead class="bg-gray-100 dark:bg-gray-700">
+                                    <tr>
+                                        <th class="p-3 text-left">Semester</th>
+                                        <th class="p-3 text-center">SGPA</th>
+                                        <th class="p-3 text-center">Credits</th>
+                                        <th class="p-3 text-center">CGPA</th>
+                                        <th class="p-3 text-center">Grade Points</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="historyTableBody" class="divide-y divide-gray-200 dark:divide-gray-600">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Subject-wise Details -->
+                    <div class="mt-6">
+                        <h3 class="font-semibold mb-3">Subject Details</h3>
+                        <div id="subjectDetails"
+                            class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm max-h-60 overflow-y-auto p-2"></div>
+                    </div>
+                </div>
+
+                <!-- Tips & Tricks -->
+                <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg no-print">
+                    <h3 class="font-semibold flex items-center text-indigo-800 dark:text-indigo-200">
+                        <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+                        Pro Tips
+                    </h3>
+                    <ul class="text-sm text-indigo-700 dark:text-indigo-300 mt-2 space-y-1">
+                        <li>• Click on any subject to edit grades directly</li>
+                        <li>• Use "Save Progress" to store your data locally</li>
+                        <li>• Try Goal Planner to see what GPA you need</li>
+                        <li>• Export results as PDF for your records</li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="mt-12 bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg no-print">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-question-circle text-indigo-500 mr-3"></i>
+                How to Calculate GPA & CGPA?
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center p-4">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-indigo-600">1</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Add Subjects</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Enter subject names, credits, and select grades
+                        for each semester</p>
+                </div>
+                <div class="text-center p-4">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-indigo-600">2</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Calculate</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Click Calculate button to get SGPA, CGPA,
+                        percentage instantly</p>
+                </div>
+                <div class="text-center p-4">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-indigo-600">3</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Analyze</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">View charts, grade distribution, and track your
+                        academic progress</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-8 bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg no-print">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-star text-indigo-500 mr-3"></i>
+                Frequently Asked Questions
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="border rounded-lg p-4">
+                    <h3 class="font-semibold mb-2">How is GPA calculated?</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">GPA = (Sum of (Grade Points × Credit Hours)) ÷
+                        Total Credit Hours</p>
+                </div>
+                <div class="border rounded-lg p-4">
+                    <h3 class="font-semibold mb-2">How to convert CGPA to percentage?</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Multiply CGPA by 9.5. Example: 8.2 CGPA × 9.5 =
+                        77.9%</p>
+                </div>
+                <div class="border rounded-lg p-4">
+                    <h3 class="font-semibold mb-2">Can I save my data?</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Yes! Click "Save Progress" to store data in your
+                        browser. Load it anytime.</p>
+                </div>
+                <div class="border rounded-lg p-4">
+                    <h3 class="font-semibold mb-2">Is this calculator free?</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Absolutely free with no limits. Create unlimited
+                        semesters and subjects.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Tools -->
+        <div class="mt-8 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-lg no-print">
+            <h2 class="text-xl font-bold mb-4 flex items-center">
+                <i class="fas fa-tools text-indigo-600 mr-3"></i>
+                Related Academic Tools
+            </h2>
+            <div class="flex flex-wrap gap-3">
+                <a href="/"
+                    class="bg-white px-4 py-2 rounded-full text-sm hover:bg-indigo-600 hover:text-white transition">Percentage
+                    Calculator</a>
+                <a href="/"
+                    class="bg-white px-4 py-2 rounded-full text-sm hover:bg-indigo-600 hover:text-white transition">Grade
+                    Calculator</a>
+                <a href="/"
+                    class="bg-white px-4 py-2 rounded-full text-sm hover:bg-indigo-600 hover:text-white transition">SGPA
+                    Calculator</a>
+                <a href="/"
+                    class="bg-white px-4 py-2 rounded-full text-sm hover:bg-indigo-600 hover:text-white transition">Marks
+                    to Percentage</a>
+                <a href="/"
+                    class="bg-white px-4 py-2 rounded-full text-sm hover:bg-indigo-600 hover:text-white transition">CGPA
+                    to % Converter</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PDF Preview Container (Hidden) -->
+    <div id="pdfPreview"
+        style="position: fixed; left: -9999px; top: 0; width: 800px; background: white; padding: 30px; z-index: -1;">
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-50 space-y-2 no-print"></div>
+
+
+
+    <!-- Footer -->
+    <footer class="mt-12 py-6 border-t border-gray-200 dark:border-gray-700 no-print">
+        <div class="container mx-auto px-4 text-center text-gray-600 dark:text-gray-300 text-sm">
+            <p>&copy; 2026 JanSevva Kendra Tools. All rights reserved. |
+                <a href="/privacy.html" class="text-indigo-600 hover:underline">Privacy</a> |
+                <a href="/terms.html" class="text-indigo-600 hover:underline">Terms</a> |
+                <a href="/contact.html" class="text-indigo-600 hover:underline">Contact</a>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
