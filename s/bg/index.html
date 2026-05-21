@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    
+    <title>Free AI Background Remover | Remove Image Background Online - JanSeva Kendra Tools</title>
+    <meta name="title" content="Free AI Background Remover | Remove Image Background Online">
+    <meta name="description" content="Remove image backgrounds free with AI. 100% client-side processing, no upload, unlimited use. High-quality transparent PNG download. Privacy guaranteed.">
+    <meta name="keywords" content="background remover, remove background, image background remover, free background removal, AI background remover, transparent background, png background remover">
+    <meta name="author" content="JanSeva Kendra Tools">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smartcsctools.in/background-remover">
+    <meta property="og:title" content="Free AI Background Remover - Remove Image Background">
+    <meta property="og:description" content="Remove image backgrounds instantly with AI. 100% free, no server upload.">
+    <meta property="og:image" content="https://smartcsctools.in/images/bg-remover-preview.jpg">
+    
+    <!-- Stylesheets -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- IMG.LY Background Removal Library -->
+    <script type="importmap">
+        {
+            "imports": {
+                "@imgly/background-removal": "https://esm.sh/@imgly/background-removal@1.4.5"
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen py-8 px-4">
+    
+    <!-- Navigation -->
+    <nav class="max-w-7xl mx-auto mb-8">
+        <div class="flex justify-between items-center bg-white/90 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-lg">
+            <a href="/" class="flex items-center space-x-3">
+                <i class="fas fa-magic text-3xl text-purple-600"></i>
+                <span class="text-2xl font-bold text-gray-800 hidden sm:block">JanSeva Kendra Tools</span>
+            </a>
+            <div class="flex items-center space-x-4">
+                <div class="flex space-x-3">
+                    <a href="#" onclick="shareOnWhatsApp()" class="text-green-600 hover:text-green-700 text-2xl"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" onclick="shareOnFacebook()" class="text-blue-600 hover:text-blue-700 text-2xl"><i class="fab fa-facebook"></i></a>
+                    <a href="#" onclick="shareOnTwitter()" class="text-sky-500 hover:text-sky-600 text-2xl"><i class="fab fa-twitter"></i></a>
+                </div>
+                <a href="/" class="bg-purple-600 text-white px-5 py-2 rounded-xl hover:bg-purple-700 transition">
+                    <i class="fas fa-home mr-2"></i>Home
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Container -->
+    <div class="max-w-6xl mx-auto">
+        
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">
+                AI Background Remover
+            </h1>
+            <p class="text-xl text-white/90 max-w-3xl mx-auto">
+                Remove image backgrounds instantly. <span class="font-bold">100% free, private & unlimited.</span> No signup required.
+            </p>
+        </div>
+        
+        <!-- Stats Bar -->
+        <div class="flex flex-wrap justify-center gap-6 mb-8">
+            <div class="bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 text-white">
+                <i class="fas fa-users mr-2"></i>
+                <span class="font-bold">50,000+</span> Happy Users
+            </div>
+            <div class="bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 text-white">
+                <i class="fas fa-star mr-2 text-yellow-300"></i>
+                <span class="font-bold">4.8/5</span> Rating
+            </div>
+            <div class="bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 text-white">
+                <i class="fas fa-infinity mr-2"></i>
+                <span class="font-bold">Unlimited</span> Free
+            </div>
+        </div>
+        
+        <!-- Main Tool Card -->
+        <div class="glass-card p-6 md:p-8 mb-8">
+            
+            <!-- Breadcrumb -->
+            <div class="flex items-center text-sm text-gray-600 mb-6 pb-4 border-b">
+                <a href="/" class="hover:text-purple-600">Home</a>
+                <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                <a href="/tools" class="hover:text-purple-600">Tools</a>
+                <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                <span class="text-purple-600 font-semibold">Background Remover</span>
+            </div>
+            
+            <!-- Upload Area -->
+            <div id="uploadArea" class="upload-area p-8" onclick="document.getElementById('fileInput').click()">
+                <i class="fas fa-cloud-upload-alt text-7xl text-purple-400 mb-4"></i>
+                <p class="text-2xl text-gray-700 mb-2">Drag & drop your image here</p>
+                <p class="text-gray-500 mb-4">or click to browse</p>
+                <button class="bg-purple-600 text-white px-8 py-3 rounded-xl hover:bg-purple-700 transition text-lg">
+                    Select Image
+                </button>
+                <input type="file" id="fileInput" accept="image/*" class="hidden" />
+                <p class="text-sm text-gray-400 mt-4">Supports: JPG, PNG, WEBP (Max 20MB)</p>
+                <p class="text-xs text-gray-400 mt-2">
+                    <i class="fas fa-lock mr-1"></i> 100% Private - Processed in your browser
+                </p>
+            </div>
+            
+            <!-- Preview Section -->
+            <div id="previewSection" class="hidden mt-8">
+                <div class="flex justify-center mb-6">
+                    <div class="relative">
+                        <img id="preview" src="" alt="Preview" class="max-h-80 rounded-2xl shadow-2xl" />
+                        <button onclick="resetTool()" class="absolute -top-3 -right-3 bg-red-500 text-white w-10 h-10 rounded-full hover:bg-red-600 transition shadow-lg">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Background Color Options -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+                        <i class="fas fa-palette text-purple-600 mr-2"></i>
+                        Choose Background Color:
+                    </h3>
+                    <div class="flex flex-wrap gap-3 justify-center">
+                        <button onclick="setBgColor('transparent')" id="btn-transparent" class="bg-option active bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-xl font-medium">
+                            <i class="fas fa-eye-slash mr-2"></i>Transparent
+                        </button>
+                        <button onclick="setBgColor('#ffffff')" id="btn-white" class="bg-option bg-white text-gray-800 border-2 border-gray-300 px-6 py-3 rounded-xl font-medium hover:border-purple-500">
+                            <i class="fas fa-square text-white mr-2" style="text-shadow: 0 0 0 1px #000;"></i>White
+                        </button>
+                        <button onclick="setBgColor('#000000')" id="btn-black" class="bg-option bg-black text-white px-6 py-3 rounded-xl font-medium hover:border-purple-500">
+                            <i class="fas fa-square mr-2"></i>Black
+                        </button>
+                        <button onclick="setBgColor('#3b82f6')" id="btn-blue" class="bg-option bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:border-purple-500">
+                            <i class="fas fa-square mr-2"></i>Blue
+                        </button>
+                        <div class="relative">
+                            <input type="color" id="customColor" value="#8b5cf6" class="w-16 h-12 rounded-xl cursor-pointer" onchange="setBgColor(this.value)" />
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Process Button -->
+                <button id="processBtn" onclick="removeBackground()" class="btn-primary w-full text-xl flex items-center justify-center">
+                    <i class="fas fa-magic mr-3"></i>
+                    Remove Background Now
+                </button>
+            </div>
+            
+            <!-- Loading Section -->
+            <div id="loadingSection" class="hidden text-center py-8">
+                <div class="loading-spinner mx-auto mb-6"></div>
+                <h3 id="loadingMessage" class="text-2xl font-semibold text-gray-800 mb-2">Downloading AI Model...</h3>
+                <p class="text-gray-600 mb-4">This happens only once. The model will be cached in your browser.</p>
+                
+                <div class="progress-bar max-w-md mx-auto">
+                    <div id="progressFill" class="progress-fill" style="width: 0%"></div>
+                </div>
+                
+                <div class="flex justify-between text-sm text-gray-600 max-w-md mx-auto">
+                    <span id="progressStatus">Initializing...</span>
+                    <span id="progressPercent">0%</span>
+                </div>
+                
+                <p class="text-sm text-gray-500 mt-4">
+                    <i class="fas fa-info-circle mr-1"></i>
+                    First time setup: Downloading ~176MB model (one-time only)
+                </p>
+            </div>
+            
+            <!-- Result Section -->
+            <div id="resultSection" class="hidden mt-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">✨ Background Removed Successfully!</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="text-center">
+                        <p class="font-semibold text-gray-700 mb-3">Original Image</p>
+                        <img id="originalResult" src="" alt="Original" class="rounded-xl shadow-lg mx-auto max-h-64" />
+                    </div>
+                    <div class="text-center">
+                        <p class="font-semibold text-gray-700 mb-3">Result</p>
+                        <img id="result" src="" alt="Result" class="rounded-xl shadow-lg mx-auto max-h-64" />
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                    <a id="downloadBtn" href="#" download="background-removed.png" class="flex-1 bg-green-600 hover:bg-green-700 text-white py-4 rounded-xl text-center font-semibold text-lg transition flex items-center justify-center">
+                        <i class="fas fa-download mr-2"></i>
+                        Download PNG
+                    </a>
+                    <button onclick="resetTool()" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white py-4 rounded-xl font-semibold text-lg transition flex items-center justify-center">
+                        <i class="fas fa-redo mr-2"></i>
+                        Remove Another
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features Grid -->
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="feature-card">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-lock text-2xl text-purple-600"></i>
+                </div>
+                <h3 class="font-semibold text-xl mb-2">100% Private</h3>
+                <p class="text-gray-600">Your images never leave your device. Processed locally in your browser.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-infinity text-2xl text-purple-600"></i>
+                </div>
+                <h3 class="font-semibold text-xl mb-2">Unlimited Free</h3>
+                <p class="text-gray-600">No limits, no credits, no signup. Remove as many images as you want.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-bolt text-2xl text-purple-600"></i>
+                </div>
+                <h3 class="font-semibold text-xl mb-2">Lightning Fast</h3>
+                <p class="text-gray-600">Advanced AI model optimized for speed. Results in 2-5 seconds.</p>
+            </div>
+        </div>
+    
+        <!-- How to Use -->
+        <div class="glass-card p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">How to Remove Background in 3 Steps</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
+                    <h3 class="font-semibold text-xl mb-2">Upload Image</h3>
+                    <p class="text-gray-600">Drag & drop or click to select your image (JPG, PNG, WEBP)</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
+                    <h3 class="font-semibold text-xl mb-2">AI Processing</h3>
+                    <p class="text-gray-600">Our AI automatically removes background with precision</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
+                    <h3 class="font-semibold text-xl mb-2">Download Result</h3>
+                    <p class="text-gray-600">Get your image with transparent background instantly</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <div class="glass-card p-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Frequently Asked Questions</h2>
+            
+            <div class="space-y-4 max-w-3xl mx-auto">
+                <div class="bg-white rounded-xl p-5 shadow-sm">
+                    <h3 class="font-semibold text-lg mb-2 flex items-center">
+                        <i class="fas fa-question-circle text-purple-600 mr-2"></i>
+                        Is this really free and unlimited?
+                    </h3>
+                    <p class="text-gray-600 ml-7">Yes! 100% free with no limits. All processing happens in your browser, so there are no server costs or restrictions.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-5 shadow-sm">
+                    <h3 class="font-semibold text-lg mb-2 flex items-center">
+                        <i class="fas fa-question-circle text-purple-600 mr-2"></i>
+                        Why is it downloading something?
+                    </h3>
+                    <p class="text-gray-600 ml-7">The first time you use it, the AI model (~176MB) downloads to your browser. After that, it works offline instantly!</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-5 shadow-sm">
+                    <h3 class="font-semibold text-lg mb-2 flex items-center">
+                        <i class="fas fa-question-circle text-purple-600 mr-2"></i>
+                        Are my images private?
+                    </h3>
+                    <p class="text-gray-600 ml-7">Absolutely! Your images never leave your device. Everything is processed locally in your browser for complete privacy.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-5 shadow-sm">
+                    <h3 class="font-semibold text-lg mb-2 flex items-center">
+                        <i class="fas fa-question-circle text-purple-600 mr-2"></i>
+                        What image formats are supported?
+                    </h3>
+                    <p class="text-gray-600 ml-7">We support JPG, PNG, and WEBP formats. Maximum file size is 20MB for optimal performance.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="mt-8 text-center text-white/80">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="/privacy.html" class="hover:text-white">Privacy</a>
+                <a href="/terms.html" class="hover:text-white">Terms</a>
+                <a href="/contact.html" class="hover:text-white">Contact</a>
+            </div>
+            <p>&copy; 2026 JanSeva Kendra Tools. All rights reserved.</p>
+        </footer>
+    </div>
+    
+   
+</body>
+<script type="module" src="index.js"></script>
+</html>
