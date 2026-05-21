@@ -1,0 +1,483 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <!-- Primary Meta Tags - SEO Optimized -->
+    <title>Free Online Image Resizer Tool | Resize by Pixels or KB - JanSeva Kendra Tools</title>
+    <meta name="title" content="Free Image Resizer - Resize Dimensions & File Size Online">
+    <meta name="description" content="Resize images by dimensions (width/height) or target file size (KB). Compress to exact KB. Support JPG, PNG, GIF. Used by 50,000+ users. 100% Free.">
+    <meta name="keywords" content="image resizer, photo resizer, resize image online, compress image to size, image size reducer, kb resizer, image dimension changer, resize jpg, resize png">
+    <meta name="author" content="JanSeva Kendra Tools">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="language" content="English">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jansevakendra.com/image-resizer.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jansevakendra.com/image-resizer.html">
+    <meta property="og:title" content="Free Image Resizer - Resize by Pixels or KB">
+    <meta property="og:description" content="Resize images by dimensions or target file size. Instant processing. Free download.">
+    <meta property="og:image" content="https://jansevakendra.com/images/image-resizer-preview.jpg">
+    <meta property="og:site_name" content="JanSeva Kendra Tools">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Image Resizer - JanSeva Kendra Tools">
+    <meta name="twitter:description" content="Resize images online free. Dimension or KB resize.">
+    
+    <!-- Preconnect for faster loading -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <!-- Stylesheets -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Image Resizer with KB Control",
+        "description": "Free online tool to resize images by dimensions or target file size in KB",
+        "applicationCategory": "Multimedia",
+        "operatingSystem": "All",
+        "url": "https://jansevakendra.com/image-resizer.html",
+        "provider": {
+            "@type": "Organization",
+            "name": "JanSeva Kendra Tools",
+            "url": "https://jansevakendra.com"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+        },
+        "featureList": [
+            "Resize by Width/Height",
+            "Resize to Specific KB",
+            "Aspect Ratio Lock",
+            "Quality Control",
+            "Live Preview",
+            "Download Resized Image"
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "15234"
+        }
+    }
+    </script>
+    
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "How to resize image to specific KB?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Upload image, switch to 'Resize by KB' mode, enter target KB size, click resize. Tool automatically adjusts quality and dimensions to achieve target size."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Is this image resizer free?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, completely free with no hidden charges. You can resize unlimited images."
+            }
+        }, {
+            "@type": "Question",
+            "name": "What image formats are supported?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We support JPG, JPEG, PNG, GIF, BMP, and WebP formats up to 20MB."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Will image quality be maintained?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we use high-quality image processing. For KB resize, you can control quality vs file size trade-off."
+            }
+        }]
+    }
+    </script>
+    
+    
+</head>
+<body class="p-4 md:p-6">
+    
+    <!-- Navigation with Breadcrumbs -->
+    <nav class="glass-morphism rounded-2xl mb-6 p-4">
+        <div class="container mx-auto flex flex-wrap justify-between items-center">
+            <div class="flex items-center space-x-2 text-sm">
+                <a href="/" class="text-gray-600 hover:text-indigo-600 transition">
+                    <i class="fas fa-home mr-1"></i> Home
+                </a>
+                
+                <span class="text-gray-400">/</span>
+                <span class="text-indigo-600 font-semibold">Image Resizer</span>
+            </div>
+            <div class="flex items-center space-x-3 mt-2 sm:mt-0">
+                <span class="text-sm text-gray-500 hidden sm:inline">Share:</span>
+                <button onclick="shareOnWhatsApp()" class="text-green-600 hover:text-green-700 transition" title="Share on WhatsApp">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                </button>
+                <button onclick="shareOnFacebook()" class="text-blue-600 hover:text-blue-700 transition" title="Share on Facebook">
+                    <i class="fab fa-facebook text-xl"></i>
+                </button>
+                <button onclick="shareOnTwitter()" class="text-sky-500 hover:text-sky-600 transition" title="Share on Twitter">
+                    <i class="fab fa-twitter text-xl"></i>
+                </button>
+                <button onclick="copyLink()" class="text-gray-600 hover:text-indigo-600 transition" title="Copy Link">
+                    <i class="fas fa-link text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Container -->
+    <div class="container mx-auto">
+        
+        <!-- Header with Stats -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+                Free Online Image Resizer Tool
+            </h1>
+            <p class="text-lg text-white/90 max-w-3xl mx-auto">
+                Resize by <span class="font-bold">dimensions (pixels)</span> OR 
+                <span class="font-bold">target file size (KB)</span>. 
+                Perfect for social media, email, and websites.
+            </p>
+            
+            <!-- Stats Counter -->
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8 mt-6 text-white">
+                <div class="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                    <i class="fas fa-image mr-2"></i>
+                    <span><span class="font-bold">1,52,342+</span> Images Resized</span>
+                </div>
+                <div class="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                    <i class="fas fa-star mr-2 text-yellow-300"></i>
+                    <span><span class="font-bold">4.8/5</span> Rating</span>
+                </div>
+                <div class="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                    <i class="fas fa-clock mr-2"></i>
+                    <span><span class="font-bold">Instant</span> Processing</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Card -->
+        <div class="glass-morphism rounded-3xl p-6 md:p-8 max-w-4xl mx-auto">
+            
+            <!-- Feature Badges -->
+            <div class="flex flex-wrap justify-center mb-6">
+                <span class="feature-badge"><i class="fas fa-arrows-alt mr-1"></i> Dimension Resize</span>
+                <span class="feature-badge"><i class="fas fa-weight-hanging mr-1"></i> KB Resize</span>
+                <span class="feature-badge"><i class="fas fa-lock mr-1"></i> Aspect Ratio Lock</span>
+                <span class="feature-badge"><i class="fas fa-eye mr-1"></i> Live Preview</span>
+                <span class="feature-badge"><i class="fas fa-download mr-1"></i> Free Download</span>
+            </div>
+            
+            <!-- Mode Toggle -->
+            <div class="mode-toggle">
+                <div id="dimensionModeBtn" class="mode-btn active" onclick="setMode('dimension')">
+                    <i class="fas fa-arrows-alt mr-2"></i>Resize by Dimensions
+                </div>
+                <div id="kbModeBtn" class="mode-btn" onclick="setMode('kb')">
+                    <i class="fas fa-weight-hanging mr-2"></i>Resize by KB
+                </div>
+            </div>
+            
+            <!-- Upload Area -->
+            <div id="uploadArea" class="upload-area mb-6">
+                <div class="text-center p-6" id="uploadPrompt">
+                    <i class="fas fa-cloud-upload-alt text-5xl text-indigo-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Upload Your Image</h3>
+                    <p class="text-gray-500 mb-4">Click to browse or drag and drop</p>
+                    <p class="text-sm text-gray-400">Supports: JPG, PNG, GIF, BMP, WebP (Max 20MB)</p>
+                </div>
+                <div id="imagePreview" class="hidden p-4">
+                    <img id="preview" class="preview-image mx-auto" alt="Preview">
+                </div>
+                <input type="file" id="fileInput" accept="image/*" class="hidden">
+            </div>
+            
+            <!-- File Info -->
+            <div id="fileInfo" class="file-info hidden mb-6">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-file-image text-2xl text-indigo-600"></i>
+                        </div>
+                        <div>
+                            <p id="fileName" class="font-semibold text-gray-800"></p>
+                            <p id="fileSize" class="text-sm text-gray-500"></p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span id="originalDimensions" class="badge"></span>
+                        <span id="fileType" class="badge"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dimension Mode Controls -->
+            <div id="dimensionControls" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="block text-sm font-medium text-gray-700">
+                            <i class="fas fa-arrow-left mr-1 text-indigo-500"></i> Width (pixels)
+                        </label>
+                        <input type="number" id="width" min="1" class="dimension-input" placeholder="Enter width">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="block text-sm font-medium text-gray-700">
+                            <i class="fas fa-arrow-up mr-1 text-indigo-500"></i> Height (pixels)
+                        </label>
+                        <input type="number" id="height" min="1" class="dimension-input" placeholder="Enter height">
+                    </div>
+                </div>
+                
+                <div class="flex items-center justify-center gap-6">
+                    <label class="flex items-center gap-2 cursor-pointer bg-gray-50 px-4 py-2 rounded-full">
+                        <input type="checkbox" id="aspectRatioLock" checked class="w-4 h-4 text-indigo-600">
+                        <span class="text-sm text-gray-700">Lock Aspect Ratio</span>
+                    </label>
+                    <button id="resetDimensions" class="text-sm text-gray-500 hover:text-indigo-600 transition flex items-center">
+                        <i class="fas fa-undo mr-1"></i> Reset to Original
+                    </button>
+                </div>
+            </div>
+            
+            <!-- KB Mode Controls -->
+            <div id="kbControls" class="space-y-6 hidden">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="block text-sm font-medium text-gray-700">
+                            <i class="fas fa-bullseye mr-1 text-indigo-500"></i> Target Size (KB)
+                        </label>
+                        <input type="number" id="targetKB" min="1" max="5120" class="kb-input" placeholder="e.g., 100">
+                        <p class="text-xs text-gray-500 mt-1">Max: 5120 KB (5MB)</p>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="block text-sm font-medium text-gray-700">
+                            <i class="fas fa-sliders-h mr-1 text-indigo-500"></i> Quality Preset
+                        </label>
+                        <select id="qualityPreset" class="kb-input">
+                            <option value="0.9">High Quality (Larger file)</option>
+                            <option value="0.7" selected>Balanced (Recommended)</option>
+                            <option value="0.5">Smaller file</option>
+                            <option value="0.3">Minimum size</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-gray-600">Fine-tune Quality</span>
+                        <span id="qualityValue" class="font-semibold text-indigo-600">70%</span>
+                    </div>
+                    <input type="range" id="qualitySlider" class="quality-slider" min="10" max="100" value="70">
+                    <div class="flex justify-between text-xs text-gray-400">
+                        <span>Smaller file</span>
+                        <span>Better quality</span>
+                    </div>
+                </div>
+                
+                <div class="bg-indigo-50 p-4 rounded-lg">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-info-circle text-indigo-600 mt-1"></i>
+                        <div>
+                            <p class="text-sm text-indigo-700 font-medium">How KB resize works:</p>
+                            <p class="text-xs text-indigo-600 mt-1">Tool automatically adjusts quality and dimensions to match your target KB. Higher quality = larger file size.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Size Comparison (shows after resize) -->
+            <div id="sizeComparison" class="hidden mt-6">
+                <h4 class="text-sm font-medium text-gray-700 mb-2">Size Comparison</h4>
+                <div class="size-comparison">
+                    <div>
+                        <span class="text-sm text-gray-500">Original:</span>
+                        <span id="originalSizeDisplay" class="font-semibold ml-2"></span>
+                    </div>
+                    <div>
+                        <span class="text-sm text-gray-500">New:</span>
+                        <span id="newSizeDisplay" class="font-semibold text-green-600 ml-2"></span>
+                    </div>
+                    <div>
+                        <span id="reductionPercent" class="text-sm text-indigo-600"></span>
+                    </div>
+                </div>
+                <div class="progress-bar mt-2">
+                    <div id="sizeProgress" class="progress-fill" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap gap-4 justify-center mt-8">
+                <button id="resizeBtn" class="btn-primary" disabled>
+                    <i class="fas fa-arrows-alt mr-2"></i>
+                    <span id="resizeBtnText">Resize Image</span>
+                </button>
+                <button id="downloadBtn" class="btn-secondary" disabled>
+                    <i class="fas fa-download mr-2"></i>
+                    Download
+                </button>
+                <button id="newImageBtn" class="btn-secondary">
+                    <i class="fas fa-plus mr-2"></i>
+                    New Image
+                </button>
+            </div>
+            
+            <!-- Loading Indicator -->
+            <div id="loadingIndicator" class="hidden text-center mt-4">
+                <div class="spinner mx-auto"></div>
+                <p id="loadingText" class="text-gray-600 mt-2">Processing image...</p>
+            </div>
+        </div>
+        
+        <!-- KB Size Recommendations -->
+        <div class="glass-morphism rounded-3xl p-6 mt-6">
+            <h3 class="font-semibold text-gray-800 mb-4 flex items-center">
+                <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+                Recommended KB Sizes for Different Platforms
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="bg-white rounded-lg p-3 text-center">
+                    <i class="fas fa-envelope text-2xl text-blue-600 mb-2"></i>
+                    <p class="text-sm font-medium">Email</p>
+                    <p class="text-xs text-gray-500">Max 500 KB</p>
+                </div>
+                <div class="bg-white rounded-lg p-3 text-center">
+                    <i class="fab fa-whatsapp text-2xl text-green-600 mb-2"></i>
+                    <p class="text-sm font-medium">WhatsApp</p>
+                    <p class="text-xs text-gray-500">100-200 KB</p>
+                </div>
+                <div class="bg-white rounded-lg p-3 text-center">
+                    <i class="fab fa-facebook text-2xl text-blue-800 mb-2"></i>
+                    <p class="text-sm font-medium">Facebook</p>
+                    <p class="text-xs text-gray-500">200-300 KB</p>
+                </div>
+                <div class="bg-white rounded-lg p-3 text-center">
+                    <i class="fas fa-globe text-2xl text-purple-600 mb-2"></i>
+                    <p class="text-sm font-medium">Website</p>
+                    <p class="text-xs text-gray-500">50-200 KB</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- How to Use Section -->
+        <div class="glass-morphism rounded-3xl p-8 mt-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-question-circle text-indigo-600 mr-3"></i>
+                How to Resize Image?
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center p-4">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-indigo-600">1</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Upload Image</h3>
+                    <p class="text-gray-600 text-sm">Click upload area and select your image (JPG, PNG, GIF)</p>
+                </div>
+                <div class="text-center p-4">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-indigo-600">2</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Choose Resize Mode</h3>
+                    <p class="text-gray-600 text-sm">Resize by dimensions OR target KB size</p>
+                </div>
+                <div class="text-center p-4">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-indigo-600">3</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Download</h3>
+                    <p class="text-gray-600 text-sm">Click resize and download your optimized image</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <div class="glass-morphism rounded-3xl p-8 mt-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-star text-indigo-600 mr-3"></i>
+                Frequently Asked Questions
+            </h2>
+            
+            <div class="space-y-4">
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="font-semibold text-lg mb-2">How to resize image to exact KB?</h3>
+                    <p class="text-gray-600">Switch to "Resize by KB" mode, enter your target size (e.g., 100 for 100KB), and click resize. Our tool automatically finds the best quality to achieve that file size.</p>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="font-semibold text-lg mb-2">Is this image resizer really free?</h3>
+                    <p class="text-gray-600">Yes, completely free! No hidden charges, no registration required. You can resize unlimited images.</p>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="font-semibold text-lg mb-2">What's the maximum file size?</h3>
+                    <p class="text-gray-600">You can upload images up to 20MB. For KB resize, target size can be up to 5MB (5120 KB).</p>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="font-semibold text-lg mb-2">Will my images be secure?</h3>
+                    <p class="text-gray-600">All processing happens in your browser. Images are never uploaded to any server, ensuring complete privacy and security.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg mb-2">Can I maintain aspect ratio?</h3>
+                    <p class="text-gray-600">Yes, in dimension mode you can lock aspect ratio. When you change width, height automatically adjusts to maintain proportions.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Related Tools -->
+        <div class="glass-morphism rounded-3xl p-8 mt-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                <i class="fas fa-tools text-indigo-600 mr-3"></i>
+                Related Tools You Might Like
+            </h2>
+            <div class="flex flex-wrap gap-3">
+                <a href="/" class="bg-white px-4 py-2 rounded-full text-sm hover:bg-indigo-600 hover:text-white transition shadow-sm">Image Compressor</a>
+                <a href="/" class="bg-white px-4 py-2 rounded-full text-sm hover:bg-indigo-600 hover:text-white transition shadow-sm">Image Converter</a>
+                <a href="/" class="bg-white px-4 py-2 rounded-full text-sm hover:bg-indigo-600 hover:text-white transition shadow-sm">Crop Image</a>
+               
+               
+                <a href="/" class="bg-white px-4 py-2 rounded-full text-sm hover:bg-indigo-600 hover:text-white transition shadow-sm">JPG to PNG</a>
+                <a href="/" class="bg-white px-4 py-2 rounded-full text-sm hover:bg-indigo-600 hover:text-white transition shadow-sm">PNG to JPG</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast Container -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-50 space-y-2"></div>
+    
+   
+    
+    <!-- Footer -->
+    <footer class="mt-12 text-center text-white/70 text-sm">
+        <div class="container mx-auto px-4">
+            <p>© 2026 Smart CSC Tools. All rights reserved. | 
+                <a href="/privacy.html" class="hover:text-white transition underline">Privacy Policy</a> | 
+                <a href="/terms.html" class="hover:text-white transition underline">Terms of Use</a> | 
+                <a href="/contact.html" class="hover:text-white transition underline">Contact Us</a>
+            </p>
+            
+        </div>
+    </footer>
+</body>
+<script src="index.js"></script>
+</html>

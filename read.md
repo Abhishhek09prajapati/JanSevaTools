@@ -1,5 +1,10 @@
 
+https://jansevakendratools.vercel.app/
 
+
+
+<link rel="stylesheet" href="style.css">
+<script src="index.js"></script>
 
 
 

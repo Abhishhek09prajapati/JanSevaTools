@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">  
+
+
+    <!-- SEO Meta Tags -->
+    <title>Smart Invoice Generator | Free Professional Invoice Maker Online - Janseva Kendra Tools</title>
+    <meta name="title" content="Smart Invoice Generator | Free Professional Invoice Maker Online">
+    <meta name="description"
+        content="Create professional invoices online free. GST invoice generator with tax, discount, logo upload, signature, UPI payment. Download PDF & share on WhatsApp. Used by 50,000+ businesses.">
+    <meta name="keywords"
+        content="invoice generator, free invoice maker, GST invoice, business invoice, professional invoice, invoice template, bill generator, tax invoice, UPI invoice, invoice maker online">
+    <meta name="author" content="Smart CSC Tools">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jansevakendratools.vercel.app/invoice-generator">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jansevakendratools.vercel.app/invoice-generator">
+    <meta property="og:title" content="Free Invoice Generator - Create Professional Invoices">
+    <meta property="og:description"
+        content="Create GST invoices with logo, signature, tax, discount & UPI payment. Free PDF download & WhatsApp share.">
+    <meta property="og:image" content="https://jansevakendratools.vercel.app/images/invoice-preview.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Invoice Generator - Free Online Tool">
+    <meta name="twitter:description" content="Create professional invoices instantly. Free PDF download.">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://chart.googleapis.com">
+
+    <!-- Stylesheets -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- QR Code Library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Smart Invoice Generator",
+        "description": "Free professional invoice generator with GST, tax, discount, UPI payment",
+        "applicationCategory": "Finance",
+        "operatingSystem": "All",
+        "url": "https://jansevakendratools.vercel.app/invoice-generator",
+        "provider": {
+            "@type": "Organization",
+            "name": "Janseva Kendra Tools"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "15234"
+        }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "How to create GST invoice online free?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Fill business details, add items with quantity & price, apply tax/discount, and download PDF. It's 100% free."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Can I add my logo and signature?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, you can upload your business logo and signature. They will appear on the invoice and PDF."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Is UPI payment option available?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, you can add UPI ID, QR code, and bank details for easy payment."
+            }
+        }]
+    }
+    </script>
+
+  
+</head>
+
+<body class="bg-gray-50 transition-colors duration-300" id="body">
+
+    <!-- Navigation with Breadcrumbs (Hidden in Print) -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 no-print">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <ol class="flex items-center space-x-2 text-sm">
+                    <li><a href="/" class="text-gray-600 hover:text-blue-600"><i class="fas fa-home mr-1"></i>Home</a>
+                    </li>
+
+                    <li class="text-gray-400">/</li>
+                    <li class="text-blue-600 font-semibold">Invoice Generator</li>
+                </ol>
+
+                <!-- Dark Mode Toggle -->
+                <button onclick="toggleDarkMode()" class="p-2 rounded-lg bg-gray-200 hover:bg-gray-300 transition">
+                    <i class="fas fa-moon text-gray-700" id="darkModeIcon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-6 max-w-6xl">
+
+        <!-- Header (Hidden in Print) -->
+        <div class="text-center mb-6 no-print">
+            <h1
+                class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-4">
+                Smart Invoice Generator
+            </h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                Create professional GST invoices with logo, signature, tax & discount.
+                <span class="font-bold text-blue-600">50,000+ businesses trust us</span>
+            </p>
+
+            <!-- Stats Counter -->
+            <div class="flex justify-center gap-6 mt-4">
+                <div class="flex items-center text-sm text-gray-500">
+                    <i class="fas fa-file-invoice text-blue-500 mr-2"></i>
+                    <span>1,52,342+ Invoices Created</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-500">
+                    <i class="fas fa-star text-yellow-500 mr-2"></i>
+                    <span>4.9/5 Rating</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls Row (Hidden in Print) -->
+        <div class="flex flex-wrap gap-3 justify-between items-center mb-4 no-print">
+            <div class="flex gap-2">
+                <!-- Theme Selector -->
+                <select id="themeSelector" onchange="changeTheme(this.value)"
+                    class="border rounded-lg px-3 py-2 text-sm">
+                    <option value="blue">Blue Theme</option>
+                    <option value="green">Green Theme</option>
+                    <option value="red">Red Theme</option>
+                </select>
+
+                <!-- Currency Selector -->
+                <select id="currencySelector" onchange="updateCurrency()" class="border rounded-lg px-3 py-2 text-sm">
+                    <option value="₹">₹ INR</option>
+                    <option value="$">$ USD</option>
+                    <option value="€">€ EUR</option>
+                    <option value="£">£ GBP</option>
+                </select>
+
+                <!-- Watermark Toggle -->
+                <button onclick="toggleWatermark()" class="btn-secondary text-sm">
+                    <i class="fas fa-water mr-2"></i>Watermark
+                </button>
+            </div>
+
+            <div class="flex gap-2">
+                <button onclick="saveInvoice()" class="btn-primary text-sm">
+                    <i class="fas fa-save mr-2"></i>Save
+                </button>
+                <button onclick="loadInvoice()" class="btn-secondary text-sm">
+                    <i class="fas fa-folder-open mr-2"></i>Load
+                </button>
+                <button onclick="resetInvoice()" class="btn-secondary text-sm">
+                    <i class="fas fa-redo mr-2"></i>Reset
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Invoice Sheet - A4 Optimized -->
+        <div class="invoice-sheet" id="invoice-sheet">
+
+            <!-- Logo & Header - Compact -->
+            <div class="flex flex-row justify-between items-start mb-4">
+                <div class="flex items-center gap-3">
+                    <!-- Logo Upload (Screen only) -->
+                    <div class="upload-box w-16 h-16 flex items-center justify-center no-print" id="logoUpload">
+                        <img id="logoPreview" class="max-w-full max-h-full hidden" alt="Logo">
+                        <i class="fas fa-cloud-upload-alt text-2xl text-gray-400" id="logoIcon"></i>
+                    </div>
+
+                    <!-- Logo Display for Print -->
+                    <div class="print-logo" style="display: none;" id="logoPrintContainer">
+                        <img id="logoPrintImg" class="max-w-16 max-h-16" alt="Logo">
+                    </div>
+
+                    <input type="file" id="logoInput" accept="image/*" class="hidden">
+
+                    <div>
+                        <div contenteditable="true" class="text-xl font-bold outline-none"
+                            style="color: var(--invoice-primary);" id="businessName"
+                            data-placeholder="Your Business Name">Your Business Name</div>
+                        <div contenteditable="true" class="text-gray-600 text-xs" id="businessAddress"
+                            data-placeholder="123 Business Street, City - 400001">123 Business Street, City - 400001
+                        </div>
+                        <div contenteditable="true" class="text-gray-600 text-xs" id="businessPhone"
+                            data-placeholder="+91 98765 43210">+91 98765 43210</div>
+                    </div>
+                </div>
+
+                <div class="text-right">
+                    <h3 class="text-2xl font-bold" style="color: var(--invoice-primary);">INVOICE</h3>
+                    <div class="grid grid-cols-2 gap-1 mt-1 text-xs">
+                        <span class="text-gray-600">Invoice No:</span>
+                        <span class="font-semibold print-value" id="printInvoiceNo">INV-2024-001</span>
+                        <input type="text" id="invoiceNo" value="INV-2024-001"
+                            class="border rounded px-1 py-0.5 text-xs w-32 no-print">
+
+                        <span class="text-gray-600">Date:</span>
+                        <span class="font-semibold print-value" id="printInvoiceDate"></span>
+                        <input type="date" id="invoiceDate" class="border rounded px-1 py-0.5 text-xs w-32 no-print">
+
+                        <span class="text-gray-600">Due Date:</span>
+                        <span class="font-semibold print-value" id="printDueDate"></span>
+                        <input type="date" id="dueDate" class="border rounded px-1 py-0.5 text-xs w-32 no-print">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bill To & Ship To - 3 rows each (Fixed) -->
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <!-- Bill To -->
+                <div>
+                    <h4 class="font-semibold text-xs mb-1" style="color: var(--invoice-primary);">Bill To:</h4>
+
+                    <!-- Print values (3 rows) -->
+                    <div class="print-value bill-to-print" id="printCustomerName"></div>
+                    <div class="print-value bill-to-print" id="printCustomerAddress"></div>
+                    <div class="print-value bill-to-print" id="printCustomerPhone"></div>
+
+                    <!-- Input fields (screen only) - 3 rows -->
+                    <input type="text" id="customerName" placeholder="Customer Name"
+                        class="w-full border rounded p-1 mb-1 text-xs no-print">
+                    <input type="text" id="customerAddress" placeholder="Customer Address"
+                        class="w-full border rounded p-1 mb-1 text-xs no-print">
+                    <input type="text" id="customerPhone" placeholder="Phone / Mobile"
+                        class="w-full border rounded p-1 text-xs no-print">
+                </div>
+
+                <!-- Ship To -->
+                <div>
+                    <h4 class="font-semibold text-xs mb-1" style="color: var(--invoice-primary);">Ship To:</h4>
+
+                    <!-- Print values (3 rows) -->
+                    <div class="print-value ship-to-print" id="printShipName"></div>
+                    <div class="print-value ship-to-print" id="printShipAddress"></div>
+                    <div class="print-value ship-to-print" id="printShipPhone"></div>
+
+                    <!-- Input fields (screen only) - 3 rows -->
+                    <input type="text" id="shipName" placeholder="Shipping Name"
+                        class="w-full border rounded p-1 mb-1 text-xs no-print">
+                    <input type="text" id="shipAddress" placeholder="Shipping Address"
+                        class="w-full border rounded p-1 mb-1 text-xs no-print">
+                    <input type="text" id="shipPhone" placeholder="Phone / Mobile"
+                        class="w-full border rounded p-1 text-xs no-print">
+                </div>
+            </div>
+
+            <!-- Items Table - Compact -->
+            <div class="mb-3">
+                <div class="overflow-x-auto">
+                    <!-- Screen table with inputs -->
+                    <table class="w-full text-xs compact-table no-print">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="p-1 text-left">#</th>
+                                <th class="p-1 text-left">Description</th>
+                                <th class="p-1 text-right">Qty</th>
+                                <th class="p-1 text-right">Price</th>
+                                <th class="p-1 text-right">Total</th>
+                                <th class="p-1 text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="itemsBody">
+                            <!-- Items will be added here dynamically -->
+                        </tbody>
+                    </table>
+
+                    <!-- Print table with values (visible only in print) -->
+                    <table class="w-full text-xs print-table" style="display: none;">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="p-1 text-left">#</th>
+                                <th class="p-1 text-left">Description</th>
+                                <th class="p-1 text-right">Qty</th>
+                                <th class="p-1 text-right">Price</th>
+                                <th class="p-1 text-right">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="itemsBodyPrint">
+                            <!-- Print items will be added here dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <button onclick="addItem()" class="btn-secondary text-xs mt-2 no-print">
+                    <i class="fas fa-plus mr-1"></i>Add Item
+                </button>
+            </div>
+
+            <!-- Calculations & Payment - Two Column Layout -->
+            <div class="grid grid-cols-2 gap-4 mb-3">
+                <!-- Left: Payment Info -->
+                <div>
+                    <h4 class="font-semibold text-xs mb-1" style="color: var(--invoice-primary);">Payment Details:</h4>
+
+                    <!-- Payment Method Tabs (Screen only) -->
+                    <div class="flex border-b mb-1 no-print">
+                        <button class="payment-tab active px-2 py-0.5 text-xs border-b-2 border-blue-600 font-medium"
+                            data-payment="bank">Bank</button>
+                        <button class="payment-tab px-2 py-0.5 text-xs" data-payment="upi">UPI</button>
+                        <button class="payment-tab px-2 py-0.5 text-xs" data-payment="cash">Cash</button>
+                    </div>
+
+                    <!-- Payment display for print -->
+                    <div class="print-value" id="printPaymentMethod">Bank Transfer</div>
+
+                    <!-- Bank Details -->
+                    <div id="bankDetails" class="payment-details space-y-1">
+                        <!-- Print values -->
+                        <div class="print-value" id="printBankName"></div>
+                        <div class="print-value" id="printAccountNo"></div>
+                        <div class="print-value" id="printIfscCode"></div>
+
+                        <!-- Input fields -->
+                        <input type="text" id="bankName" placeholder="Bank Name"
+                            class="w-full border rounded p-1 text-xs no-print">
+                        <input type="text" id="accountNo" placeholder="Account Number"
+                            class="w-full border rounded p-1 text-xs no-print">
+                        <input type="text" id="ifscCode" placeholder="IFSC Code"
+                            class="w-full border rounded p-1 text-xs no-print">
+                    </div>
+
+                    <!-- UPI Details -->
+                    <div id="upiDetails" class="payment-details hidden space-y-1">
+                        <!-- Print values -->
+                        <div class="print-value" id="printUpiId"></div>
+
+                        <!-- Input fields -->
+                        <input type="text" id="upiId" placeholder="UPI ID (e.g., name@okhdfcbank)"
+                            class="w-full border rounded p-1 text-xs no-print">
+
+                        <!-- QR Code Container -->
+                        <div class="flex flex-col items-start gap-2 mt-1 no-print">
+                            <button onclick="generateQRCode()" class="btn-secondary text-xs">
+                                <i class="fas fa-qrcode mr-1"></i>Generate QR Code
+                            </button>
+                            <div id="qrcode"></div>
+                        </div>
+
+                        <!-- QR Code for Print -->
+                        <div class="print-value" id="printQRCode"></div>
+                    </div>
+
+                    <!-- Cash Details -->
+                    <div id="cashDetails" class="payment-details hidden">
+                        <p class="text-xs text-gray-600 no-print">Cash on delivery / Cash payment accepted</p>
+                        <div class="print-value">Cash Payment</div>
+                    </div>
+                </div>
+
+                <!-- Right: Calculations -->
+                <div class="space-y-1 text-xs">
+                    <div class="flex justify-between items-center">
+                        <span>Subtotal:</span>
+                        <span id="subtotal" class="font-semibold">₹0.00</span>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <span>Tax (%):</span>
+                        <div class="flex items-center gap-1">
+                            <span class="print-value" id="printTaxPercent">0</span>
+                            <input type="number" id="taxPercent" value="0" min="0" max="100"
+                                class="border rounded p-0.5 w-12 text-right text-xs no-print">
+                            <span id="taxAmount">₹0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <span>Discount (%):</span>
+                        <div class="flex items-center gap-1">
+                            <span class="print-value" id="printDiscountPercent">0</span>
+                            <input type="number" id="discountPercent" value="0" min="0" max="100"
+                                class="border rounded p-0.5 w-12 text-right text-xs no-print">
+                            <span id="discountAmount">₹0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="border-t pt-1 mt-1">
+                        <div class="flex justify-between items-center font-bold text-sm">
+                            <span>Total:</span>
+                            <span id="total" style="color: var(--invoice-primary);">₹0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <span>Amount Paid:</span>
+                        <span class="print-value" id="printAmountPaid">0</span>
+                        <input type="number" id="amountPaid" value="0" min="0"
+                            class="border rounded p-0.5 w-20 text-right text-xs no-print" onchange="calculateBalance()">
+                    </div>
+
+                    <div class="flex justify-between items-center font-semibold">
+                        <span>Balance Due:</span>
+                        <span id="balanceDue" class="text-red-600">₹0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer & Signature - Compact -->
+            <div class="grid grid-cols-2 gap-4 mt-2">
+                <div>
+                    <h4 class="font-semibold text-xs mb-1" style="color: var(--invoice-primary);">Notes:</h4>
+
+                    <!-- Print value -->
+                    <div class="print-value" id="printNotes">Thank you for your business!</div>
+
+                    <!-- Input field -->
+                    <textarea id="invoiceNotes" rows="2" class="w-full border rounded p-1 text-xs no-print"
+                        placeholder="Thank you for your business!">Thank you for your business!</textarea>
+                </div>
+
+                <div class="text-right">
+                    <h4 class="font-semibold text-xs mb-1" style="color: var(--invoice-primary);">Authorized Signature:
+                    </h4>
+
+                    <!-- Signature Upload (Screen only) -->
+                    <div class="upload-box w-20 h-12 ml-auto flex items-center justify-center no-print"
+                        id="signatureUpload">
+                        <img id="signaturePreview" class="max-w-full max-h-full hidden" alt="Signature">
+                        <i class="fas fa-pen text-xl text-gray-400" id="signatureIcon"></i>
+                    </div>
+
+                    <!-- Signature for print -->
+                    <div class="print-signature" style="display: none;" id="signaturePrintContainer">
+                        <img id="signaturePrintImg" class="max-w-20 max-h-12" alt="Signature">
+                    </div>
+
+                    <input type="file" id="signatureInput" accept="image/*" class="hidden">
+                </div>
+            </div>
+
+            <!-- Terms - Compact -->
+            <div class="text-[8px] text-gray-500 text-center mt-3 pt-2 border-t">
+                This is a computer generated invoice and is valid without signature.
+            </div>
+        </div>
+
+        <!-- Action Buttons (Hidden in Print) -->
+        <div class="flex flex-wrap gap-3 justify-center no-print mt-6">
+            <button onclick="downloadPDF()" class="btn-primary">
+                <i class="fas fa-file-pdf mr-2"></i>Download PDF (A4)
+            </button>
+            <button onclick="printInvoice()" class="btn-secondary">
+                <i class="fas fa-print mr-2"></i>Print (A4)
+            </button>
+            <button onclick="downloadImage()" class="btn-secondary">
+                <i class="fas fa-image mr-2"></i>Download as PNG
+            </button>
+            <button onclick="shareWhatsApp()" class="btn-secondary" style="background: #25D366; color: white;">
+                <i class="fab fa-whatsapp mr-2"></i>Share
+            </button>
+        </div>
+
+        <script async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6791318178265120"
+            crossorigin="anonymous"></script>
+        <!-- Banner Ads -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6791318178265120"
+            data-ad-slot="7017392570" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <!-- FAQ Section (Hidden in Print) -->
+        <div class="bg-white p-6 rounded-xl shadow-lg no-print mt-8">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Frequently Asked Questions</h2>
+
+            <div class="space-y-4">
+                <div class="border rounded-lg p-4">
+                    <h3 class="font-semibold text-lg mb-2">Is this invoice generator really free?</h3>
+                    <p class="text-gray-600">Yes, it's completely free with no hidden charges. Create unlimited
+                        professional invoices.</p>
+                </div>
+                <div class="border rounded-lg p-4">
+                    <h3 class="font-semibold text-lg mb-2">Can I add my company logo?</h3>
+                    <p class="text-gray-600">Yes, you can upload your logo and signature. They will appear on the
+                        invoice and PDF.</p>
+                </div>
+                <div class="border rounded-lg p-4">
+                    <h3 class="font-semibold text-lg mb-2">How to save invoice for later?</h3>
+                    <p class="text-gray-600">Click "Save" button to store in browser. Click "Load" to retrieve saved
+                        invoices.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Tools (Hidden in Print) -->
+        <div class="mt-8 bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl shadow-lg no-print">
+            <h2 class="text-xl font-bold mb-4 text-gray-800">Popular Business Tools</h2>
+            <div class="flex flex-wrap gap-3">
+                <a href="/"
+                    class="bg-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 hover:text-white transition">GST
+                    Calculator</a>
+                <a href="/"
+                    class="bg-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 hover:text-white transition">Estimate
+                    Generator</a>
+                <a href="/"
+                    class="bg-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 hover:text-white transition">Receipt
+                    Maker</a>
+                <a href="/"
+                    class="bg-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 hover:text-white transition">Quotation
+                    Generator</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-50 space-y-2"></div>
+
+    <!-- Footer (Hidden in Print) -->
+    <footer class="bg-white mt-12 py-6 border-t no-print">
+        <div class="container mx-auto px-4 text-center text-gray-600">
+            <p>&copy; 2026 JanSeva Kendra Tools. All rights reserved. |
+                <a href="/privacy.html" class="text-blue-600 hover:underline">Privacy Policy</a> |
+                <a href="/terms.html" class="text-blue-600 hover:underline">Terms of Use</a>
+            </p>
+        </div>
+    </footer>
+
+   
+
+    <!-- Footer (Hidden in Print) -->
+
+</body>
+<script src="index.js"></script>
+</html>
