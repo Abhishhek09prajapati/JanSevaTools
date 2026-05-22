@@ -1,14 +1,15 @@
 
 https://jansevakendratools.vercel.app/
 
+https://smartcsctools.com/
 
 
 
 JanSeva Kendra
 
+https://www.jansevakendratools.in/
 
 
-<link rel="stylesheet" href="style.css">
 <script src="index.js"></script>
 
 
