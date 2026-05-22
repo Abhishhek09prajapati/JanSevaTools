@@ -1,11 +1,15 @@
 
-https://jansevakendratools.vercel.app/
+
 
 https://smartcsctools.com/
 
 
 
 JanSeva Kendra
+
+https://www.jansevakendratools.in/s/
+
+
 
 https://www.jansevakendratools.in/
 
@@ -23,6 +27,11 @@ https://www.jansevakendratools.in/
 
 
  <div id="footer"></div>
+
+
+
+
+ <link rel="stylesheet" href="style.css">
 
 
 

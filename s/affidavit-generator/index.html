@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6791318178265120"
+     crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>CSC Affidavit Format - Affidavit Stamp Paper format |JanSeva Kendra Tools</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professional Affidavit Format for Name Change, Address Change, DOB Correction, Marriage, and more. Create notary-ready affidavits on stamp paper. Free & secure tool byJanSeva Kendra Tools.">
+    <meta name="keywords" content="affidavit generator, stamp paper, notary, legal document, name change affidavit, address change affidavit, csc affidavit,JanSeva Kendratools">
+    <meta name="author" content="Smart CSC Tools">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://www.jansevakendratools.in/affidavit-generator.html">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="CSC Affidavit Generator - Professional Stamp Paper Tool">
+    <meta property="og:description" content="Create professional affidavits online. Free, secure, and easy to use.">
+    <meta property="og:url" content="https://www.jansevakendratools.in/affidavit-generator.html">
+    <meta property="og:type" content="website">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+   <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100">
+    
+    <!-- Back to Home Button -->
+    <a href="https://www.jansevakendratools.in/" class="fixed top-4 left-4 z-50 no-print bg-white hover:bg-gray-100 text-gray-800 px-4 py-2 rounded-lg shadow-md flex items-center gap-2 transition-all duration-300 hover:shadow-lg">
+        <i class="fas fa-home text-blue-600"></i>
+        <span class="text-sm font-medium">Back to Home</span>
+    </a>
+    
+    <!-- Header Section -->
+    <div class="bg-white shadow-sm sticky top-0 z-40 no-print">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex flex-wrap justify-between items-center gap-3">
+                <div class="flex items-center gap-2 ml-12 sm:ml-0">
+                    <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-file-signature text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-gray-800">Affidavit Format Generator</h1>
+                        <p class="text-xs text-gray-500 hidden sm:block">Professional Stamp Paper Tool | A4 Size Preview</p>
+                    </div>
+                </div>
+                
+                <div class="flex gap-2">
+                    <div class="flex bg-gray-100 rounded-lg p-1">
+                        <button onclick="setLanguage('english')" id="lang-en" class="px-3 py-1 rounded-lg text-xs font-medium transition-all bg-blue-600 text-white">EN</button>
+                        <button onclick="setLanguage('hindi')" id="lang-hi" class="px-3 py-1 rounded-lg text-xs font-medium transition-all text-gray-600">हिंदी</button>
+                    </div>
+                    <button onclick="downloadPDF()" class="btn-primary text-white px-3 py-1.5 rounded-lg flex items-center gap-1 text-sm">
+                        <i class="fas fa-download text-xs"></i> PDF
+                    </button>
+                    <button onclick="printAffidavit()" class="bg-gray-600 hover:bg-gray-700 text-white px-3 py-1.5 rounded-lg flex items-center gap-1 text-sm">
+                        <i class="fas fa-print text-xs"></i> Print
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex flex-col lg:flex-row gap-6">
+            
+            <!-- LEFT SIDE - Form Section -->
+            <div class="lg:w-2/5">
+                <div class="form-container p-5">
+                    <h2 class="text-lg font-bold mb-4 text-gray-800 flex items-center gap-2 sticky top-0 bg-white pb-2">
+                        <i class="fas fa-edit text-blue-600 text-sm"></i>
+                        Affidavit Details
+                    </h2>
+                    
+                    <!-- Stamp Paper Selection -->
+                    <div class="mb-4">
+                        <label class="block text-xs font-semibold text-gray-700 mb-2">Select Stamp Paper Value</label>
+                        <div class="grid grid-cols-4 gap-2">
+                            <div onclick="selectStamp('10')" id="stamp-10" class="stamp-card bg-gradient-to-br from-green-50 to-emerald-100 rounded-lg p-2 text-center">
+                                <i class="fas fa-stamp text-green-600 text-lg"></i>
+                                <p class="text-sm font-bold text-green-800">₹10</p>
+                            </div>
+                            <div onclick="selectStamp('20')" id="stamp-20" class="stamp-card bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg p-2 text-center">
+                                <i class="fas fa-stamp text-blue-600 text-lg"></i>
+                                <p class="text-sm font-bold text-blue-800">₹20</p>
+                            </div>
+                            <div onclick="selectStamp('50')" id="stamp-50" class="stamp-card bg-gradient-to-br from-purple-50 to-pink-100 rounded-lg p-2 text-center">
+                                <i class="fas fa-stamp text-purple-600 text-lg"></i>
+                                <p class="text-sm font-bold text-purple-800">₹50</p>
+                            </div>
+                            <div onclick="selectStamp('100')" id="stamp-100" class="stamp-card bg-gradient-to-br from-amber-50 to-yellow-100 rounded-lg p-2 text-center">
+                                <i class="fas fa-stamp text-amber-600 text-lg"></i>
+                                <p class="text-sm font-bold text-amber-800">₹100</p>
+                            </div>
+                        </div>
+                        <div class="mt-3 flex gap-2">
+                            <button onclick="document.getElementById('customStampUpload').click()" class="flex-1 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 rounded-lg transition">
+                                <i class="fas fa-upload"></i> Upload Custom
+                            </button>
+                            <button onclick="removeStamp()" class="flex-1 text-xs text-red-600 hover:text-red-700 py-2 rounded-lg transition">
+                                <i class="fas fa-times-circle"></i> Remove
+                            </button>
+                        </div>
+                        <input type="file" id="customStampUpload" accept="image/*" class="hidden" onchange="uploadCustomStamp()">
+                    </div>
+                    
+                    <!-- Stamp Top Space Control -->
+                    <div class="mb-4">
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">
+                            Stamp Top Space: <span id="stampTopValue">1.0</span> inches
+                        </label>
+                        <input type="range" id="stampTopSpace" class="slider" min="0.5" max="3" step="0.1" value="1.0" oninput="adjustStampTopSpace()">
+                    </div>
+                    
+                    <!-- Affidavit Type Selection -->
+                    <div class="mb-3">
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Select Affidavit Type</label>
+                        <select id="affidavitType" onchange="changeAffidavitType()" class="form-input w-full rounded-lg p-2 text-sm bg-gray-50">
+                            <option value="name_change">📝 Name Change Affidavit</option>
+                            <option value="address_change">🏠 Address Change Affidavit</option>
+                            <option value="dob_correction">🎂 DOB Correction Affidavit</option>
+                            <option value="education_correction">🎓 Education Certificate Correction</option>
+                            <option value="passport_correction">🛂 Passport Details Correction</option>
+                            <option value="marriage">💍 Marriage Affidavit</option>
+                            <option value="general">📄 General Affidavit</option>
+                            <option value="custom">✨ Custom Affidavit</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Form Fields -->
+                    <div class="space-y-2">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Name of Deponent</label>
+                            <input type="text" id="deponentName" oninput="updatePreview()" class="form-input w-full rounded-lg p-2 text-sm" placeholder="Enter full name">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Father / Husband Name</label>
+                            <input type="text" id="fatherName" oninput="updatePreview()" class="form-input w-full rounded-lg p-2 text-sm" placeholder="Father's or Husband's name">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Mother Name</label>
+                            <input type="text" id="motherName" oninput="updatePreview()" class="form-input w-full rounded-lg p-2 text-sm" placeholder="Mother's name">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Full Address</label>
+                            <textarea id="address" rows="2" oninput="updatePreview()" class="form-input w-full rounded-lg p-2 text-sm" placeholder="Complete postal address"></textarea>
+                        </div>
+                        <div id="incorrectInfoGroup" style="display: none;">
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Incorrect Information</label>
+                            <textarea id="incorrectInfo" rows="1" oninput="updatePreview()" class="form-input w-full rounded-lg p-2 text-sm" placeholder="Enter incorrect information"></textarea>
+                        </div>
+                        <div id="correctInfoGroup" style="display: none;">
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Correct Information</label>
+                            <textarea id="correctInfo" rows="1" oninput="updatePreview()" class="form-input w-full rounded-lg p-2 text-sm" placeholder="Enter correct information"></textarea>
+                        </div>
+                        
+                        <!-- Verified Place Field -->
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Verified at (Place/City)</label>
+                            <input type="text" id="verifiedPlace" oninput="updatePreview()" class="form-input w-full rounded-lg p-2 text-sm" placeholder="e.g., New Delhi, Mumbai, Lucknow">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Additional Notes</label>
+                            <textarea id="additionalNotes" rows="2" oninput="updatePreview()" class="form-input w-full rounded-lg p-2 text-sm" placeholder="Any additional information"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="mt-4 grid grid-cols-2 gap-2 sticky bottom-0 bg-white pt-2">
+                        <button onclick="autoFillExample()" class="btn-secondary text-white px-3 py-2 rounded-lg flex items-center justify-center gap-1 text-sm">
+                            <i class="fas fa-magic text-xs"></i> Auto Fill
+                        </button>
+                        <button onclick="resetForm()" class="bg-gray-200 text-gray-700 px-3 py-2 rounded-lg hover:bg-gray-300 flex items-center justify-center gap-1 text-sm">
+                            <i class="fas fa-undo-alt text-xs"></i> Reset
+                        </button>
+                    </div>
+                    
+                    <div class="mt-3 p-2 bg-blue-50 rounded-lg">
+                        <div class="flex gap-1 text-xs text-blue-800">
+                            <i class="fas fa-shield-alt text-xs mt-0.5"></i>
+                            <span>Stamp visible in preview only | Not in PDF/Print</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- RIGHT SIDE - A4 Paper Preview -->
+            <div class="lg:w-3/5">
+                <div class="preview-container">
+                    <div class="a4-paper">
+                        <div id="affidavitContent" class="bg-white" style="min-height: 297mm;">
+                            <div id="stampImageContainer" class="stamp-image-container no-print" style="display: none;">
+                                <img id="stampPaperImage" class="stamp-bg-image" alt="Stamp Paper">
+                            </div>
+                            <div id="stampSpaceDiv" style="height: 0px;"></div>
+                            <div id="affidavitTextContainer" class="p-6">
+                                <div id="affidavitText" class="affidavit-content"></div>
+                            </div>
+                            <div class="text-center pb-4 text-gray-400 text-xs no-print">
+                                Generated byJanSeva Kendra Tools - Affidavit Generator
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!-- How to Use Section -->
+    <div class="container mx-auto px-4 py-8 no-print">
+        <div class="bg-white rounded-xl shadow-lg p-6">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-3">
+                <i class="fas fa-info-circle text-blue-600 text-2xl"></i>
+                How to Use This Affidavit Generator
+            </h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span class="text-2xl font-bold text-blue-600">1</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Select Stamp Paper</h3>
+                    <p class="text-sm text-gray-600">Choose stamp value (₹10/₹20/₹50/₹100) or upload custom stamp image</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span class="text-2xl font-bold text-blue-600">2</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Choose Affidavit Type</h3>
+                    <p class="text-sm text-gray-600">Select from 8+ affidavit types including name change, address change, etc.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span class="text-2xl font-bold text-blue-600">3</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Fill Your Details</h3>
+                    <p class="text-sm text-gray-600">Enter personal information, address, and verification place</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span class="text-2xl font-bold text-blue-600">4</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Download or Print</h3>
+                    <p class="text-sm text-gray-600">Get PDF or print directly for notary attestation</p>
+                </div>
+            </div>
+            
+            <div class="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                <div class="flex gap-3">
+                    <i class="fas fa-gavel text-amber-600 text-xl"></i>
+                    <div>
+                        <p class="text-sm text-amber-800 font-semibold">Legal Note:</p>
+                        <p class="text-xs text-amber-700">This tool generates affidavit format for reference. Please get it notarized from a licensed notary public or oath commissioner on actual stamp paper as per your state's regulations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- FAQ Section with Schema -->
+    <div class="container mx-auto px-4 py-8 no-print">
+        <div class="bg-white rounded-xl shadow-lg p-6">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-3">
+                <i class="fas fa-question-circle text-blue-600 text-2xl"></i>
+                Frequently Asked Questions (FAQs)
+            </h2>
+            
+            <div class="space-y-4">
+                <div class="faq-item border rounded-lg p-4">
+                    <h3 class="font-semibold text-lg mb-2">What is an affidavit and when is it needed?</h3>
+                    <p class="text-gray-600 text-sm">An affidavit is a written sworn statement of fact voluntarily made by an affiant under an oath. It is needed for name change, address proof, date of birth correction, marriage registration, passport applications, and various legal proceedings.</p>
+                </div>
+                
+                <div class="faq-item border rounded-lg p-4">
+                    <h3 class="font-semibold text-lg mb-2">Is this affidavit generator free to use?</h3>
+                    <p class="text-gray-600 text-sm">Yes, this tool is completely free to use. You can generate unlimited affidavits without any charges. No registration or login required.</p>
+                </div>
+                
+                <div class="faq-item border rounded-lg p-4">
+                    <h3 class="font-semibold text-lg mb-2">Do I need stamp paper for affidavit?</h3>
+                    <p class="text-gray-600 text-sm">Yes, affidavits typically require non-judicial stamp paper of appropriate value (₹10, ₹20, ₹50, or ₹100 depending on state). This tool helps you visualize the stamp paper in preview, but you must purchase actual stamp paper from licensed vendors.</p>
+                </div>
+                
+                <div class="faq-item border rounded-lg p-4">
+                    <h3 class="font-semibold text-lg mb-2">Can I upload my own stamp paper image?</h3>
+                    <p class="text-gray-600 text-sm">Yes, you can upload your own stamp paper image using the "Upload Custom" button. The image will appear in preview only and not in the final PDF or print.</p>
+                </div>
+                
+                <div class="faq-item border rounded-lg p-4">
+                    <h3 class="font-semibold text-lg mb-2">Is the generated affidavit legally valid?</h3>
+                    <p class="text-gray-600 text-sm">The format generated is legally correct. However, for it to be legally valid, you must print it on actual stamp paper and get it notarized/attested by a notary public or oath commissioner.</p>
+                </div>
+                
+                <div class="faq-item border rounded-lg p-4">
+                    <h3 class="font-semibold text-lg mb-2">What is the stamp paper value required for affidavit?</h3>
+                    <p class="text-gray-600 text-sm">Stamp paper value varies by state. Generally, ₹10 stamp paper is sufficient for most affidavits. Some states require ₹20, ₹50, or ₹100. Check your local state stamp act for exact requirements.</p>
+                </div>
+                
+                <div class="faq-item border rounded-lg p-4">
+                    <h3 class="font-semibold text-lg mb-2">Can I use this affidavit for court purposes?</h3>
+                    <p class="text-gray-600 text-sm">This affidavit format is suitable for general legal purposes like name change, address proof, etc. For court-specific affidavits, consult a legal professional.</p>
+                </div>
+                
+                <div class="faq-item border rounded-lg p-4">
+                    <h3 class="font-semibold text-lg mb-2">Is my data stored or shared?</h3>
+                    <p class="text-gray-600 text-sm">No, this tool is 100% client-side. Your data never leaves your browser. No information is stored on our servers or shared with any third party.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Schema -->
+            <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What is an affidavit and when is it needed?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "An affidavit is a written sworn statement of fact voluntarily made by an affiant under an oath. It is needed for name change, address proof, date of birth correction, marriage registration, passport applications, and various legal proceedings."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is this affidavit generator free to use?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, this tool is completely free to use. You can generate unlimited affidavits without any charges."
+                        }
+                    }
+                ]
+            }
+            </script>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 mt-8 no-print">
+       
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm text-gray-500">
+                <p>&copy; 2025JanSeva Kendra Tools. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="toast" class="fixed bottom-5 right-5 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg hidden z-50 text-sm">
+        <i class="fas fa-check-circle mr-2"></i>
+        <span id="toastMessage"></span>
+    </div>
+    
+  
+</body>
+<script src="index.js"></script>
+</html>

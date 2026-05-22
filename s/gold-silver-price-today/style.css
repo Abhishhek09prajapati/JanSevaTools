@@ -1,0 +1,84 @@
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+.card-gold {
+    border-left: 5px solid #f59e0b;
+    transition: all 0.2s ease;
+}
+
+.card-silver {
+    border-left: 5px solid #6b7280;
+}
+
+.card-jewel {
+    border-left: 5px solid #ec489a;
+}
+
+.card-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.15);
+}
+
+.result-pulse {
+    animation: softPulse 0.5s ease;
+}
+
+@keyframes softPulse {
+    0% {
+        transform: scale(1);
+        background-color: #fef3c7;
+    }
+
+    50% {
+        transform: scale(1.01);
+        background-color: #fde68a;
+    }
+
+    100% {
+        transform: scale(1);
+        background-color: #fffbeb;
+    }
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    ring: 2px solid #f59e0b;
+    border-color: #f59e0b;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 1rem 0;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item {
+    transition: all 0.2s;
+}
+
+.cart-item:hover {
+    background-color: #fef3c7;
+}
+
+.live-button {
+    animation: gentlePulse 2s infinite;
+}
+
+@keyframes gentlePulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+    }
+}

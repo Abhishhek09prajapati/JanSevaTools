@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Boy Girl Name Slip Maker | JanSeva Kendra Tools</title>
+    <meta name="description" content="Generate and print stylish school name slips with photos and cartoons. Fit 10 slips perfectly on A4 paper or download single PNG. 100% Free online tool for CSC and Cyber Cafes.">
+    <meta name="keywords" content="name slip maker online, school sticker generator, a4 name slip print, boy name slip, girl name slip, JanSeva Kendra tools, free online printable labels">
+    <meta name="author" content="JanSeva Kendra Tools">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.jansevakendratools.in/name-slip-maker">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Boy Girl Name Slip Maker Pro",
+      "url": "https://www.jansevakendratools.in/name-slip-maker",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "All",
+      "description": "Create customized school name slips with photos and cartoons. Auto-arranges 10 slips on A4 paper for instant printing and PDF saving.",
+      "creator": {
+        "@type": "Organization",
+        "name": "JanSeva Kendra Tools",
+        "url": "https://www.jansevakendratools.in/"
+      }
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="https://www.jansevakendratools.in/">🏠 JanSeva Kendra Tools</a>
+        </div>
+        <div class="logo">
+            <a href="#">Boy & Girl Name Slip Maker</a>
+        </div>
+        <div class="header-btns">
+            <button class="btn-theme" onclick="toggleTheme()">🌙 Dark Mode</button>
+        </div>
+    </header>
+
+    <div class="app-container" >
+        <aside class="controls-panel">
+            <div class="panel-title">⚙️ Design Settings</div>
+
+            <div class="control-group">
+                <label>1. Select Theme</label>
+                <div class="template-selector">
+                    <label class="template-card active" id="cardBoy">
+                        <input type="radio" name="tpl" value="boy" checked onchange="updateUI()"> 👦 Boy Style
+                    </label>
+                    <label class="template-card" id="cardGirl">
+                        <input type="radio" name="tpl" value="girl" onchange="updateUI()"> 👧 Girl Style
+                    </label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>2. Number of Copies</label>
+                <input type="number" id="qtyInput" min="1" max="10" value="10" oninput="updateUI()">
+            </div>
+
+            <div class="control-group">
+                <label>3. Upload Photo (Recognizable Face)</label>
+                <div class="upload-box" onclick="document.getElementById('fileIn').click()">📸 Click to Upload Student Photo</div>
+                <input type="file" id="fileIn" hidden accept="image/*" onchange="loadImage(event, 'student')">
+            </div>
+
+            <div class="control-group">
+                <label>4. Add Cartoon (Optional)</label>
+                <div class="upload-box" style="border-color:#10b981; color:#10b981;" onclick="document.getElementById('cartIn').click()">🧸 Upload Cartoon PNG</div>
+                <input type="file" id="cartIn" hidden accept="image/png" onchange="loadImage(event, 'cartoon')">
+            </div>
+
+            <div id="cartoonControls" class="cartoon-controls">
+                <label style="color:var(--primary-color); font-size:12px; margin-bottom:10px;">Adjust Cartoon Alignment</label>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                    <div><label style="font-size:10px;">Size</label><input type="range" id="cartSize" min="30" max="180" value="90" oninput="updateUI()"></div>
+                    <div><label style="font-size:10px;">Up/Down</label><input type="range" id="cartY" min="-50" max="200" value="70" oninput="updateUI()"></div>
+                    <div style="grid-column: span 2;"><label style="font-size:10px;">Left/Right Position</label><input type="range" id="cartX" min="-50" max="300" value="190" oninput="updateUI()"></div>
+                </div>
+            </div>
+
+            <div class="control-group" style="margin-top: 15px;">
+                <label>5. Student Information</label>
+                <input type="text" id="nameIn" placeholder="Enter Student Name" oninput="updateUI()" value="Rohan Sharma">
+                <input type="text" id="schoolIn" placeholder="Enter School Name" oninput="updateUI()" style="margin-top:8px" value="SMART PUBLIC SCHOOL">
+            </div>
+
+            <div class="action-btns">
+                <button class="btn btn-lang" onclick="toggleLanguage()" id="langBtn">🔄 Switch to Hindi Labels</button>
+                <button class="btn btn-print" onclick="window.print()">🖨️ Direct Print A4</button>
+                <button class="btn btn-png" onclick="downloadPNG()">🖼️ Download Single PNG</button>
+                <button class="btn btn-pdf" id="btnPdf" onclick="saveAsPDF()">💾 Save as PDF</button>
+            </div>
+        </aside>
+
+        <main>
+            <section class="preview-section">
+                <h3>👀 Live Slip Design Preview</h3>
+                <div class="slip-container">
+                    <div id="master-slip" class="slip-card slip-boy">
+                        <div id="cartoonSticker" class="cartoon-element" style="display:none;">
+                            <img id="cartImg" src="">
+                        </div>
+                        <div class="slip-content">
+                            <div class="photo-frame">
+                                <img id="stuImg" src="" style="display:none">
+                                <div id="stuPlace" style="padding:10px; color:#94a3b8; font-size:11px; text-align:center; font-weight:600;">ADD PHOTO</div>
+                            </div>
+                            <div class="text-info">
+                                <div id="slipName" class="name-txt" style="font-family:'Caveat';">Student Name</div>
+                                <div class="detail-row"><span class="lbl-cls">Class:</span><div></div></div>
+                                <div class="detail-row"><span class="lbl-sec">Section:</span><div style="flex-grow:0.4"></div><span class="lbl-rol">Roll:</span><div></div></div>
+                                <div class="detail-row"><span class="lbl-sub">Subject:</span><div></div></div>
+                            </div>
+                        </div>
+                        <div class="school-tag" id="slipSchool">SCHOOL NAME</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="preview-section" style="overflow:hidden;">
+                <h3>📄 A4 Sheet View (10 Slips Perfectly Aligned)</h3>
+                <div class="a4-wrapper">
+                    <div id="a4-print" class="a4-preview"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <article class="seo-content">
+        <h2>How to Use the Free Name Slip Maker Online</h2>
+        <p>Creating professional and beautiful school name slips has never been easier. Designed specifically for CSC operators, Cyber Cafes, and parents, this tool by <strong>JanSeva Kendra Tools</strong> allows you to design, arrange, and print perfectly measured name slips directly onto A4 paper.</p>
+        
+        <h3>Step-by-Step Instructions:</h3>
+        <ul>
+            <li><strong>Select the Theme:</strong> Choose the 'Boy' template (Yellow) or the 'Girl' template (Purple) based on preference.</li>
+            <li><strong>Upload Image:</strong> Click the upload box to add a passport-sized photo. <em>Our tool ensures facial features remain clear and centered without distortion.</em></li>
+            <li><strong>Add Cartoon (Optional):</strong> Upload a transparent PNG sticker of a cartoon and use the sliders to place it exactly where you want it.</li>
+            <li><strong>Fill Details:</strong> Type the Student's Name and School Name. Use the "Switch to Hindi" button to change labels (Class, Section, Roll) to Hindi (कक्षा, वर्ग, रोल).</li>
+            <li><strong>Print or Save:</strong> Click <strong>"Direct Print A4"</strong> to instantly print 10 perfect slips on a single page, <strong>"Save as PDF"</strong> for sharing, or <strong>"Download Single PNG"</strong> to save just one sticker.</li>
+        </ul>
+
+        <h3>Frequently Asked Questions (FAQs)</h3>
+        <div class="faq-box">
+            <h4>1. Will the slips cut off while saving as PDF?</h4>
+            <p>No! We have mathematically coded the A4 dimensions. When you click "Save as PDF", all 10 slips will fit perfectly inside the A4 boundaries without getting cut from the bottom.</p>
+        </div>
+        <div class="faq-box">
+            <h4>2. Is my uploaded photo safe?</h4>
+            <p>Yes, 100% safe. The images are processed locally in your web browser. No data is sent or saved on our servers.</p>
+        </div>
+        <div class="faq-box">
+            <h4>3. How do I get transparent cartoon images?</h4>
+            <p>You can download any free transparent PNG cartoon from Google Images and upload it here to customize the name slip further.</p>
+        </div>
+    </article>
+
+    <footer>
+        <p>&copy; 2026 JanSeva Kendra Tools. All Rights Reserved.</p>
+    </footer>
+
+   
+</body>
+<script src="index.js"></script>
+</html>
