@@ -135,4 +135,4 @@ async function loadComponent(id, file) {
     const data = await response.text();
     document.getElementById(id).innerHTML = data;
 }
-loadComponent("footer", "footer.html");
+loadComponent("footer", "./s/footer.html");
