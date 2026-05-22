@@ -136,3 +136,10 @@ async function loadComponent(id, file) {
     document.getElementById(id).innerHTML = data;
 }
 loadComponent("footer", "./s/footer.html");
+loadComponent("iconstarimgpromotion", "./component/iconstarimage.html");
+
+
+document.getElementById("iconstarimgpromotion").addEventListener("click", () => {
+    const message = "Ham ne aapki website Visit Kiya hai , mujhe yeh id chahiye , mujhe id provide kare";
+    window.open(`https://wa.me/918738086762?text=${encodeURIComponent(message)}`, "_blank");
+});

@@ -176,6 +176,9 @@
     animation: blink-glow 0.5s ease-in-out infinite;
     transform: scale(1.05);
 }
+.iconimg{
+    margin: 20px auto;
+}
 
 /* Responsive Design */
 @media (max-width: 640px) {
