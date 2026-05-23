@@ -136,7 +136,7 @@ async function loadComponent(id, file) {
     document.getElementById(id).innerHTML = data;
 }
 loadComponent("footer", "./s/footer.html");
-loadComponent("sharee", "./component/share.html");
+// loadComponent("sharee", "./component/share.html");
 loadComponent("iconstarimgpromotion", "./component/iconstarimage.html");
 
 

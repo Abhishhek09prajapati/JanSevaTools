@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp Tools</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="title">Whatsapp Tools</div>
+        <div class="subtitle">
+            Enter multiple WhatsApp numbers separated by commas (,)
+        </div>
+        <div class="input-box">
+            <label>Enter Your Numbers</label>
+            <textarea id="numbers" value="8948464510,6387215755,9170212817"
+                placeholder="Example: 9876543210, 9123456789, 9988776655"></textarea>
+        </div>
+        <label>Message Box</label><br><br>
+        <textarea id="message" placeholder="Type your message here..."></textarea><br>
+
+        <button class="btn" onclick="showNumbers()">
+            Submit Numbers
+        </button>
+
+        <div id="numdata">Result</div> 
+
+    </div>
+
+</body>
+<script src="index.js"></script>
+
+</html>
