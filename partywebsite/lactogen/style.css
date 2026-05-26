@@ -2,55 +2,217 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-color: black;
-    color: white;
+    background-color: #f5f5f5;
+    padding: 10px;
 }
+
+/* =======================
+   Product List
+======================= */
 
 #listitmes {
     width: 100%;
-    height: max-content;
-    /* background-color: grey; */
     display: flex;
     flex-wrap: wrap;
-    margin: auto;
+    justify-content: center;
+    gap: 15px;
     background-color: white;
-    gap: 20px;
-    padding: 10px 5px;
+    padding: 10px;
 }
 
-#listitmes div {
-    padding: 20px;
+/* =======================
+   Product Card
+======================= */
+
+#showitmes {
+    width: 220px;
+    min-height: 320px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.3s;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+#showitmes:hover {
+    transform: translateY(-5px);
+}
+
+#showitmes img {
+    width: 85%;
+    border-radius: 15px;
+    margin-bottom: 12px;
+    object-fit: cover;
+}
+
+#showitmes span {
+    text-align: center;
+    margin: 5px 0px;
+}
+
+/* =======================
+   Plus Minus
+======================= */
+
+.minusplus {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.minusplus button {
+    background-color: #4285F4;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#valueitmes {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* =======================
+   Add Button
+======================= */
+
+#hidde {
+    background-color: green;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* =======================
+   Table
+======================= */
+
+.tables {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.tables tr th,
+.tables tr td {
     border: 1px solid black;
-    border-radius: 10px;
-    margin: 3px 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* =======================
+   Bill Section
+======================= */
+
+#billdata {
+    width: 100%;
+    max-width: 350px;
+    min-height: 500px;
+    border: 1px solid #ccc;
     background-color: aliceblue;
+    margin: 20px auto;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 20px;
+    padding-bottom: 80px;
 }
 
-#listitmes div img {
-    border-radius: 20px;
+#billdata input {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    background-color: white;
 }
 
-#listitmes div span {
-    color: black;
+#billdata input:focus {
+    border: 2px solid #4285F4;
+    box-shadow: 0px 0px 5px rgba(66, 133, 244, 0.4);
 }
 
-@media (max-width:767px) {
+#billdata h1 {
+    text-align: center;
+    padding: 15px;
+}
 
-    body {
-        background-color: red;
-        color: white;
-    }
+/* =======================
+   Order Button
+======================= */
+
+.ordernow {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    color: white;
+    border: none;
+    border-radius: 12px 12px 0px 0px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
 
 }
 
-@media (max-width:567px) {
+.ordernow:hover {
+    background: linear-gradient(135deg, #15803d, #16a34a);
+    transform: scale(1.02);
+}
 
-    body {
-        background-color: rgb(81, 6, 232);
-        color: white;
-    }
+.ordernow:active {
+    transform: scale(0.98);
+}
+
+.ordernow span {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* =======================
+   Tablet Responsive
+======================= */
+
+@media (max-width: 768px) {
+
+ 
+
+}
+
+/* =======================
+   Mobile Responsive
+======================= */
+
+@media (max-width: 580px) {
+
+
+
+
 
 }

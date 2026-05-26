@@ -1,0 +1,68 @@
+<style>
+    #showitmes {
+        width: 200px;
+        height: max-content;
+        padding: 10px 5px;
+        border: 1px solid black;
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        flex-direction: column;
+        /* margin: auto; */
+    }
+
+    #showitmes span {
+        text-align: center;
+
+    }
+
+    .minusplus {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        margin: 5px 0px;
+        display: none;
+    }
+
+    .minusplus button {
+        background-color: transparent;
+    }
+</style>
+<div id="showitmes">
+    <img width="80%" height="80%" src="../images/abhishek.jpg" alt="">
+    <span>Abhishe</span>
+    <div style="display: flex;justify-content: space-evenly; gap: 20px;">
+        <span><strike>MRP 250</strike></span>
+        <span>Rate : <Span>150</Span></span>
+    </div>
+    <label id="hidde" style="background-color: red;padding: 4px;border-radius: 8px;color: white;" for="">Add</label>
+    <div class="minusplus">
+        <button id="minus">-</button>
+        <label id="valueitmes" for="">0</label>
+        <button id="plus">+</button>
+    </div>
+</div>
+<script>
+    var valueitmes = document.getElementById("valueitmes")
+    var num = 1
+
+    document.getElementById("minus").addEventListener("click",()=>{
+        if(num <= 0){
+            num = 0
+        }
+        valueitmes.innerText = num--
+    })
+    document.getElementById("plus").addEventListener("click",()=>{
+        if(num <= 0){
+            num = 0
+        }
+        valueitmes.innerText = num++
+    })
+
+    document.getElementById("hidde").addEventListener("click",()=>{
+        document.getElementById("hidde").style.display = "none" ;
+        document.getElementsByClassName("minusplus")[0].style.display = "block"
+        valueitmes.innerText = num++
+    })
+</script>
