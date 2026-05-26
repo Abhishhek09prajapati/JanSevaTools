@@ -113,7 +113,7 @@ document.getElementById("ordernow").addEventListener("click", async () => {
     var shopname = document.getElementById("shopname").value
 
     if (!shopname) {
-        alert("as")
+        alert("Please Enter Shop Name")
     } else {
         html2canvas(bill).then(async (canvas) => {
             canvas.toBlob(async (blob) => {
