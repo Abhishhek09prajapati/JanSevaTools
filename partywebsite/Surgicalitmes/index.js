@@ -1,6 +1,6 @@
 
 
-const s = "Dailymilk"
+const s = "SurgicalItems"
 
 const url = `https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/${s}`;
 
@@ -20,7 +20,7 @@ fetch(url)
             div.classList = "showdiv"
             div.innerHTML = `       
                     <div id="showitmes">
-                        <img  src="./images/${u.image}.png" alt="">
+                        <img  src="./images/${u.image}.jpeg" alt="">
                         <span>${u.ProductName}</span>
                         <div style="display: flex;justify-content: space-evenly; gap: 20px;">
                             <span><strike>MRP ${u.Productprice}</strike></span>
@@ -97,9 +97,7 @@ fetch(url)
                         }
                         break;
                     }
-
                 }
-
             });
 
 
