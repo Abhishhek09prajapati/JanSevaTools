@@ -44,7 +44,7 @@ body {
 }
 
 #showitmes:hover {
-    transform: translateY(-5px);
+    transform: translateY(-2px);
 }
 
 #showitmes img {
@@ -224,19 +224,24 @@ body {
     #showitmes {
         /* background-color: #15803d; */
         width: 100%;
-        min-height: 150px;
+        min-height: max-content;
+        padding: 5px 15px;
         display: flex;
         flex-direction: row;
-
     }
 
     #showitmes img {
         width: 100px;
 
     }
-    #nameitmes1{
-        display: none;
+    #mrprate div{
+        /* background-color: yellow; */
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        margin: 0px;
     }
+
     #mrprate {
         width: 100%;
         height: 100%;
@@ -253,5 +258,8 @@ body {
         padding: 10px  20px;
         border: 1px solid black;
         
+    }
+    .showdiv{
+        width: 100%;
     }
 }

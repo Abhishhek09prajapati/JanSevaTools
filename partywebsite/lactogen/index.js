@@ -23,8 +23,8 @@ fetch(url)
                         <img  src="./images/${u.image}.png" alt="">
                         <span id="nameitmes1">${u.ProductName}</span>
                         <div id="mrprate">
-                            <span><strike>MRP ${u.Productprice}</strike></span>
-                            <span>Rate : <span>${u.rate}</span></span>
+                            <div><strike>MRP ${u.Productprice}</strike></div>
+                            <div>Rate : <span>${u.rate}</span></div>
                         </div>
                         <div  id="hidde">Add</div>
                         <div class="minusplus">
