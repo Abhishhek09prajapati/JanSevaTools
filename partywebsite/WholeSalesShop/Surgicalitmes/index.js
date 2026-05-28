@@ -160,24 +160,23 @@ document.getElementById("ordernow").addEventListener("click", async () => {
 
 });
 
-var d = new Date();
+setInterval(function () {
+    var d = new Date();
+    function addZero(num) {
+        return num < 10 ? "0" + num : num;
+    }
 
-// Add 0 before single digit
-function addZero(num) {
-    return num < 10 ? "0" + num : num;
-}
+    var day = addZero(d.getDate());
+    var month = addZero(d.getMonth() + 1);
+    var year = d.getFullYear();
 
-var day = addZero(d.getDate());
-var month = addZero(d.getMonth() + 1);
-var year = d.getFullYear();
+    var hour = addZero(d.getHours());
+    var minute = addZero(d.getMinutes());
+    var second = addZero(d.getSeconds());
 
-var hour = addZero(d.getHours());
-var minute = addZero(d.getMinutes());
-var second = addZero(d.getSeconds());
-
-var dateData = `Date : ${day}/${month}/${year} Time : ${hour}:${minute}:${second}`;
-
-document.getElementById("datetime").innerHTML = dateData;
+    var dateData = `Date : ${day}/${month}/${year} Time : ${hour}:${minute}:${second}`;
+    document.getElementById("datetime").innerHTML = dateData;
+}, 1000)
 
 
 

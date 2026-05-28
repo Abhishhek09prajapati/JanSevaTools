@@ -1,12 +1,13 @@
 
 
-const s = "Dailymilk"
+const s = "Balgopal"
 const url = `https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/${s}`;
 
 var tables = document.getElementsByClassName("tables")[0];
 var amount = document.getElementById("amount")
 var amountMRP = document.getElementById("amountMRP")
 var amountrate = document.getElementById('amountrate')
+var view = document.getElementById("listitmes")
 
 var mprvalue = 0;
 var ratevalue = 0;
@@ -19,7 +20,7 @@ fetch(url)
             div.classList = "showdiv"
             div.innerHTML = `       
                     <div id="showitmes">
-                        <img  src="./images/${u.image}.png" alt="">
+                        <img  src="./images/${u.image}.jpg" alt="">
                         <span id="nameitmes1">${u.ProductName}</span>
                         <div id="mrprate">
                             <div><strike>MRP ${u.Productprice}</strike></div>
@@ -33,7 +34,7 @@ fetch(url)
                         </div>
                     </div>     ` ;
 
-            document.getElementById("listitmes").append(div);
+            view.append(div);
 
             let addbtn = div.querySelector("#hidde");
             let minusplus = div.querySelector(".minusplus");
@@ -147,16 +148,11 @@ document.getElementById("ordernow").addEventListener("click", async () => {
                     });
 
                 } catch (error) {
-
                     console.log(error);
-
                 }
-
             } else {
-
                 // Fallback
                 const message = `Bill Generated For ${shopname}`;
-
                 window.open(
                     `https://wa.me/916387215755?text=${encodeURIComponent(message)}`,
                     "_blank"
@@ -170,24 +166,131 @@ document.getElementById("ordernow").addEventListener("click", async () => {
 
 });
 
-var d = new Date();
+
+
+setInterval(function () {
+    var d = new Date();
+    function addZero(num) {
+        return num < 10 ? "0" + num : num;
+    }
+
+    var day = addZero(d.getDate());
+    var month = addZero(d.getMonth() + 1);
+    var year = d.getFullYear();
+
+    var hour = addZero(d.getHours());
+    var minute = addZero(d.getMinutes());
+    var second = addZero(d.getSeconds());
+
+    var dateData = `Date : ${day}/${month}/${year} Time : ${hour}:${minute}:${second}`;
+    document.getElementById("datetime").innerHTML = dateData;
+}, 1000)
 
 // Add 0 before single digit
-function addZero(num) {
-    return num < 10 ? "0" + num : num;
-}
 
-var day = addZero(d.getDate());
-var month = addZero(d.getMonth() + 1);
-var year = d.getFullYear();
+document.getElementById("searchitmes").addEventListener("input", () => {
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            view.innerHTML = ""
+            var value1 = document.getElementById("searchitmes").value.toLowerCase();
+            // Search Product
+            var result = data.filter(item =>
+                item.ProductName.toLowerCase().includes(value1)
+            );
+            result.map(u => {
+                const div = document.createElement("div");
+                div.classList = "showdiv"
+                div.innerHTML = `       
+                    <div id="showitmes">
+                        <img  src="./images/${u.image}.jpg" alt="">
+                        <span id="nameitmes1">${u.ProductName}</span>
+                        <div id="mrprate">
+                            <div><strike>MRP ${u.Productprice}</strike></div>
+                            <div>Rate : <span>${u.rate}</span></div>
+                        </div>
+                        <div  id="hidde">Add</div>
+                        <div class="minusplus">
+                            <button id="minus">-</button>
+                            <label id="valueitmes" for="">0</label>
+                            <button id="plus">+</button>
+                        </div>
+                    </div>     ` ;
 
-var hour = addZero(d.getHours());
-var minute = addZero(d.getMinutes());
-var second = addZero(d.getSeconds());
+                view.append(div)
 
-var dateData = `Date : ${day}/${month}/${year} Time : ${hour}:${minute}:${second}`;
+                let addbtn = div.querySelector("#hidde");
+                let minusplus = div.querySelector(".minusplus");
 
-document.getElementById("datetime").innerHTML = dateData;
+
+
+
+                let minus = div.querySelector("#minus");
+                let valueitmes = div.querySelector("#valueitmes");
+                let plus = div.querySelector("#plus");
+
+                addbtn.addEventListener("click", () => {
+                    addbtn.style.display = "none";
+                    minusplus.style.display = "block"
+                });
+
+                var num = 0;
+                // PLUS
+
+                plus.addEventListener("click", () => {
+                    num++;
+                    valueitmes.innerText = num;
+                    let found = false;
+                    for (let i = 1; i < tables.rows.length; i++) {
+                        let cellValue = tables.rows[i].cells[0].innerText;
+                        if (cellValue == u.ProductName) {
+                            tables.rows[i].cells[1].innerText = num;
+                            found = true;
+                            break;
+                        }
+                    }
+                    // create row
+                    if (!found) {
+                        let row = tables.insertRow();
+                        let cell1 = row.insertCell(0);
+                        let cell2 = row.insertCell(1);
+                        cell1.innerText = u.ProductName;
+                        cell2.innerText = num;
+                    }
+
+                });
+                // MINUS
+
+                minus.addEventListener("click", () => {
+                    if (num > 0) {
+                        num--;
+                        valueitmes.innerText = num;
+                    }
+                    for (let i = 1; i < tables.rows.length; i++) {
+                        let cellValue = tables.rows[i].cells[0].innerText;
+                        if (cellValue == u.ProductName) {
+                            // update quantity
+                            tables.rows[i].cells[1].innerText = num;
+                            // remove row if 0
+                            if (num == 0) {
+                                tables.rows[i].remove();
+                            }
+                            break;
+                        }
+
+                    }
+
+                });
+            })
+        })
+}) .catch(error => {
+        console.log(error);
+    });
+
+
+
+
+
 
 
 
