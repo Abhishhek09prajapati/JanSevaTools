@@ -234,7 +234,9 @@ body {
         width: 100px;
 
     }
- 
+    #nameitmes1{
+        display: none;
+    }
     #mrprate {
         width: 100%;
         height: 100%;
