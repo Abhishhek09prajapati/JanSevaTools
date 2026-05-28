@@ -21,10 +21,10 @@ fetch(url)
             div.innerHTML = `       
                     <div id="showitmes">
                         <img  src="./images/${u.image}.png" alt="">
-                        <span>${u.ProductName}</span>
-                        <div style="display: flex;justify-content: space-evenly; gap: 20px;">
+                        <span id="nameitmes1">${u.ProductName}</span>
+                        <div id="mrprate">
                             <span><strike>MRP ${u.Productprice}</strike></span>
-                            <span>Rate : <Span>${u.rate}</Span></span>
+                            <span>Rate : <span>${u.rate}</span></span>
                         </div>
                         <div  id="hidde">Add</div>
                         <div class="minusplus">
