@@ -259,6 +259,9 @@ body {
         border: 1px solid black;
         
     }
+    #nameitmes1{
+        display: none;
+    }
     .showdiv{
         width: 100%;
     }
