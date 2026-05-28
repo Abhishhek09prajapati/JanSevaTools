@@ -1,7 +1,6 @@
 
 
 const s = "Dailymilk"
-
 const url = `https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/${s}`;
 
 var tables = document.getElementsByClassName("tables")[0];
@@ -52,9 +51,6 @@ fetch(url)
             });
 
             var num = 0;
-
-
-
             // PLUS
 
             plus.addEventListener("click", () => {
@@ -112,50 +108,81 @@ fetch(url)
 
 document.getElementById("ordernow").addEventListener("click", async () => {
     let bill = document.getElementById("billdata");
-    var shopname = document.getElementById("shopname").value
-
+    let shopname = document.getElementById("shopname").value;
     if (!shopname) {
-        alert("as")
-    } else {
-        html2canvas(bill).then(async (canvas) => {
-            canvas.toBlob(async (blob) => {
-                let file = new File(
-                    [blob],
-                    "bill.png",
-                    { type: "image/png" }
-                );
-                // mobile share
-                if (navigator.share) {
+        alert("Please Enter Shop Name");
+        return;
+    }
+    bill.style.background = "white";
+    html2canvas(bill, {
+        scale: 2,
+        useCORS: true
+    }).then(async (canvas) => {
+        canvas.toBlob(async (blob) => {
+            // Create Image File
+            let file = new File(
+                [blob],
+                `${shopname}.png`,
+                { type: "image/png" }
+            );
+
+            // Mobile WhatsApp Share
+            if (navigator.share && navigator.canShare({ files: [file] })) {
+                try {
                     await navigator.share({
-                        title: "Bill",
-                        text: "Deepu Medical Bill",
+                        title: "Medical Bill",
+                        text: `Shop Name : ${shopname}`,
                         files: [file]
                     });
+                    // Open WhatsApp Number
                     window.open(
                         `https://wa.me/916387215755`,
                         "_blank"
                     );
-                } else {
-                    alert("WhatsApp share not supported");
+                } catch (err) {
+                    console.log(err);
                 }
-            });
+
+            } else {
+
+                // PNG Download Fallback
+                const link = document.createElement("a");
+                link.download = `${shopname}.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                alert("Direct WhatsApp image share not supported in this browser.");
+
+            }
 
         });
-    }
 
-
-
-    // div to canvas
-
+    });
 
 });
 
-document.getElementById("shopname").addEventListener("input", () => {
+var d = new Date();
 
+// Add 0 before single digit
+function addZero(num) {
+    return num < 10 ? "0" + num : num;
+}
+
+var day = addZero(d.getDate());
+var month = addZero(d.getMonth() + 1);
+var year = d.getFullYear();
+
+var hour = addZero(d.getHours());
+var minute = addZero(d.getMinutes());
+var second = addZero(d.getSeconds());
+
+var dateData = `Date : ${day}/${month}/${year} Time : ${hour}:${minute}:${second}`;
+
+document.getElementById("datetime").innerHTML = dateData;
+
+
+document.getElementById("shopname").addEventListener("input", () => {
     var shopname = document.getElementById("shopname").value
     document.querySelector("#billdata label").textContent = `Shop Name :- ${shopname}`
-
-
 
 })
 

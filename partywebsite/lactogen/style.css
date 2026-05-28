@@ -112,14 +112,43 @@ body {
 .tables {
     width: 100%;
     border-collapse: collapse;
-    background-color: white;
+    margin-top: 20px;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
 }
 
-.tables tr th,
-.tables tr td {
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
+/* Header */
+
+.tables th {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    text-align: left;
+}
+
+/* Table Data */
+
+.tables td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+/* Alternate Row Color */
+
+.tables tr:nth-child(even) {
+    background: #f3f4f6;
+}
+
+/* Hover Effect */
+
+.tables tr:hover {
+    background: #dbeafe;
+    transition: 0.3s;
 }
 
 /* =======================
@@ -127,9 +156,8 @@ body {
 ======================= */
 
 #billdata {
-    width: 100%;
-    max-width: 350px;
-    min-height: 500px;
+    width: 400px;
+    height: fit-content;
     border: 1px solid #ccc;
     background-color: aliceblue;
     margin: 20px auto;
@@ -173,7 +201,7 @@ body {
     border: none;
     border-radius: 12px 12px 0px 0px;
     position: absolute;
-    bottom: 0px;
+    top: 0px;
     left: 0;
     display: flex;
     justify-content: center;
@@ -183,6 +211,7 @@ body {
     font-weight: bold;
     transition: 0.3s;
     box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
+
 
 }
 
@@ -234,7 +263,8 @@ body {
         width: 100px;
 
     }
-    #mrprate div{
+
+    #mrprate div {
         /* background-color: yellow; */
         display: flex;
         flex-direction: column;
@@ -247,22 +277,33 @@ body {
         height: 100%;
         display: flex;
         flex-direction: row;
-        gap: 0px; 
-        position: relative;     
+        gap: 0px;
+        position: relative;
     }
-    #mrprate span:nth-child(1){
+
+    #mrprate span:nth-child(1) {
         color: rgb(60, 149, 4);
     }
-    #listitmes{
+
+    #listitmes {
         width: 100%;
-        padding: 10px  20px;
+        padding: 10px 20px;
         border: 1px solid black;
-        
+
     }
-    #nameitmes1{
+
+    #nameitmes1 {
         display: none;
     }
-    .showdiv{
+
+    .showdiv {
         width: 100%;
+
+    }
+
+    .tables th,
+    .tables td {
+        padding: 10px;
+        font-size: 14px;
     }
 }
