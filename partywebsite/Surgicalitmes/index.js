@@ -129,10 +129,6 @@ document.getElementById("ordernow").addEventListener("click", async () => {
                         text: "Deepu Medical Bill",
                         files: [file]
                     });
-                    window.open(
-                        `https://wa.me/916387215755`,
-                        "_blank"
-                    );
                 } else {
                     alert("WhatsApp share not supported");
                 }
