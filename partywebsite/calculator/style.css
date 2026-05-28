@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(49, 49, 216);
+    width: 100%;
+    height: 100vh;
+}
+.viewopen{
+    display: none;
+}
+.calculator{
+    width: max-content;
+    height: max-content;
+    border: 1px solid;
+    background-image: linear-gradient(rgb(245, 92, 4),rgb(243, 247, 5));
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+    margin-top: 50px;
+}
+table tr th,td{
+    border: 0px solid black;
+    padding: 6px 10px;
+    background-color: white;
+
+
+}
+.calculator button{
+    width: 200px; /* Example width */
+    
+    padding: 10px 20px; /* Adjusted padding for better look */
+    box-shadow: 2px 1px 2px red;
+    background-color: rgb(8, 231, 38);
+    border: none;
+    border-radius: 5px; /* Slightly better radius */
+}
+.calculator label{
+    display: block;
+}
+.calculator input{
+    height: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 1px;
+    padding: 10px;
+}
+.calculator2{
+    display: flex;
+}
+.calculator2 input{
+    width: 100px;
+    border: none;
+    margin: 0px 5px;
+    padding: 10px;
+}
+.upperbil{
+    margin: auto;width: max-content;height: min-content;background-color: rgb(246, 235, 235);padding: 5px;
+}

@@ -33,15 +33,9 @@ fetch(url)
                             <button id="plus">+</button>
                         </div>
                     </div>     ` ;
-
             view.append(div);
-
             let addbtn = div.querySelector("#hidde");
             let minusplus = div.querySelector(".minusplus");
-
-
-
-
             let minus = div.querySelector("#minus");
             let valueitmes = div.querySelector("#valueitmes");
             let plus = div.querySelector("#plus");
@@ -283,9 +277,7 @@ document.getElementById("searchitmes").addEventListener("input", () => {
                 });
             })
         })
-}) .catch(error => {
-        console.log(error);
-    });
+})
 
 
 

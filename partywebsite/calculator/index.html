@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="refresh" content="no-cache">
+    <title>Calcutor</title>
+</head>
+
+<body>
+    <div>
+        <input id="passwordbox" style="height: 30px; width: 80%;top: 10%;position: absolute;margin: auto;left: 10%;padding: 5px;" placeholder="Enter Password" type="number">
+    </div>
+
+    <div class="viewopen">
+        <div class="calculator">
+            <label for="">Items Name</label><input type="text" style="width: 100%;" placeholder="items name" name=""
+                id="itemname">
+            <br><br>
+            <div class="calculator2">
+                <div>
+                    <label for="">MRP</label><input type="number" placeholder="MRP" name="" id="mrp">
+                </div>
+                <div>
+                    <label for="">Quantity</label><input type="number" placeholder="Quantity" name="" id="qty">
+                </div>
+                <div>
+                    <label for="">Discount</label><input type="number" placeholder="Discount" name="" id="discount">
+
+                </div>
+                <div>
+                    <label for="">Rate</label><input type="text" id="ratevale" placeholder="0" name="" id="" disabled>
+                </div>
+            </div><br>
+            <button onclick="addTable()">Add Itmes</button>
+        </div><br>
+        <div
+            style="margin: auto;width: max-content;height: min-content;background-color: rgb(246, 235, 235);padding: 5px;">
+            <div
+                style="width: 100%; height: 100px;background-color: white;display: flex;align-items: center;justify-content: center">
+                <div>
+                    <h4>Calculator Medical</h4>
+                    <span>Mob. </span><span>84******78</span><br>
+                    <span>Address </span><span> India</span><br>
+                    <span id="promocode"></span>
+
+                </div>
+
+            </div>
+            <table id="dataTable">
+                <tr>
+                    <th>Qty</th>
+                    <th>Itmes name</th>
+                    <th>MRP</th>
+                    <th>Rate</th>
+                    <th>Discount</th>
+                    <th>Total</th>
+                </tr>
+                <tbody>
+                </tbody>
+            </table><br>
+            <div style="width: max-content;height: min-content;border: 1px;text-align: center;padding: 20px;margin: auto;color: rgb(0, 0, 0);font-size: 25px;"
+                id="result"></div>
+            <div style="width: 100%;color: black;text-align: center; text-transform: capitalize;" id="totalmrp"></div>
+            <br>
+            <div style="color: rgb(6, 0, 0);" id="date1"></div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>
