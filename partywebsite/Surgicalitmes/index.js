@@ -180,11 +180,7 @@ var dateData = `Date : ${day}/${month}/${year} Time : ${hour}:${minute}:${second
 document.getElementById("datetime").innerHTML = dateData;
 
 
-document.getElementById("shopname").addEventListener("input", () => {
-    var shopname = document.getElementById("shopname").value
-    document.querySelector("#billdata label").textContent = `Shop Name :- ${shopname}`
 
-})
 
 
 

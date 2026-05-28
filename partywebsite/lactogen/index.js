@@ -107,50 +107,60 @@ fetch(url)
     .catch(err => console.log(err))
 
 document.getElementById("ordernow").addEventListener("click", async () => {
+
     let bill = document.getElementById("billdata");
+
     let shopname = document.getElementById("shopname").value;
+
     if (!shopname) {
+
         alert("Please Enter Shop Name");
+
         return;
     }
+
     bill.style.background = "white";
+
     html2canvas(bill, {
-        scale: 2,
+        scale: 1,
         useCORS: true
     }).then(async (canvas) => {
+
         canvas.toBlob(async (blob) => {
-            // Create Image File
+
+            // Create PNG File
             let file = new File(
                 [blob],
                 `${shopname}.png`,
                 { type: "image/png" }
             );
 
-            // Mobile WhatsApp Share
+            // WhatsApp Share Supported
             if (navigator.share && navigator.canShare({ files: [file] })) {
+
                 try {
+
                     await navigator.share({
-                        title: "Medical Bill",
+                        title: "Bill Image",
                         text: `Shop Name : ${shopname}`,
                         files: [file]
                     });
-                    // Open WhatsApp Number
-                    window.open(
-                        `https://wa.me/916387215755`,
-                        "_blank"
-                    );
-                } catch (err) {
-                    console.log(err);
+
+                } catch (error) {
+
+                    console.log(error);
+
                 }
 
             } else {
 
-                // PNG Download Fallback
-                const link = document.createElement("a");
-                link.download = `${shopname}.png`;
-                link.href = canvas.toDataURL("image/png");
-                link.click();
-                alert("Direct WhatsApp image share not supported in this browser.");
+                // Fallback
+                const message = `Bill Generated For ${shopname}`;
+
+                window.open(
+                    `https://wa.me/916387215755?text=${encodeURIComponent(message)}`,
+                    "_blank"
+                );
 
             }
 
@@ -180,11 +190,7 @@ var dateData = `Date : ${day}/${month}/${year} Time : ${hour}:${minute}:${second
 document.getElementById("datetime").innerHTML = dateData;
 
 
-document.getElementById("shopname").addEventListener("input", () => {
-    var shopname = document.getElementById("shopname").value
-    document.querySelector("#billdata label").textContent = `Shop Name :- ${shopname}`
 
-})
 
 
 
