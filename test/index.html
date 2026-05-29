@@ -1,68 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <style>
-    #showitmes {
-        width: 200px;
+    body {
+        background-color: aliceblue;
+    }
+
+
+    #reult {
+        width: 60%;
+        margin: auto;
         height: max-content;
-        padding: 10px 5px;
         border: 1px solid black;
-        display: flex;
-        /* justify-content: center; */
-        align-items: center;
-        flex-direction: column;
-        /* margin: auto; */
-    }
-
-    #showitmes span {
-        text-align: center;
-
-    }
-
-    .minusplus {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        margin: 1px 0px;
+        /* text-align: center; */
         gap: 5px;
-        margin: 5px 0px;
-        display: none;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        transition: all 3s;
     }
 
-    .minusplus button {
-        background-color: transparent;
+    #reult div {
+        width: 100%;
+        height: 20px;
+        background-color: yellow;
+        text-align: center;
+        
     }
 </style>
-<div id="showitmes">
-    <img width="80%" height="80%" src="../images/abhishek.jpg" alt="">
-    <span>Abhishe</span>
-    <div style="display: flex;justify-content: space-evenly; gap: 20px;">
-        <span><strike>MRP 250</strike></span>
-        <span>Rate : <Span>150</Span></span>
-    </div>
-    <label id="hidde" style="background-color: rgb(11, 193, 23);padding: 4px;border-radius: 8px;color: white;" for="">Add</label>
-    <div class="minusplus">
-        <button id="minus">-</button>
-        <label id="valueitmes" for="">0</label>
-        <button id="plus">+</button>
-    </div>
-</div>
+
+<body>
+    <button onclick="main(5)">click me</button>
+    <input type="text" name="" id="text">
+    <div id="reult"></div>
+</body>
 <script>
-    var valueitmes = document.getElementById("valueitmes")
-    var num = 1
+    const a = "abhishek"
+    const f = [
+        "Apple", "Banana", "Orange", "Strawberry", "Grape",
+        "Mango", "Blueberry", "Pineapple", "Watermelon", "Peach",
+        "Cherry", "Pear", "Kiwi", "Plum", "Raspberry",
+        "Pomegranate", "Lemon", "Lime", "Avocado", "Blackberry"
+    ];
+    const r = [];
 
-    document.getElementById("minus").addEventListener("click",()=>{
-        if(num <= 0){
-            num = 0
-        }
-        valueitmes.innerText = num--
-    })
-    document.getElementById("plus").addEventListener("click",()=>{
-        if(num <= 0){
-            num = 0
-        }
-        valueitmes.innerText = num++
-    })
+    var k = f
 
-    document.getElementById("hidde").addEventListener("click",()=>{
-        document.getElementById("hidde").style.display = "none" ;
-        document.getElementsByClassName("minusplus")[0].style.display = "block"
-        valueitmes.innerText = num++
-    })
+    function main(a) {
+
+        for (let i = 0; i < k.length; i++) {
+            var p = document.createElement('div')
+            p.innerHTML = k[i]
+            document.getElementById("reult").append(p)
+        }
+
+    }
+
+
 </script>
+
+</html>

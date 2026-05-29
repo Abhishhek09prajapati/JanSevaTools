@@ -71,7 +71,6 @@ fetch(url)
 
             });
             // MINUS
-
             minus.addEventListener("click", () => {
                 if (num > 0) {
                     num--;
