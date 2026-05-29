@@ -26,6 +26,14 @@ body {
     overflow-y: scroll;
     height: 70vh;
 }
+#listitmes::-webkit-scrollbar {
+    width: 10px;
+    
+}
+
+
+
+
 .inputbox{
     width: 100%;
     max-width: 400px;
