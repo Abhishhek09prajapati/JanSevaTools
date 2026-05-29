@@ -23,6 +23,8 @@ body {
     gap: 10px;
     background-color: white;
     padding: 8px;
+    overflow-y: scroll;
+    height: 70vh;
 }
 .inputbox{
     width: 100%;
@@ -316,6 +318,7 @@ body {
         width: 100%;
         padding: 10px 20px;
         border: 1px solid black;
+        
 
     }
 
