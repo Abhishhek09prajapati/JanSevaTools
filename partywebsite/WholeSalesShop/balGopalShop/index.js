@@ -15,12 +15,12 @@ var ratevalue = 0;
 fetch(url)
     .then(res => res.json())
     .then(data => {
-        data.map(u => {
+        data.slice(0,200).map(u => {
             const div = document.createElement('div')
             div.classList = "showdiv"
             div.innerHTML = `       
                     <div id="showitmes">
-                        <img  src="./images/${u.image}.jpg" alt="">
+                        <img  src="./images/${u.image}.png" alt="">
                         <span id="nameitmes1">${u.ProductName}</span>
                         <div id="mrprate">
                             <div><strike>MRP ${u.Productprice}</strike></div>
