@@ -40,7 +40,7 @@ fetch(url)
             let valueitmes = div.querySelector("#valueitmes");
             let plus = div.querySelector("#plus");
             let nameClick = div.querySelector("#nameitmes1")
-            let nameClick2 = div.querySelector("#nameitmes2")
+            
 
             addbtn.addEventListener("click", () => {
                 addbtn.style.display = "none";
@@ -52,10 +52,7 @@ fetch(url)
                 window.open(ope,"_blank")
             })
 
-            nameClick2.addEventListener("click",()=>{
-                let ope = `https://www.google.com/search?q=image+${u.ProductName}`;
-                window.open(ope,"_blank")
-            })
+           
 
             var num = 0;
             // PLUS
@@ -209,7 +206,7 @@ document.getElementById("searchitmes").addEventListener("input", () => {
                 div.innerHTML = `       
                     <div id="showitmes">
                         <img  src="./images/${u.image}.jpg" alt="">
-                        <span id="nameitmes2">${u.ProductName}</span>
+                        <span id="nameitmes">${u.ProductName}</span>
                         <div id="mrprate">
                             <div><strike>MRP ${u.Productprice}</strike></div>
                             <div>Rate : <span>${u.rate}</span></div>
