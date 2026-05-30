@@ -39,12 +39,18 @@ fetch(url)
             let minus = div.querySelector("#minus");
             let valueitmes = div.querySelector("#valueitmes");
             let plus = div.querySelector("#plus");
+            let nameClick = div.querySelector("#nameitmes1")
 
             addbtn.addEventListener("click", () => {
                 addbtn.style.display = "none";
                 minusplus.style.display = "block"
             });
 
+            nameClick.addEventListener("click",()=>{
+
+                let ope = `https://www.google.com/search?q=image+${u.ProductName}`;
+                window.open(ope,"_blank")
+            })
             var num = 0;
             // PLUS
 
