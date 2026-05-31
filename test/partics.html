@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draggable Div</title>
+    <style>
+        /* Draggable Box ki Styling */
+        #myDiv {
+            position: absolute; /* Yeh zaroori hai taaki div screen par move kar sake */
+            top: 100px;
+            left: 100px;
+            width: 200px;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            cursor: move; /* Mouse pointer change karne ke liye */
+            user-select: none; /* Drag karte waqt text select na ho */
+        }
+
+        /* Header block jise pakad kar drag karenge */
+        #myDivHeader {
+            padding: 10px;
+            background-color: #2980b9;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Yeh hai hamara Draggable Div -->
+<div id="myDiv">
+    <div id="myDivHeader">Yahan se Pakdo</div>    
+</div>
+
+<script>
+    // Element ko select karein
+    const draggableDiv = document.getElementById("myDiv");
+    const divHeader = document.getElementById("myDivHeader");
+
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    // Jab mouse header par click kare (MouseDown)
+    divHeader.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        
+        // Mouse ki position aur div ke top-left corner ka gap nikalna
+        offsetX = e.clientX - draggableDiv.offsetLeft;
+        offsetY = e.clientY - draggableDiv.offsetTop;
+    });
+
+    // Jab mouse poori screen par kahin bhi move kare (MouseMove)
+    document.addEventListener("mousemove", (e) => {
+        if (!isDragging) return; // Agar click nahi kiya toh move mat karo
+
+        // Div ki nayi position set karein
+        draggableDiv.style.left = `${e.clientX - offsetX}px`;
+        draggableDiv.style.top = `${e.clientY - offsetY}px`;
+    });
+
+    // Jab mouse click chhod de (MouseUp)
+    document.addEventListener("mouseup", () => {
+        isDragging = false;
+    });
+</script>
+
+</body>
+</html>
