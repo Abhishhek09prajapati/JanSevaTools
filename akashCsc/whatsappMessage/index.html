@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    #inputdata {
+        width: 60%;
+        padding: 10px;
+        margin: auto;
+        margin-left: 20%;
+        border-radius: 10px;
+        margin-top: 10px;
+        box-shadow: 2px 2px 2px;
+
+    }
+
+    .maindiv1 {
+        width: 100%;
+        background-color: red;
+        position: fixed;
+        top: 0;
+    }
+
+    #foter {
+        background-color: rgb(33, 169, 6);
+        width: 100%;
+        height: max-content;
+        padding: 10px;
+        position: fixed;
+        bottom: 10px;
+        margin: auto;
+        border-radius: 20px;
+        /* transition: all 4s ease-in-out; */
+        animation: moving 3s infinite  alternate ease-in-out;
+    }
+
+    @keyframes moving {
+        0%  { transform: rotatex(3deg);}
+
+        25% {transform: rotate(6deg);}
+
+        50% {transform: rotate(-6deg);}
+
+        75% {transform: rotate(6deg);}
+
+        100% {transform: rotate(2deg);}
+    }
+</style>
+
+<body>
+    <div class="maindiv1">
+        <h1 style="width: 100%;text-align: center;">Enter Some Message</h1>
+        <div>
+            <input id="inputdata" placeholder="Example :- Mobile Recharge ID chahiye">
+        </div><br>
+        <hr>
+    </div>
+    <div class="maindiv"></div>
+    <div id="foter">
+        <h4 style="text-align: center;margin-top: 7px;">This website price under 999 Rs</h4>
+        <p style="margin-left: 20px; color: rgb(133, 7, 7);">Full of you personal number , Unlimited number , one click
+            message . fully customizes</p>
+    </div>
+</body>
+<script src="jox.js"></script>
+
+</html>
