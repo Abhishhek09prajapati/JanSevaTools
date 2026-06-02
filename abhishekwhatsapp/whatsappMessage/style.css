@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.maindiv {
+
+    width: 450px;
+    /* height: 80%; */
+    margin: auto;
+    margin-top: 110px;
+    display: none;
+    height: 70vh;
+    overflow: auto;
+   
+}
+
+.div1 {
+    width: 100%;
+    background-color: rgb(3, 15, 1);
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px;
+    color: rgb(24, 1, 1);
+    font-size: 15px; 
+    border-radius: 10px;
+}
+
+#inputdata {
+    width: 60%;
+    padding: 10px;
+    margin: auto;
+    margin-left: 20%;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 2px 2px 2px;
+
+}
+
+.maindiv1 {
+    width: 100%;
+    background-color: red;
+    position: fixed;
+    top: 0;
+}
+
+#foter {
+    background-color: rgb(33, 169, 6);
+    width: 100%;
+    height: max-content;
+    padding: 10px;
+    position: fixed;
+    bottom: 10px;
+    margin: auto;
+    border-radius: 20px;
+    /* transition: all 4s ease-in-out; */
+    animation: moving 3s infinite alternate ease-in-out;
+}
+
+@keyframes moving {
+    0% {
+        transform: rotatex(3deg);
+    }
+
+    25% {
+        transform: rotate(6deg);
+    }
+
+    50% {
+        transform: rotate(-6deg);
+    }
+
+    75% {
+        transform: rotate(6deg);
+    }
+
+    100% {
+        transform: rotate(2deg);
+    }
+}
