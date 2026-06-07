@@ -21,12 +21,12 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
             }
         );
 
-        alert("Data Saved Successfully");
+        alert("Data Send successfully");
         document.getElementById("contactForm").reset();
 
     } catch (error) {
         console.log(error);
-        alert("Error Saving Data");
+        alert("Error Sending Data");
     }
 
 });
