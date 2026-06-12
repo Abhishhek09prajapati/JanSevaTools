@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(141, 195, 243);
+}
+#maindiv{
+    width: 500px;
+    height: max-content;
+    /* border: 1px solid black; */
+    margin: auto;
+    background-color: antiquewhite;
+    margin-top: 5px;
+}
+
+.websitediv{
+    width: 100%;
+    height: max-content;
+    padding: 10px 0px;
+    border: 1px solid black;
+    text-align: center;
+    margin: 8px 0px;
+}
