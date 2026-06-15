@@ -2,8 +2,8 @@
    1. Premium Cyber-Glass Design Tokens
    ========================================================================== */
 :root {
-    --bg-primary: #0a0c16;        /* Deep midnight canvas */
-    --bg-surface: #111424;        /* Rich dark structural panels */
+    --bg-primary: #d5dbf5;        /* Deep midnight canvas */
+    --bg-surface: #01030c;        /* Rich dark structural panels */
     --accent-color: #818cf8;      /* Electric Violet/Indigo accent */
     --accent-glow: rgba(129, 140, 248, 0.4);
     --text-main: #f8fafc;         /* High-end off-white text */
