@@ -5,6 +5,7 @@
 }
 body{
     background-color: rgb(141, 195, 243);
+    width: 100%;
 }
 #maindiv{
     width: 500px;
