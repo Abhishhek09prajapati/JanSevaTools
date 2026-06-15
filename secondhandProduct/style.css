@@ -1,0 +1,417 @@
+/* ==========================================================================
+   1. Premium Cyber-Glass Design Tokens
+   ========================================================================== */
+:root {
+    --bg-primary: #0a0c16;        /* Deep midnight canvas */
+    --bg-surface: #111424;        /* Rich dark structural panels */
+    --accent-color: #818cf8;      /* Electric Violet/Indigo accent */
+    --accent-glow: rgba(129, 140, 248, 0.4);
+    --text-main: #f8fafc;         /* High-end off-white text */
+    --text-muted: #94a3b8;        /* Soft slate-gray body text */
+    --sidebar-bg: rgba(10, 12, 22, 0.85); /* Semi-transparent canvas for glass */
+    --border-color: rgba(255, 255, 255, 0.05);
+    --border-glow: rgba(129, 140, 248, 0.15);
+    
+    /* Luxury Soft Layers Shadows */
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(255, 255, 255, 0.05);
+    
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+    --transition-premium: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   2. Base Canvas Reset
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Luxury minimal scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+/* ==========================================================================
+   3. Floating Premium Glass Navbar
+   ========================================================================== */
+nav {
+    height: 76px;
+    width: calc(100% - 32px);
+    max-width: 1300px;
+    background: rgba(17, 20, 36, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    position: sticky;
+    top: 16px;
+    margin: 16px auto 0 auto;
+    z-index: 100;
+    box-shadow: var(--shadow-lg);
+}
+
+nav div {
+    text-align: center;
+    width: 100%;
+}
+
+#companyname {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #fff 30%, var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav span {
+    font-size: 24px;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: var(--transition-premium);
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+nav span:hover {
+    color: var(--accent-color);
+    background: rgba(129, 140, 248, 0.1);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* ==========================================================================
+   4. Glassmorphic Hero Banner & Grid List
+   ========================================================================== */
+#itmeslist {
+    background: radial-gradient(circle at top left, rgba(129, 140, 248, 0.08), transparent 40%), var(--bg-surface);
+    padding: 40px 32px;
+    width: 92%;
+    max-width: 1100px;
+    height: max-content;
+    margin: 40px auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+}
+
+#itmeslist h3 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+    color: #ffffff;
+}
+
+#itmeslist p {
+    text-align: left;
+    line-height: 1.7;
+    font-size: 0.98rem;
+    color: var(--text-muted);
+    max-width: 850px;
+    margin-bottom: 30px;
+}
+
+/* Modern Minimalist Grid Container */
+#catagories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+    width: 100%;
+    background-color: transparent;
+    padding: 10px 0 0 0;
+}
+
+/* Luxury Dynamic Cards */
+.catalist {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Left aligned layout like global professional marketplaces */
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: var(--transition-premium);
+}
+
+.catalist::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(129, 140, 248, 0.08));
+    opacity: 0;
+    transition: var(--transition-premium);
+}
+
+.catalist:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--accent-color);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(129, 140, 248, 0.1);
+}
+
+.catalist:hover::before {
+    opacity: 1;
+}
+
+.catalist img {
+    border-radius: var(--radius-sm);
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    transition: var(--transition-premium);
+    box-shadow: var(--shadow-sm);
+}
+
+.catalist:hover img {
+    transform: scale(1.04);
+}
+
+.catalist h3 {
+    color: var(--text-main) !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    margin: 14px 0 0 4px !important;
+    letter-spacing: 0px;
+}
+
+/* ==========================================================================
+   5. Modern Sidebar Navigation Panels
+   ========================================================================== */
+#slidebar {
+    width: 0%;
+    height: 100vh;
+    position: fixed;
+    background: var(--sidebar-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    top: 0;
+    left: 0;
+    z-index: 999;
+    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-x: hidden;
+    border-right: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+}
+
+#slidebar span {
+    display: flex;
+    margin: 24px 24px 20px auto;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--text-muted);
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.02);
+    cursor: pointer;
+    transition: var(--transition-premium);
+}
+
+#slidebar span:hover {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    transform: rotate(90deg);
+}
+
+#slidebar div {
+    display: none;
+    padding: 0 24px;
+}
+
+.listdata li {
+    background: transparent;
+    margin: 8px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    padding: 14px 20px;
+    list-style: none;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-premium);
+}
+
+.listdata li:hover {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-main);
+    border-color: var(--border-color);
+    padding-left: 26px;
+}
+
+#productbtn {
+    font-weight: 500;
+}
+
+#doblelist {
+    display: none;
+    padding: 8px 0 0 10px;
+    list-style: none;
+}
+
+#doblelist li {
+    font-size: 0.95rem;
+    padding: 10px 14px;
+    margin: 4px 0;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-sm);
+}
+
+#doblelist li:hover {
+    background: var(--accent-color);
+    color: #000000;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   6. Modern Premium Grid Footer Layout
+   ========================================================================== */
+footer {
+    background-color: var(--bg-surface);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 60px 40px 30px 40px;
+    margin-top: 100px;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-brand h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    color: var(--accent-color);
+}
+
+.footer-brand p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    max-width: 340px;
+}
+
+.footer-links h4,
+.footer-categories h4 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.footer-links ul,
+.footer-categories ul {
+    list-style: none;
+}
+
+.footer-links li,
+.footer-categories li {
+    margin-bottom: 12px;
+}
+
+.footer-links a,
+.footer-categories a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: var(--transition-premium);
+}
+
+.footer-links a:hover,
+.footer-categories a:hover {
+    color: var(--accent-color);
+    padding-left: 6px;
+}
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 50px auto 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+/* ==========================================================================
+   7. Responsive Mobile Overrides
+   ========================================================================== */
+@media (max-width: 768px) {
+    nav {
+        width: calc(100% - 24px);
+        top: 12px;
+        margin: 12px auto 0 auto;
+        padding: 0 16px;
+    }
+    #itmeslist {
+        padding: 30px 20px;
+        width: 94%;
+        margin: 24px auto;
+    }
+    #itmeslist h3 {
+        font-size: 1.4rem;
+    }
+    #catagories {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 14px;
+    }
+    .catalist img {
+        height: 100px;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
