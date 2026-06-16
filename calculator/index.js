@@ -4,6 +4,8 @@ const patientInput = document.querySelector('input[placeholder="Enter Patient Na
 const doctorInput = document.querySelector('input[placeholder="Enter Doctor Name"]');
 const previewPatient = document.getElementById('preview-patient');
 const previewDoctor = document.getElementById('preview-doctor');
+const serial = document.getElementById('serialnumber');
+const serialnumber = document.querySelector('input[placeholder="Enter Serial no."]');
 
 // Medicine Detail Fields
 const medicineInput = document.querySelector('input[placeholder="e.g., Paracetamol"]');
@@ -28,6 +30,10 @@ patientInput.addEventListener('input', (e) => {
 
 doctorInput.addEventListener('input', (e) => {
     previewDoctor.textContent = e.target.value.trim() || '-';
+});
+
+serialnumber.addEventListener('input', (e) => {
+    serial.textContent = e.target.value.trim() || '-';
 });
 
 // --- 2. Calculate Expiry Date Helper ---
