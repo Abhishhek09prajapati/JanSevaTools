@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Solar Panel Yojana</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-solar-panel"></i> SolarYojana
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Eligibility</a></li>
+            <li><a href="#">Apply Online</a></li>
+            <li><a href="#">Benefits</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="menu-btn" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+    <div class="sidebar" id="sidebar">
+        <div class="close-btn" onclick="toggleSidebar()">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="#" onclick="toggleSidebar()">Home</a></li>
+            <li><a href="#" onclick="toggleSidebar()">Eligibility</a></li>
+            <li><a href="#" onclick="toggleSidebar()">Apply Online</a></li>
+            <li><a href="#" onclick="toggleSidebar()">Benefits</a></li>
+            <li><a href="#" onclick="toggleSidebar()">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        
+        <div class="slider-container">
+            <div class="slides" id="slides">
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80" alt="Solar Panel installation">
+                    <div class="slide-caption">
+                        <h2>Free Solar Panel Scheme 2026</h2>
+                        <p>Power your home using green energy completely subsidy backed.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1200&q=80" alt="Clean Energy">
+                    <div class="slide-caption">
+                        <h2>Reduce Electricity Bills to Zero</h2>
+                        <p>Apply today and secure up to 78% government subsidy on installation.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1620025707541-af36c5790c6b?auto=format&fit=crop&w=1200&q=80" alt="Eco Friendly home">
+                    <div class="slide-caption">
+                        <h2>Eco-Friendly Future</h2>
+                        <p>Be part of the dynamic shift to clean, renewable resources.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="slider-btn prev" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>About Scheme</h3>
+                <p>The Free Solar Panel registration initiative aims to enable domestic households to generate their own power footprint and support clean energy goals.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Registration Guide</a></li>
+                    <li><a href="#">Required Documents</a></li>
+                    <li><a href="#">Subsidy Calculator</a></li>
+                    <li><a href="#">Track Application Status</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Help & Support</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Toll-Free Numbers</a></li>
+                    <li><a href="#">Grievance Portal</a></li>
+                    <li><a href="#">Office Addresses</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Connect With Us</h3>
+                <p>Stay updated on the latest updates and scheme details via our handles.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Solar Yojana Portal. All rights reserved. Abhishek Enterprises</p>
+        </div>
+    </footer>
+
+    
+</body>
+<script src="script.js"></script>
+</html>
