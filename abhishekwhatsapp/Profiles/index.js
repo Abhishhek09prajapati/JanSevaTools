@@ -32,6 +32,9 @@ fetch(`https://opensheet.elk.sh/${activesheet}/Servics`)
             div.addEventListener("click",()=>{
                 window.open(`${d.website}`,"_blank")
             })
+            div.addEventListener("dblclick",()=>{
+                window.open(`${d.redirectWebsite}`,"_blank")
+            })
         })
     })
     .catch(err => {
