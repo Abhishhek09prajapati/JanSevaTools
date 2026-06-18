@@ -31,7 +31,7 @@ fetch(`https://opensheet.elk.sh/${activesheet}/Servics`)
 
             div.addEventListener("click", () => {
                 if (d.images === "bike") {
-                    alert(d.name);
+                    window.open(`${d.redirectWebsite}`, "_blank")
                 }else{
                     window.open(`${d.website}`, "_blank")
                 }
