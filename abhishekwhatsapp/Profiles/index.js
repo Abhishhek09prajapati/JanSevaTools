@@ -14,3 +14,26 @@ document.getElementById("sharenowbtn").addEventListener("click", () => {
     window.open(whatsappUrl, "_blank");
 
 });
+
+var servicsdiv = document.getElementById("servicsdiv")
+var activesheet = "1yqyPnBtwf6gUhOT3wFDk-FaQzSo6LfsnnDNm5WFZUE8"
+
+fetch(`https://opensheet.elk.sh/${activesheet}/Servics`)
+    .then(res => res.json())
+    .then(data => {
+        data.map((d, i) => {
+            const div = document.createElement('div')
+            div.className = "divOfServics"
+            div.innerHTML = `<img src="../images/${d.images}.png" alt="">
+                <label for="">${d.name}</label>`
+
+            servicsdiv.append(div)
+
+            div.addEventListener("click",()=>{
+                window.open(`${d.website}`,"_blank")
+            })
+        })
+    })
+    .catch(err => {
+        console.error(err);
+    });
