@@ -2,67 +2,68 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #1e293b;
 }
 
 body {
     width: 100%;
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean fallback fonts */
+    background-color: #f8fafc;
 }
 
+/* --- Main Grid Container --- */
 .maindiv {
-    background-color: rgb(0, 60, 255);
+    background-color: #f1f5f9; /* Muted slate background instead of harsh bright blue */
     width: 100%;
-    height: 70%;
-    border: 1px solid black;
+    height: 70vh; /* Changed to viewport height for better structural stability */
+    border: 1px solid #e2e8f0;
     margin: 10px auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
+    gap: 16px; /* Slightly wider gap for breathing room */
+    padding: 16px;
     align-content: flex-start;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
+/* --- Product Cards (Grid items) --- */
 .maindivchild {
     width: 180px;
     height: max-content;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid black;
-    border-radius: 8px;
+    padding: 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
-    background-color: red;
+    background-color: #ffffff; /* Swapped from 'red' to clean white */
     align-items: center;
     justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.maindivchild:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .maindivchild button {
     width: 100%;
-    height: 100%;
-    background-color: #ffffff;
-    color: #003cff;
-    margin: 5px;
-    /* Matches your parent div blue */
+    padding: 8px 12px;
+    background-color: #003cff; /* Primary blue */
+    color: #ffffff;
+    margin-top: 10px;
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
+    border-radius: 6px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
 }
 
-/* Hover effect: button lifts up slightly and darkens text */
 .maindivchild button:hover {
-    background-color: #f0f0f0;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Click effect: pushes down */
-.maindivchild button:active {
-    transform: translateY(0);
+    background-color: #002ecc;
+    box-shadow: 0 4px 8px rgba(0, 60, 255, 0.2);
 }
 
 .gr {
@@ -70,71 +71,56 @@ body {
     flex-direction: column;
 }
 
+/* --- Modal Overlay Background --- */
 .productviews {
     width: 100%;
-    /* background-color: rgb(102, 245, 80); */
-    height: 500px;
-    border-radius: 2px;
-    border: 1px solid black;
-    position: absolute;
-    top: 80px;
-    height: 100%;
-    display: none;
-
+    height: 100vh;
+    position: fixed; /* Ensures it locks to the viewport, not the document flow */
+    top: 0;
+    left: 0;
+    background-color: rgba(15, 23, 42, 0.6); /* Soft, blurred dark backdrop */
+    backdrop-filter: blur(4px); /* Modern blur effect */
+    z-index: 999;
+   
+    /* Perfect Center Alignment for the child container */
+    display: none; /* Toggle to 'flex' via JS to show */
+    justify-content: center;
+    align-items: center;
 }
 
 #closebtn {
-    display: block;
-    /* Turns the span into a block container */
-    text-align: right;
-    /* Aligns the icon to the right side */
-    font-size: 25px;
-    color: black;
+    align-self: flex-end; /* Pushes close button to the top-right of the modal card */
+    font-size: 24px;
+    color: #64748b;
     cursor: pointer;
-    margin-right: 10px;
     font-weight: 600;
+    transition: color 0.2s;
+    line-height: 1;
 }
 
-#productview1 {
-    width: 400px;
-    /* height: 90%; */
-    border: 1px solid black;
-    margin: auto;
-    background-color: rgb(174, 132, 54);
+#closebtn:hover {
+    color: #1e293b;
 }
 
-/* Container: Centered perfectly on screen */
+/* --- Detailed Product Card Modal --- */
 #productview1 {
-    width: 450px;
+    width: 100%;
+    max-width: 440px; /* Responsive boundaries */
     background-color: #ffffff;
-    /* Swapped harsh green for clean white */
     padding: 24px;
-    box-sizing: border-box;
     border-radius: 16px;
-    /* Smooth rounded corners */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    /* Premium soft shadow */
-
-    /* Perfect Center Alignment */
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    transform: translate(20%, 0%);
-
-    /* Layout alignment */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Stack elements beautifully */
+    display: flex;
+    flex-direction: column;
     gap: 16px;
-    font-family: sans-serif;
-    height: max-content;
 }
 
 /* Product Image styling */
 #productview1 img {
     width: 100%;
-    /* Adjusted for a better balance */
-    max-height: 200px;
+    max-height: 220px;
     object-fit: cover;
     border-radius: 12px;
 }
@@ -143,71 +129,68 @@ body {
 #productview1 h3 {
     font-size: 22px;
     color: #1e293b;
-    /* Dark slate */
     font-weight: 700;
     margin: 0;
+    text-align: left; /* Standard alignment reading direction */
 }
 
 /* Product Description */
 #productview1 p {
     font-size: 14px;
     color: #64748b;
-    /* Soft gray description */
-    text-align: center;
-    line-height: 1.5;
+    text-align: left;
+    line-height: 1.6;
     margin: 0;
 }
 
-/* Pricing Container (Row layout) */
-#productview1>div:nth-of-type(1) {
+/* Pricing Container */
+#productview1 > div:nth-of-type(1) {
     display: flex;
     width: 100%;
-    justify-content: space-around;
-    /* Distributes MRP and Rate evenly */
+    justify-content: space-between; /* Cleaner space distribution */
     background-color: #f8fafc;
-    /* Light gray background block for pricing */
-    padding: 12px;
-    border-radius: 8px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    align-items: center;
 }
 
 /* Pricing Labels */
-#productview1>div:nth-of-type(1) label {
+#productview1 > div:nth-of-type(1) label {
     font-size: 15px;
     font-weight: 600;
-    color: #334155;
+    color: #475569;
 }
 
-/* Pricing Highlight (Targeting the second label as the deal rate) */
-#productview1>div:nth-of-type(1) label:last-child {
+/* Target dynamic rate blue highlight */
+#productview1 > div:nth-of-type(1) label:last-child {
     color: #003cff;
-    /* Vibrant blue accent for the dynamic rate */
+    font-size: 18px; /* Pop out the active price slightly */
+    font-weight: 700;
 }
 
 /* Button Action Bar Container */
-#productview1>div:nth-of-type(2) {
+#productview1 > div:nth-of-type(2) {
     display: flex;
     width: 100%;
     gap: 12px;
-    /* Spaces buttons apart */
-    margin-top: 8px;
+    margin-top: 4px;
 }
 
 /* Shared Button Base Layout */
 #productview1 button {
     flex: 1;
-    /* Makes both buttons identical in width */
     padding: 12px;
     font-size: 15px;
     font-weight: 600;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
 
-/* Share Button Style (Secondary outline button) */
+/* Share Button Style */
 #productview1 button:first-child {
     background-color: transparent;
-    color: #64748b;
+    color: #475569;
     border: 1px solid #cbd5e1;
 }
 
@@ -217,20 +200,19 @@ body {
     border-color: #94a3b8;
 }
 
-/* Contact Us Button Style (Primary filled button) */
+/* Contact Us Button Style */
 #productview1 button:last-child {
     background-color: #003cff;
     color: white;
     border: none;
-    box-shadow: 0 4px 12px rgba(0, 60, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 60, 255, 0.15);
 }
 
 #productview1 button:last-child:hover {
     background-color: #002ecc;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(0, 60, 255, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 60, 255, 0.3);
 }
 
 #productview1 button:active {
-    transform: translateY(0);
+    transform: scale(0.98); /* Native press-down feel */
 }
