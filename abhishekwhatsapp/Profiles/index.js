@@ -29,11 +29,16 @@ fetch(`https://opensheet.elk.sh/${activesheet}/Servics`)
 
             servicsdiv.append(div)
 
-            div.addEventListener("click",()=>{
-                window.open(`${d.website}`,"_blank")
-            })
-            div.addEventListener("dblclick",()=>{
-                window.open(`${d.redirectWebsite}`,"_blank")
+            div.addEventListener("click", () => {
+                if (d.images === "bike") {
+                    alert(d.name);
+                }else{
+                    window.open(`${d.website}`, "_blank")
+                }
+                
+            });
+            div.addEventListener("dblclick", () => {
+                window.open(`${d.redirectWebsite}`, "_blank")
             })
         })
     })
