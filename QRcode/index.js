@@ -12,7 +12,7 @@ function showqr() {
 
 function showqr1(a, b) {
     document.getElementById("showbarcode").style.display = "block"
-    document.getElementById("showbarcode").innerHTML = ""
+    document.getElementById("showbarcode").innerHTML = "";
     const note = "Payment for Services";
     const payeeName = "Iconstar Business";
 
@@ -32,5 +32,5 @@ function showqr1(a, b) {
     document.getElementsByClassName("maindiv")[0].querySelector("input[placeholder='Enter UPI ID']").value = "";
     document.getElementsByClassName("maindiv")[0].querySelector("input[placeholder='Enter Amount']").value = "";
     // 6387215755@ptaxis
-    
+
 }
