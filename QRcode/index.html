@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+
+<body>
+    <div class="maindiv">
+        <div>
+            <label for="">Enter Upi ID</label>
+            <input type="text" placeholder="Enter UPI ID">
+        </div>
+        <div>
+            <label for="">Enter Amount</label>
+            <input type="number" placeholder="Enter Amount">
+        </div>
+        <button onclick="showqr()">Show QR Code</button>
+    </div>
+    <div id="showbarcode">
+        <h1 style="text-align: center;margin-bottom: 5%;">Payment Barcode</h1>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>
