@@ -6,7 +6,7 @@ function loadFile(fileName, elementId) {
         });
 }
 
-var products = "bike"
+var products = "shop"
 
 loadFile("../../components/header.html", "header");
 loadFile("../../components/footer.html", "footer");

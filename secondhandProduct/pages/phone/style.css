@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #1e293b;
+}
+
+body {
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean fallback fonts */
+    background-color: #f8fafc;
+}
+
+/* --- Main Grid Container --- */
+.maindiv {
+    background-color: #f1f5f9; /* Muted slate background instead of harsh bright blue */
+    width: 100%;
+    height: 70vh; /* Changed to viewport height for better structural stability */
+    border: 1px solid #e2e8f0;
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Slightly wider gap for breathing room */
+    padding: 16px;
+    align-content: flex-start;
+    overflow-y: auto;
+}
+
+/* --- Product Cards (Grid items) --- */
+.maindivchild {
+    width: 180px;
+    height: max-content;
+    padding: 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff; /* Swapped from 'red' to clean white */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.maindivchild:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.maindivchild button {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #003cff; /* Primary blue */
+    color: #ffffff;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.maindivchild button:hover {
+    background-color: #002ecc;
+    box-shadow: 0 4px 8px rgba(0, 60, 255, 0.2);
+}
+
+.gr {
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Modal Overlay Background --- */
+.productviews {
+    width: 100%;
+    height: 100vh;
+    position: fixed; /* Ensures it locks to the viewport, not the document flow */
+    top: 0;
+    left: 0;
+    background-color: rgba(15, 23, 42, 0.6); /* Soft, blurred dark backdrop */
+    backdrop-filter: blur(4px); /* Modern blur effect */
+    z-index: 999;
+   
+    /* Perfect Center Alignment for the child container */
+    display: none; /* Toggle to 'flex' via JS to show */
+    justify-content: center;
+    align-items: center;
+}
+
+#closebtn {
+    align-self: flex-end; /* Pushes close button to the top-right of the modal card */
+    font-size: 24px;
+    color: #64748b;
+    cursor: pointer;
+    font-weight: 600;
+    transition: color 0.2s;
+    line-height: 1;
+}
+
+#closebtn:hover {
+    color: #1e293b;
+}
+
+/* --- Detailed Product Card Modal --- */
+#productview1 {
+    width: 100%;
+    max-width: 440px; /* Responsive boundaries */
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Stack elements beautifully */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Product Image styling */
+#productview1 img {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Product Title */
+#productview1 h3 {
+    font-size: 22px;
+    color: #1e293b;
+    font-weight: 700;
+    margin: 0;
+    text-align: left; /* Standard alignment reading direction */
+}
+
+/* Product Description */
+#productview1 p {
+    font-size: 14px;
+    color: #64748b;
+    text-align: left;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Pricing Container */
+#productview1 > div:nth-of-type(1) {
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* Cleaner space distribution */
+    background-color: #f8fafc;
+    padding: 14px 18px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+/* Pricing Labels */
+#productview1 > div:nth-of-type(1) label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #475569;
+}
+
+/* Target dynamic rate blue highlight */
+#productview1 > div:nth-of-type(1) label:last-child {
+    color: #003cff;
+    font-size: 18px; /* Pop out the active price slightly */
+    font-weight: 700;
+}
+
+/* Button Action Bar Container */
+#productview1 > div:nth-of-type(2) {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+/* Shared Button Base Layout */
+#productview1 button {
+    flex: 1;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Share Button Style */
+#productview1 button:first-child {
+    background-color: transparent;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+}
+
+#productview1 button:first-child:hover {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    border-color: #94a3b8;
+}
+
+/* Contact Us Button Style */
+#productview1 button:last-child {
+    background-color: #003cff;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 60, 255, 0.15);
+}
+
+#productview1 button:last-child:hover {
+    background-color: #002ecc;
+    box-shadow: 0 6px 20px rgba(0, 60, 255, 0.3);
+}
+
+#productview1 button:active {
+    transform: scale(0.98); /* Native press-down feel */
+}
