@@ -24,7 +24,7 @@ fetch(`https://opensheet.elk.sh/${activesheet}/Servics`)
         data.map((d, i) => {
             const div = document.createElement('div')
             div.className = "divOfServics"
-            div.innerHTML = `<img src="../images/${d.images}.png" alt="">
+            div.innerHTML = `<img src="../images/${d.images}.jpeg" alt="">
                 <label for="">${d.name}</label>`
 
             servicsdiv.append(div)
