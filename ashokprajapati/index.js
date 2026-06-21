@@ -39,7 +39,7 @@ document.getElementById("sendmsg").addEventListener("click", () => {
     // Check if amount is provided and a number is selected
     if (amountInput.value && activePhoneNumber) {
         let amount = amountInput.value;
-        let msg = encodeURIComponent(`Dear, ${activename}
+        let msg = encodeURIComponent(`Dear, ${activename} ji
 Your payment of Rs ${amount} is pending Ashok Mobile Basti
 
 If you have already made the payment, kindly ignore this message.
