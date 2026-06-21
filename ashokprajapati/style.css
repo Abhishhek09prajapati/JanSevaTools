@@ -6,6 +6,7 @@
 body{
     background-color: rgb(200, 117, 9);
     position: relative;
+    /* width: 100%; */
 }
 #whatsappdata{
     width: 500px;
@@ -14,6 +15,7 @@ body{
     margin:auto;
     overflow-y: scroll;
     background-color: #25D366;
+    width: 100%;
 }
 .divdata{
     border: 1px solid black;
