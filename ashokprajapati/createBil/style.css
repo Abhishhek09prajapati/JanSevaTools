@@ -16,11 +16,12 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    /* max-width: 1200px; */
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 2rem;
+  
 }
 
 /* --- Left Side: Input Form Panel --- */
@@ -30,6 +31,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     height: fit-content;
+    
 }
 
 #inputbillItems h2 {
