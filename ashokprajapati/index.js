@@ -1,7 +1,10 @@
 var datadiv = document.getElementById("datadiv");
-let activePhoneNumber = ""; // Renamed for clarity
+let activePhoneNumber = "";
+let activename = ""; // Renamed for clarity
 
-fetch("https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/ashok")
+var sheet = "1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA"
+
+fetch(`https://opensheet.elk.sh/${sheet}/ashok`)
     .then(res => res.json())
     .then(data => {
         data.map((d) => {
@@ -12,7 +15,8 @@ fetch("https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/ash
 
             div.addEventListener("click", () => {
                 datadiv.style.display = "block";
-                activePhoneNumber = d.numbers; // Store globally when clicked
+                activePhoneNumber = d.numbers;
+                activename = d.name
                 profiles(d.name, d.numbers);
             });
         });
@@ -35,7 +39,14 @@ document.getElementById("sendmsg").addEventListener("click", () => {
     // Check if amount is provided and a number is selected
     if (amountInput.value && activePhoneNumber) {
         let amount = amountInput.value;
-        let msg = encodeURIComponent(`Hello, aapka bakaya raashi hai: ${amount}`);
+        let msg = encodeURIComponent(`Dear, ${activename}
+Your payment of ${amount} is pending with FOLDER HOUSE
+
+If you have already made the payment, kindly ignore this message.
+
+Thank You
+Ashok MObile Shop
+8887868003`);
 
         // Open WhatsApp link
         window.open(`https://wa.me/91${activePhoneNumber}?text=${msg}`, "_blank");
