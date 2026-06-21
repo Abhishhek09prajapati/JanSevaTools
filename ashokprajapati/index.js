@@ -40,7 +40,7 @@ document.getElementById("sendmsg").addEventListener("click", () => {
     if (amountInput.value && activePhoneNumber) {
         let amount = amountInput.value;
         let msg = encodeURIComponent(`Dear, ${activename}
-Your payment of ${amount} is pending with FOLDER HOUSE
+Your payment of Rs ${amount} is pending 
 
 If you have already made the payment, kindly ignore this message.
 
