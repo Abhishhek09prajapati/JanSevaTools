@@ -23,6 +23,9 @@ body{
     text-align: center;
     color: rgb(0, 11, 0);
     text-transform: capitalize;
+    margin: 1px 2px;
+    background-color: white;
+    border-radius: 10px;
 }
 .divdata:hover{
     text-shadow: 1px 2px 5px  rgb(80, 233, 4);
