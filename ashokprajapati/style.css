@@ -16,6 +16,7 @@ body{
     overflow-y: scroll;
     background-color: #25D366;
     width: 100%;
+    padding: 4% 0px;
 }
 .divdata{
     border: 1px solid black;
