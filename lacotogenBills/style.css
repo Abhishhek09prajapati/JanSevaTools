@@ -1,0 +1,245 @@
+/* --- Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333333;
+    padding: 2rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2rem;
+}
+
+/* --- Left Side: Input Form Panel --- */
+#inputbillItems {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+}
+
+#inputbillItems h2 {
+    margin-bottom: 1.5rem;
+    color: #1a2530;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 0.5rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+/* Make wide text fields take full row width */
+.form-group:nth-child(1),
+.form-group:nth-child(2),
+.form-group:nth-child(3) {
+    grid-column: span 2;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.form-group input {
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15);
+}
+
+.btn-primary {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.85rem;
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #2b6cb0;
+}
+
+/* --- Right Side: Live Invoice Preview --- */
+#previews {
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 600px;
+}
+
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.company-details h1 {
+    font-size: 1.2rem;
+    color: #2c5282;
+    margin-bottom: 0.5rem;
+}
+
+.company-details p {
+    font-size: 0.85rem;
+    color: #718096;
+    line-height: 1.4;
+}
+
+.company-details .address {
+    font-size: 0.95rem;
+    color: #4a5568;
+    margin-bottom: 0.25rem;
+}
+
+.patient-details {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.patient-details h3 {
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+/* --- Modern Invoice Table --- */
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: auto; /* Pushes footer down */
+}
+
+.invoice-table th {
+    background-color: #f7fafc;
+    color: #4a5568;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    text-align: left;
+}
+
+.invoice-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 0.95rem;
+    color: #2d3748;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.font-bold {
+    font-weight: 700;
+    color: #1a202c;
+}
+
+/* --- Invoice Footer & Print --- */
+.invoice-footer {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 1.5rem;
+}
+
+.invoice-footer p {
+    font-style: italic;
+    color: #a0aec0;
+    font-size: 0.9rem;
+}
+
+.btn-print {
+    padding: 0.6rem 1.2rem;
+    background-color: #48bb78;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-print:hover {
+    background-color: #38a169;
+}
+
+/* --- Responsive Layout for Smaller Screens --- */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    body {
+        padding: 1rem;
+    }
+}
+
+/* --- Clean Look Setup Just For Printing --- */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    #inputbillItems, .btn-print {
+        display: none; /* Hide UI controls when printing */
+    }
+    .container {
+        display: block;
+    }
+    #previews {
+        box-shadow: none;
+        padding: 0;
+    }
+}

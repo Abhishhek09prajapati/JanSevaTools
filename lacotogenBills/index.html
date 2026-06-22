@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div id="inputbillItems">
+            <h2>Billing Details</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Customer Name</label>
+                    <input type="text" placeholder="Enter Customer Name">
+                </div>
+
+                <div class="form-group">
+                    <label>Medicine Name</label>
+                    <input type="text" placeholder="e.g., Lactogen">
+                </div>
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <input type="number" placeholder="Enter Quantity">
+                </div>
+                <div class="form-group">
+                    <label>MRP (₹)</label>
+                    <input type="number" step="0.01" placeholder="Enter MRP">
+                </div>
+                <div class="form-group">
+                    <label>Discount (%)</label>
+                    <input type="number" step="0.01" placeholder="Enter MRP">
+                </div>
+                <div class="form-group">
+                    <label>Batch Number</label>
+                    <input type="text" placeholder="Enter Batch">
+                </div>
+                <div class="form-group">
+                    <label>Expiry Date</label>
+                    <input type="text" placeholder="Expiry Date">
+                </div>
+                <div class="form-group">
+                    <label>Serial No.</label>
+                    <input type="text" placeholder="Enter Serial no.">
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" placeholder="Enter Date">
+                </div>
+            </div>
+            <button class="btn-primary">Add Item to Bill</button>
+        </div>
+
+        <div id="previews">
+            <div class="invoice-header">
+                <div class="company-details">
+                    <h1 id="shopname">Verma Medical Store Bulaki Adda</h1>
+                    <p class="address">347/441 , Tikatganj , Lucknow , Uttar Pradesh</p>
+                    <p id="mobilenumber1"><strong>Mobile:</strong> +91 9838617065</p>
+                    <!-- <p><strong>Food License:</strong> FSSAI-123456789</p> -->
+                    <p id="gstno"><strong>GST No:</strong > </p>
+                    <p id="dls"><strong>Drug License:</strong> RLF20UP2025020968 , RLF21UP2025020908</p>
+                </div>
+                <div class="patient-details">
+                    <h3>Invoice / Bill Receipt</h3>
+                    <p><strong>Customer Name:</strong> <span id="preview-patient">-</span></p>
+                    <p><strong>Date:</strong> <span id="daate"></span></p>
+                    <p><strong>Serial No.-</strong> <span id="serialnumber"></span></p>
+                </div>
+            </div>
+
+            <table class="invoice-table">
+                <thead>
+                    <tr>
+                        <th>Items</th>
+                        <th>Quantity</th>
+                        <th>Batch</th>
+                        <th>Discount</th>
+                        <th>Expiry</th>
+                        <th>MRP</th>
+                    
+                        <th class="text-right">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5" class="text-right font-bold">Total Amount:</td>
+                        <td class="text-right font-bold"></td>
+                    </tr>
+                </tfoot>
+            </table>
+            
+            <div class="invoice-footer">
+                <span id="shopname1">Verma Medical Store Bulaki Adda</span>
+                <button class="btn-print" onclick="window.print()">Print Invoice</button>
+            </div>
+        </div>
+    </div>
+
+   
+</body>
+<script src="index.js"></script>
+<script src="script.js"></script>
+</html>
