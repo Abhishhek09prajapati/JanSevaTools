@@ -127,6 +127,8 @@ body {
 
 .company-details p {
     font-size: 0.85rem;
+    /* background-color: red; */
+    width: 80%;
     color: #718096;
     line-height: 1.4;
 }
@@ -142,6 +144,9 @@ body {
     font-size: 0.9rem;
     color: #4a5568;
     line-height: 1.6;
+    /* background-color: green; */
+    width: 80%;
+
 }
 
 .patient-details h3 {
@@ -154,7 +159,8 @@ body {
 .invoice-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: auto; /* Pushes footer down */
+    margin-bottom: auto;
+    /* Pushes footer down */
 }
 
 .invoice-table th {
@@ -221,6 +227,7 @@ body {
     .container {
         grid-template-columns: 1fr;
     }
+
     body {
         padding: 1rem;
     }
@@ -232,12 +239,17 @@ body {
         background: white;
         padding: 0;
     }
-    #inputbillItems, .btn-print {
-        display: none; /* Hide UI controls when printing */
+
+    #inputbillItems,
+    .btn-print {
+        display: none;
+        /* Hide UI controls when printing */
     }
+
     .container {
         display: block;
     }
+
     #previews {
         box-shadow: none;
         padding: 0;
