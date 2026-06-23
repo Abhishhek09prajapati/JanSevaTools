@@ -28,36 +28,35 @@ fetch(`https://opensheet.elk.sh/${sheetName}/Customer`)
 
 
             div.addEventListener('click', () => {
-                if (tempmessagetext) {
-
-                    // 1. Send the data to your Google Apps Script
-                    fetch(scipt, {
-                        method: "POST",
-                        mode: "no-cors", // Bypasses standard cross-origin restriction rules
-                        headers: {
-                            "Content-Type": "text/plain" // Prevents browser from sending an OPTIONS preflight request
-                        },
-                        body: JSON.stringify({
-                            number: `${d.customerNumber}`,
-                            color: "red"
-                        })
+                fetch(scipt, {
+                    method: "POST",
+                    mode: "no-cors", // Bypasses standard cross-origin restriction rules
+                    headers: {
+                        "Content-Type": "text/plain" // Prevents browser from sending an OPTIONS preflight request
+                    },
+                    body: JSON.stringify({
+                        number: d.customerNumber,
+                        color: "red"
                     })
-                        .then(() => {
-                            /* With mode: "no-cors", the response is 'opaque'. 
-                              We cannot read response.ok, but the fetch will complete.
-                              We can now safely trigger the WhatsApp redirect.
-                            */
-                            const message = `Dear ${d.customerName} Ji , \n\n ${tempmessagetext}`;
-                            window.open(`https://wa.me/91${d.customerNumber}?text=${encodeURIComponent(message)}`, "_blank");
-                        })
-                        .catch(error => {
-                            console.error("Network Error:", error);
-                            alert("Something went wrong with the network request.");
-                        });
+                })
+                    .then(() => {
+                        /* With mode: "no-cors", the response is 'opaque'. 
+                          We cannot read response.ok, but the fetch will complete.
+                          We can now safely trigger the WhatsApp redirect.
+                        */
+                        const message = `Dear ${d.customerName.toUpperCase()} Ji , \n\n ${tempmessagetext}`;
+                        window.open(`https://wa.me/91${d.customerNumber}?text=${encodeURIComponent(message)}`, "_blank");
+                    })
+                    .catch(error => {
+                        console.error("Network Error:", error);
+                        alert("Something went wrong with the network request.");
+                    });
 
-                } else {
-                    alert("Please Enter Template Value");
-                }
+                // if (tempmessagetext) {        
+
+                // } else {
+                //     alert("Please Enter Template Value");
+                // }
             });
 
 
