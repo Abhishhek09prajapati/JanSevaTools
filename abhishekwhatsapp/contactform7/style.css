@@ -181,6 +181,20 @@ input:focus, textarea:focus {
 #submited:hover svg {
     transform: translateX(3px);
 }
+.processor{
+    width:400px;
+    height: max-content;
+    padding: 10px;
+    border: 1px solid black;
+    position: absolute;
+    background-color: #1e293b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+
+}
 
 /* Mobile Responsiveness Rules */
 @media (max-width: 480px) {
