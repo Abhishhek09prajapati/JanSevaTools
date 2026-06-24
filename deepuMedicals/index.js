@@ -1,6 +1,6 @@
 var sheetName = "1cb28gYunLwsO9v6Jpxbhxg6NqGYN_9v0MwCJ5e-GyzQ";
 var whastappData = document.getElementById("whatsappnumber");
-var whastappNumber = "6387215755";
+var whastappNumber = "8467822578";
 
 var scipt = "https://script.google.com/macros/s/AKfycbzutnWIxWzZHfzWOwomlw1Z4uZwsTzm028nqwFNGlOZvBoWzwOiRyhiYdcMM3CbJHN6Ow/exec";
 
