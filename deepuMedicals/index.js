@@ -13,6 +13,9 @@ fetch(`https://opensheet.elk.sh/${sheetName}/Customer`)
         data.map((d, i) => {
 
             var div = document.createElement("div");
+            div.style.padding = "10px 0px";
+            div.style.borderRadius = "5px";
+            div.style.paddingLeft = "15px"
             div.className = "divwhatsapp"
             div.innerHTML = `${d.customerName.toUpperCase()} - ${d.customerNumber}`
             whastappData.append(div);

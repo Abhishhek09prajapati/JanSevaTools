@@ -53,6 +53,7 @@ body {
     letter-spacing: 0.5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     z-index: 10;
+    
 }
 
 /* Scrollable Content Wrapper */
@@ -133,6 +134,7 @@ button:active, #copyBtn:active {
     align-items: center;
     justify-content: center;
     text-align: center;
+    
 }
 
 .bardcodeVew {
