@@ -2,7 +2,7 @@ var sheetName = "1cb28gYunLwsO9v6Jpxbhxg6NqGYN_9v0MwCJ5e-GyzQ";
 var whastappData = document.getElementById("whatsappnumber");
 var whastappNumber = "6387215755";
 
-var scipt = "https://script.google.com/macros/s/AKfycbyhM2HnQ29_hnyfKQ0Sr5zgCm0ff8aDkwu_KElOCoq9LJvJnStcupxRobUm49CCtBq9jw/exec"
+var scipt = "https://script.google.com/macros/s/AKfycbzutnWIxWzZHfzWOwomlw1Z4uZwsTzm028nqwFNGlOZvBoWzwOiRyhiYdcMM3CbJHN6Ow/exec"
 
 
 let tempmessagetext = "";
@@ -28,7 +28,7 @@ fetch(`https://opensheet.elk.sh/${sheetName}/Customer`)
 
 
             div.addEventListener('click', () => {
-                fetch(scipt, {
+                fetch(`${scipt}`, {
                     method: "POST",
                     mode: "no-cors", // Bypasses standard cross-origin restriction rules
                     headers: {
@@ -45,7 +45,7 @@ fetch(`https://opensheet.elk.sh/${sheetName}/Customer`)
                           We can now safely trigger the WhatsApp redirect.
                         */
                         const message = `Dear ${d.customerName.toUpperCase()} Ji , \n\n ${tempmessagetext}`;
-                        window.open(`https://wa.me/91${d.customerNumber}?text=${encodeURIComponent(message)}`, "_blank");
+                        window.open(`https://wa.me/91${d.customerNumber}?text=${encodeURIComponent(message)}`, "target");
                     })
                     .catch(error => {
                         console.error("Network Error:", error);

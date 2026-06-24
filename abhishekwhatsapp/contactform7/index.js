@@ -7,7 +7,8 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
         email: document.getElementById("email").value,
         mobile: document.getElementById("mobile").value,
         referral: document.getElementById("referral").value,
-        address: document.getElementById("address").value
+        address: document.getElementById("address").value,
+        ocupation: document.getElementById("ocupation").value
     };
 
     try {
