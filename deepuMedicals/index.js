@@ -2,7 +2,7 @@ var sheetName = "1cb28gYunLwsO9v6Jpxbhxg6NqGYN_9v0MwCJ5e-GyzQ";
 var whastappData = document.getElementById("whatsappnumber");
 var whastappNumber = "6387215755";
 
-var scipt = "https://script.google.com/macros/s/AKfycbzutnWIxWzZHfzWOwomlw1Z4uZwsTzm028nqwFNGlOZvBoWzwOiRyhiYdcMM3CbJHN6Ow/exec"
+var scipt = "https://script.google.com/macros/s/AKfycbzutnWIxWzZHfzWOwomlw1Z4uZwsTzm028nqwFNGlOZvBoWzwOiRyhiYdcMM3CbJHN6Ow/exec";
 
 
 let tempmessagetext = "";
@@ -26,37 +26,36 @@ fetch(`https://opensheet.elk.sh/${sheetName}/Customer`)
             }
 
 
-
             div.addEventListener('click', () => {
-                fetch(`${scipt}`, {
-                    method: "POST",
-                    mode: "no-cors", // Bypasses standard cross-origin restriction rules
-                    headers: {
-                        "Content-Type": "text/plain" // Prevents browser from sending an OPTIONS preflight request
-                    },
-                    body: JSON.stringify({
-                        number: d.customerNumber,
-                        color: "red"
-                    })
-                })
-                    .then(() => {
-                        /* With mode: "no-cors", the response is 'opaque'. 
-                          We cannot read response.ok, but the fetch will complete.
-                          We can now safely trigger the WhatsApp redirect.
-                        */
-                        const message = `Dear ${d.customerName.toUpperCase()} Ji , \n\n ${tempmessagetext}`;
-                        window.open(`https://wa.me/91${d.customerNumber}?text=${encodeURIComponent(message)}`, "target");
-                    })
-                    .catch(error => {
-                        console.error("Network Error:", error);
-                        alert("Something went wrong with the network request.");
-                    });
 
-                // if (tempmessagetext) {        
 
-                // } else {
-                //     alert("Please Enter Template Value");
-                // }
+                if (tempmessagetext) {
+                    fetch(`${scipt}`, {
+                        method: "POST",
+                        mode: "no-cors", // Bypasses standard cross-origin restriction rules
+                        headers: {
+                            "Content-Type": "text/plain" // Prevents browser from sending an OPTIONS preflight request
+                        },
+                        body: JSON.stringify({
+                            number: d.customerNumber,
+                            color: "red"
+                        })
+                    })
+                        .then(() => {
+                            /* With mode: "no-cors", the response is 'opaque'. 
+                              We cannot read response.ok, but the fetch will complete.
+                              We can now safely trigger the WhatsApp redirect.
+                            */
+                            const message = `Dear ${d.customerName.toUpperCase()} Ji , \n\n ${tempmessagetext}`;
+                            window.open(`https://wa.me/91${d.customerNumber}?text=${encodeURIComponent(message)}`, "target");
+                        })
+                        .catch(error => {
+                            console.error("Network Error:", error);
+                            alert("Something went wrong with the network request.");
+                        });
+                } else {
+                    alert("Please Enter Template Value");
+                }
             });
 
 
