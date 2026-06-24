@@ -46,8 +46,16 @@ fetch(`https://opensheet.elk.sh/${sheetName}/Customer`)
                               We cannot read response.ok, but the fetch will complete.
                               We can now safely trigger the WhatsApp redirect.
                             */
-                            const message = `Dear ${d.customerName.toUpperCase()} Ji , \n\n ${tempmessagetext}`;
-                            window.open(`https://wa.me/91${d.customerNumber}?text=${encodeURIComponent(message)}`, "target");
+
+                            if (d.color == "green") {
+                                const message = `Dear ${d.customerName.toUpperCase()} Ji , \n\n ${tempmessagetext}`;
+                                window.open(`https://wa.me/91${d.customerNumber}?text=${encodeURIComponent(message)}`, "target");
+                            } else {
+                                alert("Message already Send")
+                            }
+
+
+
                         })
                         .catch(error => {
                             console.error("Network Error:", error);
