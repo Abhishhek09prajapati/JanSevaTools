@@ -79,7 +79,7 @@ fetch(`https://opensheet.elk.sh/${sheetName}/Customer`)
 
 
 // The link you provided
-const whatsappUrl = "https://wa.me/916387215755?text=Hello";
+const whatsappUrl = `https://wa.me/91${whastappNumber}?text=Hello`;
 
 // The API endpoint for QR generation
 const qrApi = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(whatsappUrl)}`;
