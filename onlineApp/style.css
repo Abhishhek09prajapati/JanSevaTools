@@ -1,0 +1,181 @@
+/* ==========================================
+   1. Core Reset & Base Styles
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #b30606 0%, #1a0000 100%); /* Premium deep red gradient */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 10px;
+}
+
+/* ==========================================
+   2. Main Layout Container
+   ========================================== */
+.mobileView {
+    width: 100%;
+    max-width: 480px; /* Perfect smartphone screen width emulation */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    gap: 16px;
+    padding: 10px;
+}
+
+/* ==========================================
+   3. Dynamically Appended App Cards
+   ========================================== */
+.earningapp {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* Modern blurred background */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s;
+}
+
+.earningapp:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.earningapp:active {
+    transform: scale(0.97);
+}
+
+.earningapp img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 18px; /* Slightly rounded app icon feel */
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    background-color: #fff; /* Protects PNGs transparency backgrounds */
+}
+
+.earningapp label {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+/* ==========================================
+   4. Modal/Popup View UI
+   ========================================== */
+#view {
+    display: none; /* Controlled by JavaScript toggles */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    
+    /* Centered popup block */
+    max-width: 400px;
+    height: fit-content;
+  
+    width: 90%;
+    flex-direction: column;
+    gap: 12px;
+    padding: 50px;
+    
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    animation: slideUp 0.3s cubic-bezier(0.1, 1, 0.1, 1);
+}
+
+/* Close Icon Button */
+#closebtn {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 1.1rem;
+    color: #777;
+    cursor: pointer;
+    padding: 4px;
+    transition: color 0.2s;
+    font-weight: 600;
+    color: black;
+   
+}
+
+#closebtn:hover {
+    color: #111;
+}
+
+/* Universal Action Buttons inside Popups */
+#view button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+#view button:active {
+    transform: scale(0.98);
+}
+
+/* Unique Primary Colors for Separate Action Triggers */
+#sharebtn {
+    background-color: #74a8f5;
+    color: #333333;
+}
+
+#sharebtn:hover {
+    background-color: #e4e6eb;
+}
+
+#accountbtn {
+    background: linear-gradient(90deg, #ff3333 0%, #d80808 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(216, 8, 8, 0.3);
+}
+
+#accountbtn:hover {
+    background: linear-gradient(90deg, #e62e2e 0%, #be0707 100%);
+}
+
+/* ==========================================
+   5. Animations
+   ========================================== */
+@keyframes slideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
