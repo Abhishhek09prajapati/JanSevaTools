@@ -120,7 +120,7 @@ document.getElementById("orderbtn").addEventListener('click', () => {
     document.getElementById("productitmes").style.display = "none";
 })
 
-document.getElementById("ordernow").addEventListener("click", async () => {
+document.getElementById("sharebtn").addEventListener("click", async () => {
 
     const element = document.getElementById("orderLists");
 
@@ -147,3 +147,12 @@ document.getElementById("ordernow").addEventListener("click", async () => {
     }, "image/png");
 
 });
+
+document.getElementById("closebtn").addEventListener("click",()=>{
+    document.getElementsByClassName("ordernowbtn")[0].style.display = "none"
+})
+
+
+document.getElementById("ordernow").addEventListener("click",()=>{
+    document.getElementsByClassName("ordernowbtn")[0].style.display = "flex"
+})

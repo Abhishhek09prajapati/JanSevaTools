@@ -240,7 +240,7 @@ footer {
 
 #orderLists {
     width: 100%;
-    background-color: aqua;
+    background-color: rgb(226, 230, 230);
     height: 500px;
 }
 
@@ -345,7 +345,33 @@ footer {
 
 #ordernow img {
     width: 100%;
-    max-width: 200px;
+    max-width: 150px;
     border-radius: 25%;
     bottom: 0px;
+    height: 30px;
+}
+.ordernowbtn{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    background-color: rgb(249, 246, 246);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.ordernowbtn img{
+    border-radius: 24%;
+}
+.ordernowbtn label{
+    margin: 10px;
+}
+.ordernowbtn input{
+    padding: 3px 8px;
+    border-radius: 10px;
+    margin: 4px;
 }
