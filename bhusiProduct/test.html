@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantity Counter</title>
+    <style>
+        /* Modern styling for the quantity component */
+        .counter-container {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            border: 1px solid #e2e8e2;
+            border-radius: 30px;
+            padding: 6px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            min-width: 140px;
+        }
+
+        .counter-btn {
+            background-color: #2c6e49; /* Smooth Organic Green */
+            color: #ffffff;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s, transform 0.1s;
+            user-select: none;
+        }
+
+        .counter-btn:hover {
+            background-color: #4c9a2a;
+        }
+
+        .counter-btn:active {
+            transform: scale(0.95);
+        }
+
+        .counter-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1f2421;
+            min-width: 40px;
+            text-align: center;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="counter-container">
+        <button id="minusvalue" class="counter-btn">-</button>
+        <span id="valueitems" class="counter-value">0</span>
+        <button id="addvalue" class="counter-btn">+</button>
+    </div>
+
+</body>
+<script>
+    let a = 0; // Starts at 0 items ordered
+    const valueDisplay = document.getElementById("valueitems");
+
+    document.getElementById("addvalue").addEventListener('click', () => {
+        // Pre-increment (++a) updates the value instantly before rendering
+        valueDisplay.innerText = ++a;
+    });
+
+    document.getElementById("minusvalue").addEventListener('click', () => {
+        // Prevent count from going below 0
+        if (a > 0) {
+            valueDisplay.innerText = --a;
+        }
+    });
+</script>
+</html>

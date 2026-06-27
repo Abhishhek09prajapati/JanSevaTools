@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amla Product | Diwash Food Order</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Diwash Foods</h2>
+            <i class="fa-solid fa-xmark" id="close-btn"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="#"><i class="fa-solid fa-leaf"></i> Our Amla Products</a></li>
+            <li><a href="#"><i class="fa-solid fa-basket-shopping"></i> Order Now</a></li>
+            <li><a href="#"><i class="fa-solid fa-phone"></i> Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <nav>
+            <i class="fa-solid fa-bars" id="menu-btn"></i>
+            <span class="logo">Diwash Foods</span>
+        </nav>
+
+        <!-- <div class="hero-section">
+            <div class="content-card">
+                <h1>Welcome To Diwash Food Order</h1>
+                <p class="tagline">Pure, healthy, and traditionally crafted amla products.</p>
+                <hr>
+                <p class="description">
+                    Discover the perfect blend of health and taste with our premium **Amla (Indian Gooseberry)
+                    products**. Rich in Vitamin C and antioxidants, we bring you this superfood in two delicious
+                    varieties: traditionally sweetened with **refined sugar** or naturally crafted with wholesome
+                    **brown sugar**. Perfect for daily immunity boosts!
+                </p>
+                <button class="btn">Explore Products</button>
+            </div>
+        </div> -->
+
+        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+        <div class="productLists">
+
+
+            <div id="productitmes">
+
+            </div>
+
+
+            <div id="orderLists">
+
+
+                <table id="ordertable">
+                    <thead>
+                        <tr>
+                            <th>Itmes</th>
+                            <th>quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+        <div id="ordernow">
+            <img src="./images/ordernnow.jpeg" alt="">
+        </div>
+
+
+        <div class="ordernowbtn">
+            <span id="closebtn" style="width: 90%;text-align: end;font-weight: 600;">&#10006;</span>
+            <div>
+                <label for="">Enter Your Shop Name</label>
+                <input id="shopname" type="text" placeholder="Enter Your Shop Name">
+            </div>
+            <div>
+                <label for="">Enter Your Number</label>
+                <input id="shopnumber" type="number" placeholder="Enter Your Number">
+            </div>
+            <div>
+                <label for="">Enter Your Address</label>
+                <input id="shopaddress" type="text" placeholder="Enter Your Address">
+            </div>
+            <img id="sharebtn" width="100px" src="./images/ordernnow.jpeg" alt="">
+        </div>
+
+
+
+
+        <div class="bottomBar">
+            <div id="homebtn">
+                <label for="">Home</label>
+            </div>
+            <div id="orderbtn">
+                <label for="">Order</label>
+            </div>
+        </div>
+
+
+
+
+
+
+        <footer>
+            <p>&copy; 2026 Diwash Food Order. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
