@@ -15,7 +15,7 @@ function serachnumber() {
             })
             .then(data => {
                 // Filters the rows matching the user's input number
-                var filterData = data.filter(v => v.number == searchValue.value);
+                var filterData = data.filter(v => v.number == searchValue.value );
 
                 // Pass the filtered array to the display function
                 showdiv(filterData);
@@ -34,9 +34,7 @@ showDiv.style.display = "none";
 
 function showdiv(k) {
     // Check if the filtered array contains any matching records
-    if (k.length > 0) {
-
-       
+    if (k.length > 0) {       
 
         if (k[0].status === "pending") {
             showDiv.style.display = "block";
