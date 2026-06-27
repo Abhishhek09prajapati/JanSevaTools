@@ -32,7 +32,7 @@ fetch(`https://opensheet.elk.sh/${sheet}/${sheenumber}`)
             div.className = "prointmes"
             div.innerHTML = `<img src="./images/${lo.image}" alt="">
         <label for="">${lo.name}</label>
-        <label for="">Rate : ${lo.rate}</label>
+        <label for="">Rate : ${lo.rate} per ${lo.weight}</label>
         <label for="">Mrp : ${lo.mrp}</label>
 
 
