@@ -122,46 +122,47 @@ document.getElementById("orderbtn").addEventListener('click', () => {
     document.getElementById("productitmes").style.display = "none";
 })
 
- 
-let shopname = document.getElementById("shopname") ;
-let shopnumber = document.getElementById("shopnumber") ;
-let shopaddress = document.getElementById("shopaddress") ;
+
+let shopname = document.getElementById("shopname");
+let shopnumber = document.getElementById("shopnumber");
+let shopaddress = document.getElementById("shopaddress");
 
 
 
 document.getElementById("sharebtn").addEventListener("click", async () => {
 
-    const element = document.getElementById("orderLists");
 
-    const canvas = await html2canvas(element);
-
-    canvas.toBlob(async (blob) => {
-
-        const file = new File([blob], "OrderList.png", {
-            type: "image/png"
-        });
-
-        if (navigator.canShare && navigator.canShare({ files: [file] })) {
-
-            await navigator.share({
-                title: "Order List",
-                text: "My Order List",
-                files: [file]
+    if (shopname.value && shopaddress.value && shopnumber.value) {
+        const element = document.getElementById("orderLists");
+        const canvas = await html2canvas(element);
+        canvas.toBlob(async (blob) => {
+            const file = new File([blob], "OrderList.png", {
+                type: "image/png"
             });
+            if (navigator.canShare && navigator.canShare({ files: [file] })) {
 
-        } else {
-            alert("Your browser doesn't support file sharing.");
-        }
+                await navigator.share({
+                    title: "Order List",
+                    text: `${shopname.value} to ${shopnumber.value} in Address ${shopaddress.value}`,
+                    files: [file]
+                });
 
-    }, "image/png");
+            } else {
+                alert("Your browser doesn't support file sharing.");
+            }
+        }, "image/png");
+    } else {
+        alert("Please Eter Full Details")
+    }
+
 
 });
 
-document.getElementById("closebtn").addEventListener("click",()=>{
+document.getElementById("closebtn").addEventListener("click", () => {
     document.getElementsByClassName("ordernowbtn")[0].style.display = "none"
 })
 
 
-document.getElementById("ordernow").addEventListener("click",()=>{
+document.getElementById("ordernow").addEventListener("click", () => {
     document.getElementsByClassName("ordernowbtn")[0].style.display = "flex"
 })
