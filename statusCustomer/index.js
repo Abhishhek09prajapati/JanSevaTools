@@ -35,17 +35,28 @@ showDiv.style.display = "none";
 function showdiv(k) {
     // Check if the filtered array contains any matching records
     if (k.length > 0) {
-        // Match found! Show the congratulations div
-        showDiv.style.display = "block";
-        document.getElementById("h1text").innerHTML = `congratulations`
-        document.getElementById("h1text").style.color = "Green"
-        document.getElementById("ptext").innerHTML = `App ki Medicine Shop pe aa chuka hai , Please Pickup`
+
+       
+
+        if (k[0].status === "pending") {
+            showDiv.style.display = "block";
+            document.getElementById("h1text").innerHTML = `Status Pending hai`
+            document.getElementById("h1text").style.color = "#054f77"
+            document.getElementById("ptext").innerHTML = `Abhi aap ka medicine aa raha hai`
+        } else {
+            showDiv.style.display = "block";
+            document.getElementById("h1text").innerHTML = `congratulations`
+            document.getElementById("h1text").style.color = "Green"
+            document.getElementById("ptext").innerHTML = `App ki Medicine Shop pe aa chuka hai , Please Pickup`
+        }
+       
+
     } else {
         // No match found! Keep the container hidden and alert the user
         showDiv.style.display = "block";
         document.getElementById("h1text").innerHTML = `Sorry`
         document.getElementById("h1text").style.color = "red"
-        document.getElementById("ptext").innerHTML = `aap ki abhi tak aaye nahi hai , please wait kare`
+        document.getElementById("ptext").innerHTML = `Appka Koi Bhi Order Nahi hai Meri Pass , ThanksYou`
 
     }
 
