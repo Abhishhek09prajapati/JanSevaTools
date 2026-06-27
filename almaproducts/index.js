@@ -21,8 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+var sheet = "1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA"
+var sheenumber = 'DiwashFoods'
 
-fetch(`https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/DiwashFoods`)
+fetch(`https://opensheet.elk.sh/${sheet}/${sheenumber}`)
     .then(res => res.json())
     .then(d => {
         d.forEach(lo => {
@@ -119,6 +121,13 @@ document.getElementById("orderbtn").addEventListener('click', () => {
     document.getElementById("orderLists").style.display = "block";
     document.getElementById("productitmes").style.display = "none";
 })
+
+ 
+let shopname = document.getElementById("shopname") ;
+let shopnumber = document.getElementById("shopnumber") ;
+let shopaddress = document.getElementById("shopaddress") ;
+
+
 
 document.getElementById("sharebtn").addEventListener("click", async () => {
 
