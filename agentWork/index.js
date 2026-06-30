@@ -25,12 +25,16 @@ function searchbtn() {
 }
 
 function profiles(d) {
-    document.getElementById("agentData").style.display = ""
-    document.getElementById("profilesImage").src = `./images/${d[0].image}`;
-    document.getElementById("profileName").innerText = `${d[0].name}`;
-    document.getElementById("profileAddress").innerText = `Address : ${d[0].address} `;
-    document.getElementById("profileWallat").innerText = `Your Money : ${d[0].money}`;
-    numberInput.value = ""
+    if (d.length > 0) {
+        document.getElementById("agentData").style.display = ""
+        document.getElementById("profilesImage").src = `./images/${d[0].image}`;
+        document.getElementById("profileName").innerText = `${d[0].name}`;
+        document.getElementById("profileAddress").innerText = `Address : ${d[0].address} `;
+        document.getElementById("profileWallat").innerText = `Your Money : ${d[0].money}`;
+        numberInput.value = ""
+    }else{
+        alert("Aap agent Nahi hai  , Admin se Contact Kare , 7607658761")
+    }
 }
 
 document.getElementById("withdrawBtn").addEventListener("click", () => {
