@@ -29,4 +29,4 @@ function moveSlide(direction) {
 // Auto slide change every 5 seconds
 setInterval(() => {
     moveSlide(1);
-}, 5000);
+}, 1500);

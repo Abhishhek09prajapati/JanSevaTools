@@ -274,7 +274,7 @@ footer {
 }
 
 .counter-container button {
-    background-color: green;
+    background-color: rgb(194, 200, 194);
     padding: 0px 5px;
     width: 20px;
     border-radius: 5px;
@@ -375,3 +375,4 @@ footer {
     border-radius: 10px;
     margin: 4px;
 }
+
