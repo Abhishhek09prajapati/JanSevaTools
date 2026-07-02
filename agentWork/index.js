@@ -50,20 +50,28 @@ document.getElementById("datahistory").addEventListener("click", () => {
     fetch(`https://opensheet.elk.sh/${sheet}/agentHistory`)
         .then(res => res.json())
         .then(d => {
-
-
             var historyfilter = po[0].history;
+            
+            // 1. Clear previous history data so it doesn't pile up on multiple clicks
+            historyData.innerHTML = ""; 
+
             d.forEach(t => {
                 var div = document.createElement("div");
                 div.className = "historyClass";
-                div.innerHTML = `${t[historyfilter]}`;
-                historyData.append(div)
-            })
+                
+                // 2. Corrected logic: Check if the value exists and isn't empty
+                if (t[historyfilter] && t[historyfilter].toString().trim().length > 0) {
+                    div.innerHTML = `${t[historyfilter]}`;
+                } else {
+                    div.innerHTML = `No history`; // Fixed the stray '}' typo here
+                }
+                
+                historyData.append(div);
+            });
 
             document.querySelector("#historydata").style.display = "block";
-            
-
         })
         .catch(error => console.error("Error fetching sheet data:", error));
-})
+});
+
 document.querySelector("#historydata").style.display = "none";
