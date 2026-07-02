@@ -1,0 +1,24 @@
+#maindiv1 {
+    width: 500px;
+    height: 300px;
+    /* border: 1px solid black; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* 2 columns */
+    margin: auto;
+    justify-content: space-evenly;
+    padding: 10px 0px ;
+
+}
+
+.divcata {
+    border: 1px solid black;
+    display: block;
+    width: 150px;
+    height: min-content;
+    padding: 5px;
+    text-align: center;
+}
+.imgcata{
+    width: 100%;
+    height: max-content;
+}
