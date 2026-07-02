@@ -1,5 +1,6 @@
-var numberInput = document.getElementById("numberInput")
-var sheet = "1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA"
+var numberInput = document.getElementById("numberInput");
+var sheet = "1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA";
+var historyData = document.getElementById("historydata");
 
 
 let po = null;
@@ -15,12 +16,10 @@ function searchbtn() {
                 var ud = d.filter(dv => dv.number == numberInput.value)
                 po = ud;
                 profiles(ud)
-
-
             })
             .catch(error => console.error("Error fetching sheet data:", error));
     } else {
-        alert("nahi hai")
+        alert("Please Some Data Enter or Check Your Number");
     }
 }
 
@@ -32,9 +31,10 @@ function profiles(d) {
         document.getElementById("profileAddress").innerText = `Address : ${d[0].address} `;
         document.getElementById("profileWallat").innerText = `Your Money : ${d[0].money}`;
         numberInput.value = ""
-    }else{
+    } else {
         alert("Aap agent Nahi hai  , Admin se Contact Kare , 7607658761")
     }
+
 }
 
 document.getElementById("withdrawBtn").addEventListener("click", () => {
@@ -45,3 +45,25 @@ document.getElementById("withdrawBtn").addEventListener("click", () => {
         "_blank"
     );
 });
+
+document.getElementById("datahistory").addEventListener("click", () => {
+    fetch(`https://opensheet.elk.sh/${sheet}/agentHistory`)
+        .then(res => res.json())
+        .then(d => {
+
+
+            var historyfilter = po[0].history;
+            d.forEach(t => {
+                var div = document.createElement("div");
+                div.className = "historyClass";
+                div.innerHTML = `${t[historyfilter]}`;
+                historyData.append(div)
+            })
+
+            document.querySelector("#historydata").style.display = "block";
+            
+
+        })
+        .catch(error => console.error("Error fetching sheet data:", error));
+})
+document.querySelector("#historydata").style.display = "none";
