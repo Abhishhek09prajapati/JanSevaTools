@@ -68,10 +68,8 @@ document.getElementById("datahistory").addEventListener("click", () => {
                 
                 historyData.append(div);
             });
-
             document.querySelector("#historydata").style.display = "block";
         })
         .catch(error => console.error("Error fetching sheet data:", error));
 });
-
 document.querySelector("#historydata").style.display = "none";
