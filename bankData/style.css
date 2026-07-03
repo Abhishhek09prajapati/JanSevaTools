@@ -1,0 +1,199 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main Container */
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Section */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.search-container label {
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-container input:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+}
+
+.search-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 4px;
+}
+
+.search-container button:hover {
+    background-color: #2b6cb0;
+}
+
+.search-container button:active {
+    background-color: #2c5282;
+}
+
+/* User Info Display Area */
+.user-info {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    min-height: 60px;
+    /* Keeps it clean if empty initially */
+}
+
+/* User History Section */
+#userHistory {
+
+    border-top: 2px dashed #e2e8f0;
+    padding-top: 20px;
+}
+
+/* Utility classes you can use when generating elements with JavaScript */
+.data-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.data-row:last-child {
+    border-bottom: none;
+}
+
+.error-message {
+    color: #e53e3e;
+    font-weight: 500;
+    text-align: center;
+}
+
+.user-history {
+    width: 100%;
+    height: 300px;
+    background-color: #c0d4e8;
+    border: 1px solid #e2e8f0;
+    color: #333;
+    overflow: auto;
+}
+
+/* History Section Styling */
+#userHistory {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px dashed #e2e8f0;
+}
+
+#userHistory h2 {
+    color: #2d3748;
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Table Container for Responsiveness */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Base Table Styling */
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+    background-color: #ffffff;
+}
+
+/* Header Styling */
+.history-table th {
+    background-color: #f8fafc;
+    color: #4a5568;
+    font-weight: 600;
+    padding: 12px 16px;
+    border-bottom: 2px solid #e2e8f0;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+/* Data Row Styling */
+.history-table td {
+    padding: 12px 16px;
+    color: #4a5568;
+    border-bottom: 1px solid #edf2f7;
+    white-space: nowrap;
+    /* Prevents awkward text wrapping */
+}
+
+/* Zebra Striping & Hover State */
+.history-table tbody tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+
+.history-table tbody tr:hover {
+    background-color: #f1f5f9;
+    transition: background-color 0.15s ease;
+}
+
+/* Alignment Rules for Financial Data */
+.history-table th:nth-child(3),
+.history-table td:nth-child(3) {
+    text-align: right;
+    /* Right-aligns Amount columns */
+    font-weight: 600;
+}
+
+.history-table td:nth-child(1) {
+    font-family: monospace;
+    /* Makes Transaction IDs highly legible */
+    color: #718096;
+}
