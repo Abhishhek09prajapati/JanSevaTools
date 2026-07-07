@@ -9,11 +9,10 @@
 body {
     background-color: #f4f7f6;
     color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* display: flex; */
     min-height: 100vh;
     padding: 20px;
+    
 }
 
 /* Main Container */
@@ -21,6 +20,7 @@ body {
     background-color: #ffffff;
     width: 100%;
     max-width: 600px;
+    margin: auto;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);

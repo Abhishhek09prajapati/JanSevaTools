@@ -27,12 +27,7 @@ document.getElementById("searchBtn").addEventListener("click", () => {
 document.querySelector("#user-info").addEventListener("click", (event) => {
     // Check if the clicked element is the View History button
     if (event.target && event.target.id === "viewHistoryBtn") {
-
-
         showUserHistory();
-
-
-
         // You can call your history loading function here if needed
     }
 
@@ -62,8 +57,10 @@ function getUserData(userId) {
             // Render updated template (Fixed duplicate IDs)
             document.getElementById("user-info").innerHTML = `
                 <h2>User Information</h2>
-                <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
-                    <img width="100px" height="100px" src="./images/bike.jpeg" alt="User Avatar" id="userAvatar" style="border-radius: 50%; object-fit: cover;">
+                <div
+                    style="width: 100%; display: flex; justify-content: center; align-items: center; margin-bottom: 15px;position: relative;">
+                    <img width="100px" height="100px" src="./images/bike.jpeg" alt="User Avatar" id="userAvatar"
+                        style="border-radius: 50%; object-fit: cover;position: absolute; top: 0; right: 0%">
                 </div>
                 <p><strong>Name:</strong> <span>${user.name || "N/A"}</span></p>
                 <p><strong>Phone Number:</strong> <span>${user.phone || "N/A"}</span></p>
@@ -73,7 +70,7 @@ function getUserData(userId) {
                 <p><strong>Loan Number:</strong> <span>${user.loanNumber || "N/A"}</span></p>
                 <p><strong>Loan Amount:</strong> <span>${user.loanAmount || "N/A"}</span></p>
                 <p><strong>RD Amount:</strong> <span>${user.rdAmount || "N/A"}</span></p>
-                <p><strong>FD Amount:</strong> <span>${user.fdAmount || "N/A"}</span></p>                
+                <p><strong>FD Amount:</strong> <span>${user.fdAmount || "N/A"}</span></p>
                 <div class="button-container" style="display: flex; gap: 10px; margin-top: 15px;">
                     <button id="viewHistoryBtn">View History</button>
                     <button id="ShareButton">WhatsApp Message</button>
@@ -106,6 +103,5 @@ function showUserHistory() {
                 historyTableBody.appendChild(row);
             })
         });
-
     document.querySelector("#userHistory").style.display = "";
 }
