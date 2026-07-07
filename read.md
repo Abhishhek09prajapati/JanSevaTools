@@ -37,6 +37,16 @@ https://www.jansevakendratools.in/
 
 &#9776;   menu ka code
 &#10006; close ka code
+| Icon        | HTML Code   |
+| ----------- | ----------- |
+| 📋 Copy     | `&#128203;` |
+| 📤 Share    | `&#128228;` |
+| 🔗 Link     | `&#128279;` |
+| 📥 Download | `&#128229;` |
+| ☎ Call      | `&#9742;`   |
+| 💬 WhatsApp | `&#128172;` |
+| ✉ Email     | `&#9993;`   |
+
 
 
 

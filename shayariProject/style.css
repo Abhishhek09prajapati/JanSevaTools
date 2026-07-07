@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #723737;
+    position: relative;
+    height: 100vh;
+}
+
+nav {
+    height: 80px;
+    background: #71e809;
+    border: 2px solid #71e809;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav-links {
+    /* background: #d3b704; */
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 0px 20px;
+    /* display: none; */
+}
+
+.nav-links ul {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+
+}
+
+.nav-links ul li a:hover {
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    background: #e83609;
+    position: absolute;
+    bottom: 0;
+
+}
+
+.sliderBar {
+    width: 50%;
+    height: 100vh;
+    border: 2px solid #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #d40a2f;
+    z-index: 1;
+}
+
+#navLinksitems {
+    display: none;
+}
+
+#menuBar {
+    font-size: 30px;
+}
+
+.shayariData {
+    width: 500px;
+    height: 550px;
+    border: 2px solid #000;
+    background: #f5f5f5;
+    margin: 0 auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 10px;
+    
+}
+
+.shaDiv {
+    width: 90%;
+    height: 150px;
+    padding: 5px 10px;
+    background-color: rgb(235, 95, 95);
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.searchdata {
+    width: 100%;
+    height: max-content;
+    padding: 5px 0px;
+    border: 1px solid black;
+}
+.shayariOtion{
+    width: 100%;
+    height: 50px;
+}
+.shayariOtion option{
+    background-color: pink;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+
+/* ==========================================================================
+   2. Tablet Devices
+   Applies to screens 768px wide and larger (e.g., iPads, tablets)
+   ========================================================================== */
+@media screen and (min-width: 768px) {
+    body {
+        background: #e11c1c;
+    }
+
+    #menuBar {
+        display: none;
+    }
+
+    #navLinksitems {
+        display: block;
+    }
+}
+
+/* ==========================================================================
+   3. Laptop / Small Desktop Devices
+   Applies to screens 1024px wide and larger
+   ========================================================================== */
+@media screen and (min-width: 1024px) {
+    body {
+        background: #0c3f02;
+    }
+
+    #menuBar {
+        display: none;
+    }
+
+    #navLinksitems {
+        display: block;
+    }
+}
+
+/* ==========================================================================
+   4. Large Computer Screens / Desktops
+   Applies to screens 1200px wide and larger
+   ========================================================================== */
+@media screen and (min-width: 1200px) {
+    body {
+        background: #596404;
+    }
+
+    #menuBar {
+        display: none;
+    }
+
+    #navLinksitems {
+        display: block;
+    }
+}
