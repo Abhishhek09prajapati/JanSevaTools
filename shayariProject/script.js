@@ -1,80 +1,119 @@
-document.getElementById("sliderBar").style.display = "none";
-var shyaridiv = document.getElementById("shayariData")
-var m1 = 0;
-const sheet = "1kO3qRaQB5bzuv8WF5H_yHMVJfjwl9dLiCuG1jb_y39c";
+// ==========================================
+// 1. Global Configuration & DOM Elements
+// ==========================================
+const sheetId = "1kO3qRaQB5bzuv8WF5H_yHMVJfjwl9dLiCuG1jb_y39c";
+const apiURL = `https://opensheet.elk.sh/${sheetId}/shayariAbhishek`;
 
+const menuBar = document.getElementById("menuBar");
+const navLinksitems = document.getElementById("navLinksitems");
+const shayariOption = document.getElementById("shayariOtion");
+const shayariDiv = document.getElementById("shayariData");
 
-document.getElementById("menuBar").addEventListener("click", (e) => {
+let globalShayariData = []; // बार-बार fetch करने से बचने के लिए डेटा यहाँ स्टोर होगा
+let isMenuOpen = false;
 
-    if (m1 == 0) {
-        document.getElementById("sliderBar").style.display = "block";
-        e.target.innerHTML = "&#10006;"
-        m1 = 1;
+// ==========================================
+// 2. Responsive Mobile Navbar Menu Toggle
+// ==========================================
+menuBar.addEventListener("click", () => {
+    if (!isMenuOpen) {
+        navLinksitems.classList.add("active");
+        menuBar.innerHTML = "&#10006;"; // Close (X) icon
+        isMenuOpen = true;
     } else {
-        document.getElementById("sliderBar").style.display = "none";
-        e.target.innerHTML = "&#9776;"
-        m1 = 0;
+        navLinksitems.classList.remove("active");
+        menuBar.innerHTML = "&#9776;"; // Hamburger menu icon
+        isMenuOpen = false;
     }
 });
-var slect = document.getElementById("shayariOtion");
 
-fetch(`https://opensheet.elk.sh/${sheet}/shayariAbhishek`)
-    .then(response => response.json())
+// ==========================================
+// 3. Fetch Data Once & Initialize Dropdown
+// ==========================================
+fetch(apiURL)
+    .then(response => {
+        if (!response.ok) throw new Error("Network response was not ok");
+        return response.json();
+    })
     .then(data => {
+        globalShayariData = data; // डेटा सुरक्षित रख लिया
 
-
-        // 1. Extract all categories and filter out empty ones
+        // Google Sheet से सारी कैटेगरीज निकालना और खाली फ़ील्ड्स को हटाना
         const allCategories = data.map(d => d.catagories).filter(Boolean);
 
-
-
-        // 2. Use 'Set' to remove duplicate category names
+        // Duplicate कैटेगरीज हटाना
         const uniqueCategories = [...new Set(allCategories)];
 
-        // 3. Clear existing options first (except maybe a placeholder)
-        slect.innerHTML = '<option value="">Select a Category</option>';
+        // ड्रॉपडाउन में पहला ऑप्शन सेट करना
+        shayariOption.innerHTML = '<option value="">--- चुनें शायरी कैटेगरी ---</option>';
 
-        // 4. Loop through unique categories to build the dropdown options
+        // लूप चलाकर ड्रॉपडाउन में कैटेगरीज जोड़ना
         uniqueCategories.forEach(category => {
-            var option = document.createElement("option");
-            option.value = category;       // Good practice: sets the backend value
-            option.textContent = category; // Sets the visible text
-            slect.appendChild(option);
+            const option = document.createElement("option");
+            option.value = category;
+            option.textContent = category;
+            shayariOption.appendChild(option);
         });
     })
-    .catch(error => console.error("Error updating dropdown:", error));
+    .catch(error => console.error("Error fetching or parsing data:", error));
 
-slect.addEventListener("change", (e) => {
-    shayarifetch(e.target.value)
+// ==========================================
+// 4. Dropdown Change Event Listener
+// ==========================================
+shayariOption.addEventListener("change", (e) => {
+    const selectedCategory = e.target.value;
+    if (selectedCategory) {
+        renderShayari(selectedCategory);
+    } else {
+        shayariDiv.innerHTML = ""; // अगर कोई कैटेगरी सिलेक्ट न हो तो स्क्रीन क्लियर रखें
+    }
+});
 
-})
+// ==========================================
+// 5. Render Selected Shayari to the Screen
+// ==========================================
+function renderShayari(categoryName) {
+    shayariDiv.innerHTML = ""; // पुराना डेटा साफ़ करें
 
+    // सिलेक्ट की गई कैटेगरी में से सिर्फ वही रो फ़िल्टर करें जो खाली नहीं हैं
+    const filteredData = globalShayariData.filter(
+        item => item[categoryName] && item[categoryName].trim() !== ""
+    );
 
-function shayarifetch(m) {
-    fetch(`https://opensheet.elk.sh/${sheet}/shayariAbhishek`)
-        .then(response => response.json())
-        .then(data => {
-            shyaridiv.innerHTML = "";   
+    if (filteredData.length === 0) {
+        shayariDiv.innerHTML = "<p style='text-align:center; width:100%; color:#64748b;'>इस कैटेगरी में अभी कोई शायरी उपलब्ध नहीं है।</p>";
+        return;
+    }
 
-            // 1. Filter out rows where the column 'm' is empty, null, or undefined
-            const validData = data.filter(k => k[m] && k[m].trim() !== "");
+    // स्क्रीन पर शायरी के कार्ड्स बनाना
+    filteredData.forEach((item, index) => {
+        const text = item[categoryName];
+        const card = document.createElement("div");
+        card.className = "shaDiv"; // यह क्लास आपके CSS से मैच करेगी
 
-            // 2. Loop through only the valid, non-empty data
-            validData.forEach((k, i) => {
-                var div = document.createElement("div");
-                div.className = "shaDiv";
-                
-                // i + 1 keeps the numbering clean (1, 2, 3...) without gaps
-                div.innerHTML = `
-                    <p>${i + 1}. ${k[m]}</p>
-                    <div class="shareBtn">
-                        <img src="" alt="shareBtn" >
-                        <img src="" alt="copyBtn">
-                    </div>
-                `;
-                shyaridiv.append(div);
-            });
-        })
-        .catch(error => console.error("Error:", error));
+        // शायरी और आधुनिक SVG कॉपी/शेयर बटन्स
+        card.innerHTML = `
+            <p>${index + 1}. ${text}</p>
+            <div class="shareBtn" style="display: flex; justify-content: center; gap: 20px; margin-top: 15px;">
+                <button onclick="copyToClipboard(\`${text.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`)" title="Copy Shayari" style="background:none; border:none; cursor:pointer; font-size:1.2rem;">📋 Copy</button>
+                <button onclick="shareToWhatsApp(\`${text.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`)" title="Share on WhatsApp" style="background:none; border:none; cursor:pointer; font-size:1.2rem;">🟢 WhatsApp</button>
+            </div>
+        `;
+        shayariDiv.appendChild(card);
+    });
 }
 
+// ==========================================
+// 6. Utility Functions (Copy & Share)
+// ==========================================
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text)
+        .then(() => alert("शायरी कॉपी हो गई है!"))
+        .catch(err => console.error("Copy failed: ", err));
+}
+
+function shareToWhatsApp(text) {
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://api.whatsapp.com/send?text=${encodedText}`;
+    window.open(whatsappUrl, '_blank');
+}
