@@ -195,6 +195,18 @@ input:focus, textarea:focus {
     font-size: 25px;
 
 }
+.loading{
+    width: 300px;
+    height: max-content;
+    background-color: rgb(181, 241, 181);
+    border: 1px solid black;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+}
 
 /* Mobile Responsiveness Rules */
 @media (max-width: 480px) {

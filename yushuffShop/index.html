@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="mobileView">
+
+        <h2>Customer Ledger</h2>
+
+        <div class="customerView">
+
+            <label>Enter Name or Mobile Number</label>
+
+            <div class="search-box">
+                <input id="serachdata" type="text" placeholder="Search customer...">
+                <button id="searchnumber">Search</button>
+            </div>
+
+        </div>
+
+        <div id="ledager" class="ledager">
+
+            <div class="customerView1">
+
+                <div class="customer-info">
+                    <h3 id="namedata"></h3>
+                    <p id="numberdata"></p>
+                </div>
+
+                <button class="showleadager">
+                    View Ledger
+                </button>
+                <button class="showleadager">
+                    Add Amount
+                </button>
+
+            </div>
+
+            <div id="leagerView">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Date</th>
+                            <th>Particular</th>
+                            <th>Amount</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="ledagrValue">
+
+                        <tr>
+                            <td>1</td>
+                            <td>09-07-2026</td>
+                            <td>Medicine</td>
+                            <td>₹500</td>
+                            <td>₹5000</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="addentery" id="addentery">
+        <!-- बंद करने वाले क्रॉस आइकॉन पर 'close-btn' क्लास दी गई है -->
+        <span class="close-btn">&#10006;</span>
+
+        <div class="form-group">
+            <label for="billNumber">Bill Number</label>
+            <input type="text" id="billNumber" placeholder="उदा. BILL-2024-01">
+        </div>
+        <div>
+            <input type="radio" name="v" value="DR" id="dooo"> DR <br>
+            <input type="radio" name="v" value="CR" id="cooo"> CR
+        </div><br>
+
+        <div class="form-group">
+            <label for="enterAmount">Enter Amount (₹)</label>
+            <!-- type="number" किया ताकि यूजर सिर्फ पैसे/नंबर ही लिख सके -->
+            <input type="number" id="enterAmount" placeholder="0.00" min="0" step="0.01">
+        </div>
+
+        <button type="button" id="sendData">Add Ledger</button>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>

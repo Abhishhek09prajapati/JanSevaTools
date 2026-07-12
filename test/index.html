@@ -8,13 +8,40 @@
 </head>
 
 <body>
+    <button id="payBtn">Pay ₹100</button>
 
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </body>
 <script>
-    fetch("https://jsonplaceholder.typicode.com/users")
-        .then(res => res.json())
-        .then(data => console.log(data[0]));
+    document.getElementById("payBtn").addEventListener("click", () => {
 
+        var options = {
+            key: "YOUR_KEY_ID",   // Replace with your Razorpay Key ID
+            amount: 10000,        // Amount in paise (₹100 = 10000 paise)
+            currency: "INR",
+            name: "My Company",
+            description: "Mobile Recharge",
+            image: "logo.png",
+
+            handler: function (response) {
+                alert("Payment Successful");
+                console.log(response.razorpay_payment_id);
+            },
+
+            prefill: {
+                name: "Abhishek",
+                email: "abc@gmail.com",
+                contact: "9876543210"
+            },
+
+            theme: {
+                color: "#3399cc"
+            }
+        };
+
+        var rzp = new Razorpay(options);
+        rzp.open();
+    });
 </script>
 
 </html>

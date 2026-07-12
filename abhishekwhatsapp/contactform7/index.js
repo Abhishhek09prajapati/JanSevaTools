@@ -1,9 +1,9 @@
-
+var loading = document.getElementById("loading")
+loading.style.display = "none"
 
 document.getElementById("contactForm").addEventListener("submit", async (e) => {
-
     e.preventDefault();
-
+    loading.style.display = "flex"
     const data = {
         name: document.getElementById("name").value,
         email: document.getElementById("email").value,
@@ -24,7 +24,8 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
             }
         );
 
-        alert("Data Send successfully");
+        
+        loading.style.display = "none"
         document.getElementById("contactForm").reset();
 
     } catch (error) {

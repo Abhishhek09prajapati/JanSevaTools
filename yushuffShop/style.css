@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f3f8ff;
+    padding: 20px;
+    position: relative;
+}
+
+.mobileView {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
+    padding: 20px;
+}
+
+.mobileView h2 {
+    text-align: center;
+    color: #1565c0;
+    margin-bottom: 20px;
+}
+
+.customerView label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #1565c0;
+}
+
+.search-box button {
+    padding: 12px 25px;
+    border: none;
+    background: #1565c0;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background: #0d47a1;
+}
+
+.ledager {
+    margin-top: 25px;
+}
+
+.customerView1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.customer-info h3 {
+    color: #1565c0;
+}
+
+.customer-info p {
+    color: #555;
+    margin-top: 5px;
+}
+
+.showleadager {
+    padding: 10px 20px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.showleadager:hover {
+    background: #1b5e20;
+}
+
+#leagerView {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #1565c0;
+    color: white;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+tbody tr:hover {
+    background: #e8f4ff;
+}
+
+.addentery {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 3rem auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Close (X) Button */
+.addentery .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.2rem;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.addentery .close-btn:hover {
+    color: #ef4444;
+    /* होवर करने पर रेड होगा */
+}
+
+/* ==========================================
+           2. Form Fields (Inputs & Labels)
+           ========================================== */
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #475569;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    color: #1e293b;
+    transition: all 0.2s ease;
+    background-color: #f8fafc;
+}
+
+/* Input Focus State */
+.form-group input:focus {
+    border-color: #de6262;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(222, 98, 98, 0.15);
+}
+
+/* ==========================================
+           3. Action Button
+           ========================================== */
+.addentery button {
+    width: 100%;
+    padding: 0.85rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #de6262 0%, #ffb88c 100%);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(222, 98, 98, 0.2);
+    margin-top: 0.5rem;
+}
+
+.addentery button:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);
+}
+
+.addentery button:active {
+    transform: translateY(1px);
+}
+
+/* Tablet */
+
+@media(max-width:768px) {
+
+    .customerView1 {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:480px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .customer-info h3 {
+        font-size: 18px;
+    }
+
+}
