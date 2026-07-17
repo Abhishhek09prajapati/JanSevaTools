@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <title>Exam Question Paper Maker | Create MCQ & Descriptive Papers | JanSeva Kendra Tools</title>
+    <meta name="description" content="Free Exam Question Paper Maker with MCQ and descriptive questions. Create professional question papers in Hindi & English. Download PDF & Print. Used by 10,000+ teachers.">
+    <meta name="keywords" content="exam paper maker, question paper generator, mcq paper maker, descriptive paper, hindi exam paper, online paper creator, teacher tool, smartcsctools">
+    <meta name="author" content="JanSeva Kendra Tools">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="revisit-after" content="1 day">    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.jansevakendratools.in/exam-paper-maker/index.html">
+    <meta property="og:title" content="Exam Question Paper Maker - Free Online Tool">
+    <meta property="og:description" content="Create professional exam papers with MCQ & descriptive questions. Hindi/English support. Free PDF download.">
+    <meta property="og:image" content="https://www.jansevakendratools.in/images/exam-paper-preview.jpg">
+    <meta property="og:site_name" content="JanSeva Kendra Tools">    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exam Question Paper Maker | JanSeva Kendra Tools">
+    <meta name="twitter:description" content="Free exam paper generator with MCQ and descriptive questions.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.jansevakendratools.in/exam-paper-maker">
+    
+    <!-- Schema Markup for Tool -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Exam Question Paper Maker",
+        "alternateName": "प्रश्न पत्र निर्माता",
+        "description": "Free online tool to create professional exam question papers with MCQ and descriptive questions. Supports Hindi and English languages.",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "All",
+        "url": "https://www.jansevakendratools.in/exam-paper-maker",
+        "provider": {
+            "@type": "Organization",
+            "name": "JanSeva Kendra Tools",
+            "url": "https://www.jansevakendratools.in"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+        },
+        "featureList": [
+            "MCQ Questions",
+            "Descriptive Questions",
+            "Hindi & English Support",
+            "PDF Download",
+            "Print Option",
+            "Hide Instructions",
+            "Font Size Adjustment"
+        ],
+        "inLanguage": ["en", "hi"],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "2547"
+        }
+    }
+    </script>
+    
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How to create an exam question paper?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Simply fill the exam details, add MCQ and descriptive questions, adjust font size if needed, then download as PDF or print directly."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this exam paper maker free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, it's completely free with no hidden charges. You can create unlimited question papers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I create papers in Hindi?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, you can switch between English and Hindi languages using the language toggle button."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I download the question paper as PDF?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, click the PDF button to download your question paper as a professionally formatted PDF file."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
+   <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100">
+    
+    <!-- Back to Home Button -->
+    <a href="https://smartcsctools.com" class="back-home-btn no-print">
+        <i class="fas fa-home"></i>
+        <span>Back to Home</span>
+    </a>
+    
+    <!-- Header - No Print -->
+    <div class="bg-white shadow-sm sticky top-0 z-50 no-print">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex flex-wrap justify-between items-center gap-3">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-file-alt text-2xl text-orange-600"></i>
+                    <div>
+                        <h1 class="text-lg font-bold text-gray-800">Exam Question Paper Maker</h1>
+                        <p class="text-xs text-gray-500">MCQ + Descriptive | Hindi + English | Free</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <div class="language-switch">
+                        <div class="lang-btn active" data-lang="en" onclick="switchLanguage('en')">English</div>
+                        <div class="lang-btn" data-lang="hi" onclick="switchLanguage('hi')">हिंदी</div>
+                    </div>
+                    <div class="number-toggle">
+                        <div class="num-btn active" data-num="normal" onclick="switchNumberFormat('normal')">1,2,3</div>
+                        <div class="num-btn" data-num="hindi" onclick="switchNumberFormat('hindi')">१,२,३</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex flex-col xl:flex-row gap-6">
+            
+            <!-- Left Panel - Form -->
+            <div class="xl:w-2/5 no-print">
+                <div class="bg-white rounded-xl shadow-lg p-5 sticky top-20 max-h-[90vh] overflow-y-auto">
+                    <h2 id="form-title" class="text-xl font-bold mb-4 text-gray-800">Exam Details</h2>
+                    
+                    <!-- Basic Info -->
+                    <div class="grid grid-cols-2 gap-3 mb-4">
+                        <div class="col-span-2">
+                            <label id="label-institution" class="block text-sm font-medium mb-1">Institution Name</label>
+                            <input type="text" id="institution" class="w-full p-2 border rounded-lg text-sm" placeholder="Smart Public School" value="Smart Public School">
+                        </div>
+                        <div>
+                            <label id="label-exam-title" class="block text-sm font-medium mb-1">Exam Title</label>
+                            <input type="text" id="exam-title" class="w-full p-2 border rounded-lg text-sm" placeholder="Annual Examination" value="Annual Examination">
+                        </div>
+                        <div>
+                            <label id="label-class" class="block text-sm font-medium mb-1">Class</label>
+                            <input type="text" id="class" class="w-full p-2 border rounded-lg text-sm" placeholder="10th" value="10th">
+                        </div>
+                        <div>
+                            <label id="label-subject" class="block text-sm font-medium mb-1">Subject</label>
+                            <input type="text" id="subject" class="w-full p-2 border rounded-lg text-sm" placeholder="Mathematics" value="Mathematics">
+                        </div>
+                        <div>
+                            <label id="label-time" class="block text-sm font-medium mb-1">Time</label>
+                            <input type="text" id="time" class="w-full p-2 border rounded-lg text-sm" placeholder="3 Hours" value="3 Hours">
+                        </div>
+                        <div>
+                            <label id="label-marks" class="block text-sm font-medium mb-1">Total Marks</label>
+                            <input type="text" id="marks" class="w-full p-2 border rounded-lg text-sm" placeholder="100" value="100">
+                        </div>
+                    </div>
+                    
+                    <!-- Hide Instructions Toggle -->
+                    <div class="bg-gray-50 p-3 rounded-lg mb-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="font-semibold text-sm">General Instructions</h3>
+                                <p class="text-xs text-gray-500">Show/Hide instructions in preview</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="hide-instructions" onchange="toggleInstructions()">
+                                <span class="toggle-slider"></span>
+                                <span class="text-sm" id="instructions-toggle-label">Hide</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Font Size Controls -->
+                    <div class="bg-gray-50 p-3 rounded-lg mb-4">
+                        <h3 class="font-semibold text-sm mb-2">Font Size Adjustment</h3>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="text-xs text-gray-600">Header Font (px)</label>
+                                <input type="number" id="header-font" class="w-full p-1.5 border rounded-lg text-sm" value="20" min="14" max="28" step="1">
+                            </div>
+                            <div>
+                                <label class="text-xs text-gray-600">Question Font (px)</label>
+                                <input type="number" id="question-font" class="w-full p-1.5 border rounded-lg text-sm" value="12" min="10" max="18" step="1">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- MCQ Section -->
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="font-semibold text-gray-700"><i class="fas fa-list-ul text-orange-500 mr-2"></i> <span id="mcq-title">MCQ Questions</span></h3>
+                            <button onclick="addMCQ()" class="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-sm hover:bg-orange-600">
+                                <i class="fas fa-plus mr-1"></i> <span id="add-mcq-btn">Add MCQ</span>
+                            </button>
+                        </div>
+                        <div id="mcq-list" class="space-y-3 max-h-80 overflow-y-auto pr-1"></div>
+                    </div>
+                    
+                    <!-- Descriptive Section -->
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="font-semibold text-gray-700"><i class="fas fa-paragraph text-orange-500 mr-2"></i> <span id="descriptive-title">Descriptive Questions</span></h3>
+                            <button onclick="addDescriptive()" class="bg-orange-500 text-white px-3 py-1.5 rounded-lg text-sm hover:bg-orange-600">
+                                <i class="fas fa-plus mr-1"></i> <span id="add-desc-btn">Add Question</span>
+                            </button>
+                        </div>
+                        <div id="descriptive-list" class="space-y-3 max-h-80 overflow-y-auto pr-1"></div>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="flex gap-3 mt-4">
+                        <button onclick="printPaper()" class="flex-1 bg-blue-600 text-white py-2.5 rounded-lg hover:bg-blue-700 text-sm">
+                            <i class="fas fa-print mr-2"></i> <span id="print-btn">Print</span>
+                        </button>
+                        <button onclick="generatePDF()" class="flex-1 bg-green-600 text-white py-2.5 rounded-lg hover:bg-green-700 text-sm">
+                            <i class="fas fa-file-pdf mr-2"></i> <span id="download-pdf">PDF</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Panel - A4 Live Preview -->
+            <div class="xl:w-3/5">
+                <div class="a4-preview no-print">
+                    <div class="flex justify-between items-center mb-3 px-2">
+                        <span class="text-sm text-gray-600"><i class="fas fa-eye mr-1"></i> A4 Layout Preview</span>
+                        <span class="text-xs text-gray-400">↓ Scroll to view</span>
+                    </div>
+                    <div class="paper-container rounded-lg overflow-auto max-h-[85vh]">
+                        <div id="paper-content" class="a4-content"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- How to Use Section - SEO Optimized -->
+        <div class="mt-10 no-print">
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-graduation-cap text-orange-500 mr-3"></i>
+                    How to Use Exam Question Paper Maker?
+                </h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl font-bold text-orange-600">1</span>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Fill Exam Details</h3>
+                        <p class="text-gray-600 text-sm">Enter institution name, exam title, class, subject, time and total marks.</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl font-bold text-orange-600">2</span>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Add Questions</h3>
+                        <p class="text-gray-600 text-sm">Add MCQ questions with options and descriptive questions with marks.</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl font-bold text-orange-600">3</span>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Download or Print</h3>
+                        <p class="text-gray-600 text-sm">Click PDF button to download or Print button to take printout.</p>
+                    </div>
+                </div>
+                
+                <!-- Additional Tips -->
+                <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <h3 class="font-semibold text-blue-800 mb-2"><i class="fas fa-lightbulb mr-2"></i> Pro Tips:</h3>
+                    <ul class="list-disc list-inside text-sm text-blue-700 space-y-1">
+                        <li>Use <strong>Hide Instructions</strong> toggle to remove general instructions from paper</li>
+                        <li>Adjust <strong>Font Size</strong> to fit more questions on single page</li>
+                        <li>Switch to <strong>Hindi language</strong> for creating papers in Hindi medium</li>
+                        <li>Use <strong>Hindi Numbers</strong> option for Devanagari number format</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Section - SEO Optimized with Schema -->
+        <div class="mt-6 mb-10 no-print">
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-question-circle text-orange-500 mr-3"></i>
+                    Frequently Asked Questions (FAQs)
+                </h2>
+                
+                <div class="space-y-2" itemscope itemtype="https://schema.org/FAQPage">
+                    <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="faq-question flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                            <h3 class="font-semibold text-gray-800" itemprop="name">Is this exam paper maker really free?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                        </div>
+                        <div class="faq-answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <div itemprop="text">
+                                <p>Yes, this exam question paper maker is completely free! No registration, no hidden charges, no credit card required. You can create unlimited question papers for any subject and class.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="faq-question flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                            <h3 class="font-semibold text-gray-800" itemprop="name">Can I create question papers in Hindi language?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                        </div>
+                        <div class="faq-answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <div itemprop="text">
+                                <p>Absolutely! You can switch between English and Hindi languages using the language toggle button. All labels, instructions, and section headings will be translated automatically. Your question text remains as you type.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="faq-question flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                            <h3 class="font-semibold text-gray-800" itemprop="name">How to download the question paper as PDF?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                        </div>
+                        <div class="faq-answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <div itemprop="text">
+                                <p>Simply click the green "PDF" button after creating your question paper. The paper will be downloaded as a professionally formatted PDF file with perfect A4 layout, ready for printing or sharing.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="faq-question flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                            <h3 class="font-semibold text-gray-800" itemprop="name">Can I add both MCQ and descriptive questions?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                        </div>
+                        <div class="faq-answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <div itemprop="text">
+                                <p>Yes! You can add both types of questions. MCQ questions appear in Section A with options, and descriptive questions appear in Section B with answer spaces. Question numbers continue sequentially across both sections.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="faq-question flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                            <h3 class="font-semibold text-gray-800" itemprop="name">How to hide general instructions from the paper?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                        </div>
+                        <div class="faq-answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <div itemprop="text">
+                                <p>Use the "Hide Instructions" toggle switch in the left panel. When enabled, the instructions section will be hidden from the preview, print, and PDF output. This gives you more space for questions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="faq-question flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                            <h3 class="font-semibold text-gray-800" itemprop="name">What are the benefits of using this exam paper maker?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                        </div>
+                        <div class="faq-answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <div itemprop="text">
+                                <p>This tool saves time for teachers, ensures professional formatting, supports bilingual education, provides instant PDF download, and is completely free. It's trusted by over 10,000 teachers across India.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-6 no-print">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 JanSeva Kendra Tools. All rights reserved.</p>
+            
+        </div>
+    </footer>
+    
+    <!-- Toast Container -->
+    <div id="toast-container"></div>   
+</body>
+<script src="index.js"></script>
+</html>

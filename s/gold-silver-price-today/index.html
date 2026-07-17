@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <!-- Tailwind + Font Awesome + Google Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gradient-to-br from-amber-50 to-yellow-50/30 min-h-screen py-6 md:py-10">
+
+    <!-- Back to Home Button -->
+    <a href="/"
+        class="fixed top-5 right-5 z-50 bg-white/90 backdrop-blur rounded-full px-4 py-2 shadow-lg flex items-center gap-2 text-amber-700 font-medium hover:bg-amber-50 transition-all border border-amber-200">
+        <i class="fas fa-home"></i> Back to Home
+    </a>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <!-- Header with Live Button -->
+        <div class="text-center mb-10">
+            <div
+                class="inline-flex items-center gap-2 bg-white/70 backdrop-blur rounded-full px-5 py-1.5 shadow-sm mb-3">
+                <i class="fas fa-calculator text-amber-600"></i>
+                <span class="text-sm font-semibold text-amber-700">India's Smart Gold & Silver Tool</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-gray-800 tracking-tight">Gold & Silver <span
+                    class="text-amber-600">Smart Calculator Tool</span></h1>
+            <p class="text-gray-500 max-w-2xl mx-auto mt-2">10g Gold Rate | Per KG Silver Rate | Multi-Item Jewellery
+                Cart | Add Multiple Items & Get Total Cost</p>
+
+            <!-- LIVE BUTTON - Gold Silver Price Today -->
+            <div class="mt-6 flex justify-center">
+                <a href="https://www.google.com/search?q=gold+silver+price+today" target="_blank"
+                    rel="noopener noreferrer"
+                    class="live-button inline-flex items-center gap-3 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold px-6 py-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-chart-line text-xl"></i>
+                    <span class="text-lg">Gold Silver Price Today</span>
+                    <i class="fas fa-external-link-alt text-sm"></i>
+                    <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
+                    </span>
+                </a>
+            </div>
+            <p class="text-xs text-gray-400 mt-2">Click to view live prices on Google | Get latest market rates</p>
+        </div>
+
+        <!-- ========== TOOL 1 & 2: GOLD + SILVER BASIC CALCULATOR ========== -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <!-- GOLD BASIC -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-gold card-hover">
+                <div class="bg-gradient-to-r from-amber-600 to-amber-700 px-6 py-4">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-2"><i class="fas fa-coins text-2xl text-white"></i>
+                            <h2 class="text-xl font-bold text-white">Gold Price Tool</h2>
+                        </div><span class="bg-white/20 text-white px-3 py-1 rounded-full text-xs">Rate: ₹ / 10
+                            Gram</span>
+                    </div>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div><label class="font-semibold text-gray-700">Today's Gold Rate (per 10 gram)</label>
+                        <div class="relative mt-1"><span class="absolute left-3 top-1/2">₹</span><input type="number"
+                                id="gold10gRate" value="75200" step="100"
+                                class="w-full pl-8 pr-4 py-3 border rounded-xl"></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div><label>Weight (grams)</label><input type="number" id="goldWeightBase" value="10"
+                                class="w-full border rounded-xl p-3"></div>
+                        <div><label>Karat</label><select id="goldKaratBase" class="w-full border rounded-xl p-3">
+                                <option value="24">24K</option>
+                                <option value="22" selected>22K</option>
+                                <option value="18">18K</option>
+                            </select></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div><label>Making Charges (%)</label><select id="goldMakingBase"
+                                class="w-full border rounded-xl p-3">
+                                <option value="0">0%</option>
+                                <option value="3" selected>3%</option>
+                                <option value="5">5%</option>
+                                <option value="10">10%</option>
+                                <option value="15">15%</option>
+                            </select></div>
+                        <div><label>GST (%)</label><select id="goldGstBase" class="w-full border rounded-xl p-3">
+                                <option value="0">0%</option>
+                                <option value="3" selected>3%</option>
+                                <option value="5">5%</option>
+                                <option value="12">12%</option>
+                                <option value="18">18%</option>
+                            </select></div>
+                    </div>
+                    <div id="goldBaseResult" class="bg-amber-50 rounded-xl p-4">
+                        <div class="flex justify-between"><span class="font-bold">💰 Final Amount:</span><span
+                                id="goldBaseTotal" class="text-2xl font-extrabold text-amber-700">₹0</span></div>
+                        <div id="goldBaseBreakdown" class="text-xs text-gray-500 mt-2"></div>
+                    </div>
+                    <button id="resetGoldBase"
+                        class="w-full py-2 border border-amber-300 text-amber-700 rounded-xl hover:bg-amber-50"><i
+                            class="fas fa-undo-alt"></i> Reset</button>
+                </div>
+            </div>
+
+            <!-- SILVER BASIC -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-silver card-hover">
+                <div class="bg-gradient-to-r from-gray-700 to-gray-800 px-6 py-4">
+                    <div class="flex justify-between">
+                        <div class="flex items-center gap-2"><i class="fas fa-ring text-white text-xl"></i>
+                            <h2 class="text-xl font-bold text-white">Silver Price Tool</h2>
+                        </div><span class="bg-white/20 text-white px-3 py-1 rounded-full text-xs">Rate: ₹ / 1 KG</span>
+                    </div>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div><label class="font-semibold">Today's Silver Rate (per KG)</label>
+                        <div class="relative mt-1"><span class="absolute left-3 top-1/2">₹</span><input type="number"
+                                id="silverKgRate" value="92500" step="500"
+                                class="w-full pl-8 pr-4 py-3 border rounded-xl"></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div><label>Weight (grams)</label><input type="number" id="silverWeightBase" value="100"
+                                class="w-full border rounded-xl p-3"></div>
+                        <div><label>Unit</label><select id="silverUnitBase" class="w-full border rounded-xl p-3">
+                                <option value="gram">Gram (g)</option>
+                                <option value="kg">Kilogram (kg)</option>
+                            </select></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div><label>Making Charges (%)</label><select id="silverMakingBase"
+                                class="w-full border rounded-xl p-3">
+                                <option value="0">0%</option>
+                                <option value="3" selected>3%</option>
+                                <option value="5">5%</option>
+                                <option value="10">10%</option>
+                                <option value="15">15%</option>
+                            </select></div>
+                        <div><label>GST (%)</label><select id="silverGstBase" class="w-full border rounded-xl p-3">
+                                <option value="0">0%</option>
+                                <option value="3" selected>3%</option>
+                                <option value="5">5%</option>
+                                <option value="12">12%</option>
+                                <option value="18">18%</option>
+                            </select></div>
+                    </div>
+                    <div id="silverBaseResult" class="bg-gray-50 rounded-xl p-4">
+                        <div class="flex justify-between"><span class="font-bold">🥈 Final Price:</span><span
+                                id="silverBaseTotal" class="text-2xl font-bold text-gray-800">₹0</span></div>
+                        <div id="silverBaseBreakdown" class="text-xs text-gray-500"></div>
+                    </div>
+                    <button id="resetSilverBase"
+                        class="w-full py-2 border border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50"><i
+                            class="fas fa-undo-alt"></i> Reset</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ========== MULTI-ITEM JEWELLERY CART (GOLD & SILVER) ========== -->
+        <h2 class="text-2xl md:text-3xl font-bold text-center mt-6 mb-6 flex items-center justify-center gap-3"><i
+                class="fas fa-shopping-cart text-pink-500"></i> Multi-Item Jewellery Cost <i
+                class="fas fa-cart-plus text-pink-500"></i></h2>
+        <p class="text-center text-gray-600 mb-8">Add multiple jewellery items, each with its own weight, karat/purity,
+            making charges & GST. Get combined total price for all items.</p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- GOLD JEWELLERY CART -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-jewel">
+                <div class="bg-gradient-to-r from-pink-600 to-rose-600 px-6 py-4">
+                    <div class="flex items-center gap-3"><i class="fas fa-crown text-white text-2xl"></i>
+                        <h2 class="text-xl font-bold text-white">Gold Jewellery Cost</h2>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <!-- Add Item Form -->
+                    <div class="bg-pink-50 p-4 rounded-xl mb-6">
+                        <h3 class="font-semibold text-pink-700 mb-3"><i class="fas fa-plus-circle"></i> Add New Gold
+                            Item</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                            <input type="text" id="goldItemName" placeholder="Item name (e.g., Necklace)"
+                                class="border rounded-lg p-2 text-sm">
+                            <input type="number" id="goldItemWeight" placeholder="Weight (g)" value="10"
+                                class="border rounded-lg p-2 text-sm">
+                            <select id="goldItemKarat" class="border rounded-lg p-2 text-sm">
+                                <option value="24">24K</option>
+                                <option value="22" selected>22K</option>
+                                <option value="18">18K</option>
+                            </select>
+                            <select id="goldItemMaking" class="border rounded-lg p-2 text-sm">
+                                <option value="0">0%</option>
+                                <option value="3">3%</option>
+                                <option value="5" selected>5%</option>
+                                <option value="10">10%</option>
+                                <option value="15">15%</option>
+                            </select>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mt-3">
+                            <select id="goldItemGst" class="border rounded-lg p-2 text-sm">
+                                <option value="0">0%</option>
+                                <option value="3" selected>3%</option>
+                                <option value="5">5%</option>
+                                <option value="12">12%</option>
+                                <option value="18">18%</option>
+                            </select>
+                            <button id="addGoldItemBtn"
+                                class="bg-pink-600 text-white rounded-lg py-2 hover:bg-pink-700 transition"><i
+                                    class="fas fa-cart-plus"></i> Add to Cart</button>
+                        </div>
+                        <div class="mt-3"><label class="text-xs font-semibold">Today's Gold Rate (per
+                                10g):</label><input type="number" id="goldCartRate" value="75200" step="100"
+                                class="border rounded-lg p-2 text-sm w-full mt-1"></div>
+                    </div>
+
+                    <!-- Cart Items List -->
+                    <div id="goldCartItems" class="space-y-2 max-h-80 overflow-y-auto mb-4"></div>
+
+                    <!-- Cart Total -->
+                    <div id="goldCartTotal"
+                        class="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-xl p-4 mt-4 border border-amber-200">
+                        <div class="flex justify-between items-center"><span class="font-bold text-lg">💰 Total Gold
+                                Cart Value:</span><span id="goldCartFinalTotal"
+                                class="text-2xl font-extrabold text-amber-700">₹0</span></div>
+                        <div id="goldCartBreakdown" class="text-xs text-gray-500 mt-2"></div>
+                    </div>
+                    <button id="clearGoldCart"
+                        class="w-full mt-3 py-2 border border-pink-300 text-pink-600 rounded-xl hover:bg-pink-50 text-sm"><i
+                            class="fas fa-trash-alt"></i> Clear All Gold Items</button>
+                </div>
+            </div>
+
+            <!-- SILVER JEWELLERY CART -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border-l-4 border-gray-500">
+                <div class="bg-gradient-to-r from-gray-600 to-gray-700 px-6 py-4">
+                    <div class="flex items-center gap-3"><i class="fas fa-star-of-life text-white text-2xl"></i>
+                        <h2 class="text-xl font-bold text-white">Silver Jewellery Cost</h2>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <!-- Add Item Form -->
+                    <div class="bg-gray-50 p-4 rounded-xl mb-6">
+                        <h3 class="font-semibold text-gray-700 mb-3"><i class="fas fa-plus-circle"></i> Add New Silver
+                            Item</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                            <input type="text" id="silverItemName" placeholder="Item name" value="Silver Ring"
+                                class="border rounded-lg p-2 text-sm">
+                            <input type="number" id="silverItemWeight" placeholder="Weight (g)" value="50"
+                                class="border rounded-lg p-2 text-sm">
+                            <select id="silverItemPurity" class="border rounded-lg p-2 text-sm">
+                                <option value="999">99.9% Pure</option>
+                                <option value="925">92.5% Sterling</option>
+                            </select>
+                            <select id="silverItemMaking" class="border rounded-lg p-2 text-sm">
+                                <option value="0">0%</option>
+                                <option value="3" selected>3%</option>
+                                <option value="5">5%</option>
+                                <option value="8">8%</option>
+                                <option value="12">12%</option>
+                            </select>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mt-3">
+                            <select id="silverItemGst" class="border rounded-lg p-2 text-sm">
+                                <option value="0">0%</option>
+                                <option value="3" selected>3%</option>
+                                <option value="5">5%</option>
+                                <option value="12">12%</option>
+                                <option value="18">18%</option>
+                            </select>
+                            <button id="addSilverItemBtn"
+                                class="bg-gray-600 text-white rounded-lg py-2 hover:bg-gray-700 transition"><i
+                                    class="fas fa-cart-plus"></i> Add to Cart</button>
+                        </div>
+                        <div class="mt-3"><label class="text-xs font-semibold">Today's Silver Rate (per
+                                KG):</label><input type="number" id="silverCartRate" value="92500" step="500"
+                                class="border rounded-lg p-2 text-sm w-full mt-1"></div>
+                    </div>
+
+                    <!-- Cart Items List -->
+                    <div id="silverCartItems" class="space-y-2 max-h-80 overflow-y-auto mb-4"></div>
+
+                    <!-- Cart Total -->
+                    <div id="silverCartTotal" class="bg-gray-100 rounded-xl p-4 mt-4">
+                        <div class="flex justify-between items-center"><span class="font-bold text-lg">🥄 Total Silver
+                                Cart Value:</span><span id="silverCartFinalTotal"
+                                class="text-2xl font-bold text-gray-800">₹0</span></div>
+                        <div id="silverCartBreakdown" class="text-xs text-gray-500 mt-2"></div>
+                    </div>
+                    <button id="clearSilverCart"
+                        class="w-full mt-3 py-2 border border-gray-400 text-gray-600 rounded-xl hover:bg-gray-100 text-sm"><i
+                            class="fas fa-trash-alt"></i> Clear All Silver Items</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ========== HOW TO USE & FAQ SECTION ========== -->
+        <div class="mt-16 bg-white rounded-2xl shadow-lg p-6 md:p-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2"><i
+                    class="fas fa-question-circle text-amber-500"></i> How to Use This Tool</h2>
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div>
+                    <h3 class="font-semibold text-lg text-amber-700">💰 Gold & Silver Price Tools</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-gray-600 text-sm mt-2">
+                        <li>Enter today's Gold rate (per 10g) or Silver rate (per KG).</li>
+                        <li>Select weight, karat/purity, making charges % and GST %.</li>
+                        <li>Final amount includes metal value + making charges + GST instantly.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg text-pink-600">🛒 Multi-Item Jewellery Cart</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-gray-600 text-sm mt-2">
+                        <li><strong>Add multiple items:</strong> Enter item name, weight, karat/purity, making % & GST.
+                        </li>
+                        <li>Click "Add to Cart" — each item appears in cart with individual price.</li>
+                        <li>Cart shows subtotal for each item + combined grand total with all charges.</li>
+                        <li>You can add unlimited items to get final jewellery purchase cost.</li>
+                        <li>Use "Clear All" to reset cart.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQ Section with Schema -->
+            <div class="border-t pt-6" itemscope itemtype="https://schema.org/FAQPage">
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-star text-amber-500"></i>
+                    Frequently Asked Questions</h3>
+                <div class="space-y-3">
+                    <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <h4 itemprop="name" class="font-semibold text-gray-800">1. Can I add multiple jewellery items at
+                            once?</h4>
+                        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <div itemprop="text" class="text-gray-600 text-sm mt-1">Yes! The Multi-Item Jewellery Cart
+                                allows you to add unlimited gold and silver items. Each item can have different weight,
+                                purity, making charges, and GST. The cart calculates individual prices and shows a
+                                combined grand total.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <h4 itemprop="name" class="font-semibold text-gray-800">2. How is the price calculated for each
+                            jewellery item?</h4>
+                        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <div itemprop="text" class="text-gray-600 text-sm mt-1">For gold: (Rate per 10g ÷ 10) ×
+                                weight × purity factor (24K=1, 22K=0.916, 18K=0.75) = metal value. Then add making
+                                charges % and GST %. Silver follows similar logic with KG rate ÷ 1000 × purity factor
+                                (999=1, 925=0.925).</div>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <h4 itemprop="name" class="font-semibold text-gray-800">3. Can I use different making charges
+                            for different items?</h4>
+                        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <div itemprop="text" class="text-gray-600 text-sm mt-1">Absolutely! Each item in the cart
+                                has its own making charges dropdown (0% to 20% for gold, 0% to 12% for silver) and GST
+                                selection (0% to 18%). This reflects real-world jewellery purchases where different
+                                designs have different making charges.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <h4 itemprop="name" class="font-semibold text-gray-800">4. How do I check today's live gold and
+                            silver prices?</h4>
+                        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <div itemprop="text" class="text-gray-600 text-sm mt-1">Click the "Gold Silver Price Today"
+                                button at the top of the page. It will open a Google search showing the latest gold and
+                                silver rates in India. You can then enter those rates in our calculators for accurate
+                                cost estimation.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 text-sm text-gray-500 italic">💡 Pro Tip: Click the "Gold Silver Price Today" button first
+                to get current market rates, then use our calculators to estimate your jewellery cost with making
+                charges and GST.</div>
+        </div>
+
+        <div class="text-center text-xs text-gray-400 py-6 border-t mt-8">Smart Gold & Silver Calculator | Multi-Item
+            Jewellery Cost | Made in India</div>
+    </div>
+
+
+</body>
+<script src="index.js"></script>
+
+</html>

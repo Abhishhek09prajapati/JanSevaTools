@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+    <!-- Primary Meta Tags - SEO Optimized -->
+    <title>Enhanced Photo Editor | Free Online Photo Enhancer - JanSeva Kendra Tools</title>
+    <meta name="title" content="Enhanced Photo Editor | Free Online Photo Enhancer with AI">
+    <meta name="description"
+        content="Free online photo enhancer. Brightness, contrast, saturation & sharpen adjustments. Auto-enhance feature. No upload required - works 100% in browser. Used by 50,000+ users.">
+    <meta name="keywords"
+        content="photo editor, photo enhancer, image editor online, photo brightness, contrast adjust, saturation editor, sharpen image, free photo editor, online photo enhancer, photo editing tool">
+    <meta name="author" content="JanSeva Kendra Tools">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="revisit-after" content="1 day">
+    <meta name="language" content="English">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.jansevakendratools.in/s/enhance-photo.html">
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.jansevakendratools.in/s/enhance-photo.html">
+    <meta property="og:title" content="Free Online Photo Enhancer - Brightness, Contrast, Saturation">
+    <meta property="og:description"
+        content="Enhance your photos instantly with our free online editor. Auto-enhance feature available.">
+    <meta property="og:image" content="https://www.jansevakendratools.in/images/photo-enhancer-preview.jpg">
+    <meta property="og:site_name" content="JanSeva Kendra Tools">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.jansevakendratools.in/s/enhance-photo.html">
+    <meta name="twitter:title" content="Photo Enhancer - Free Online Tool">
+    <meta name="twitter:description" content="Enhance your photos with AI-powered adjustments">
+    <meta name="twitter:image" content="https://www.jansevakendratools.in/images/photo-enhancer-preview.jpg">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Enhanced Photo Editor",
+        "description": "Free online photo editor with brightness, contrast, saturation and sharpen controls",
+        "applicationCategory": "Multimedia",
+        "operatingSystem": "All",
+        "url": "https://www.jansevakendratools.in/s/enhance-photo.html",
+        "provider": {
+            "@type": "Organization",
+            "name": "JanSeva Kendra Tools",
+            "url": "https://www.jansevakendratools.in/"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+        },
+        "featureList": [
+            "Brightness Adjustment",
+            "Contrast Control",
+            "Saturation Tuning",
+            "Sharpen Effect",
+            "Auto-Enhance",
+            "JPG/PNG Download",
+            "Before/After Preview",
+            "No Upload Required"
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "ratingCount": "892"
+        }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "How to enhance photo online free?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Upload your photo and use brightness, contrast, saturation and sharpen sliders. Click Auto Enhance for quick results. Download in JPG or PNG format."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Is this photo editor really free?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, it's completely free with no watermarks. All processing happens in your browser - no server upload required."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Can I edit photos without uploading?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all editing happens locally in your browser. Your photos never leave your device, ensuring complete privacy."
+            }
+        }]
+    }
+    </script>
+
+    <!-- Resources -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 min-h-screen">
+
+    <!-- Navigation with Breadcrumbs -->
+    <nav class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50 no-print border-b border-blue-100">
+        <div class="max-w-7xl mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <ol class="flex items-center space-x-2 text-sm">
+                    <li>
+                        <a href="/" class="text-gray-600 hover:text-blue-600 transition flex items-center">
+                            <i class="fas fa-home mr-1"></i> Home
+                        </a>
+                    </li>
+
+                    <li class="text-gray-400">/</li>
+                    <li class="text-blue-600 font-semibold" aria-current="page">Photo Enhancer</li>
+                </ol>
+
+                <!-- Share Buttons -->
+                <div class="flex items-center space-x-3">
+                    <span class="text-sm text-gray-500 hidden md:block">Share:</span>
+                    <button onclick="shareOnWhatsApp()"
+                        class="text-green-600 hover:text-green-700 transition transform hover:scale-110"
+                        title="Share on WhatsApp">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </button>
+                    <button onclick="shareOnFacebook()"
+                        class="text-blue-600 hover:text-blue-700 transition transform hover:scale-110"
+                        title="Share on Facebook">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </button>
+                    <button onclick="shareOnTwitter()"
+                        class="text-sky-500 hover:text-sky-600 transition transform hover:scale-110"
+                        title="Share on Twitter">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </button>
+                    <button onclick="copyLink()"
+                        class="text-gray-600 hover:text-gray-800 transition transform hover:scale-110"
+                        title="Copy link">
+                        <i class="fas fa-link"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 py-8">
+
+        <!-- Header with Stats -->
+        <div class="text-center mb-8 no-print">
+            <h1
+                class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-4">
+                Enhanced Photo Editor
+            </h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                Enhance your photos instantly with professional controls. <span
+                    class="font-bold text-blue-600">50,000+</span> photos enhanced.
+                <span class="font-semibold">100% Free</span> • <span class="font-semibold">No Upload</span> • <span
+                    class="font-semibold">Privacy First</span> 📸
+            </p>
+
+            <!-- Stats Counter -->
+            <div class="flex flex-wrap justify-center gap-6 mt-4">
+                <div class="stats-card flex items-center">
+                    <i class="fas fa-camera text-blue-500 text-2xl mr-3"></i>
+                    <div>
+                        <div class="text-2xl font-bold text-blue-600">52.3K+</div>
+                        <div class="text-xs text-gray-500">Photos Enhanced</div>
+                    </div>
+                </div>
+                <div class="stats-card flex items-center">
+                    <i class="fas fa-star text-yellow-500 text-2xl mr-3"></i>
+                    <div>
+                        <div class="text-2xl font-bold text-yellow-600">4.7/5</div>
+                        <div class="text-xs text-gray-500">User Rating</div>
+                    </div>
+                </div>
+                <div class="stats-card flex items-center">
+                    <i class="fas fa-shield-alt text-green-500 text-2xl mr-3"></i>
+                    <div>
+                        <div class="text-2xl font-bold text-green-600">100%</div>
+                        <div class="text-xs text-gray-500">Privacy Safe</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Editor Card -->
+        <div class="bg-white/80 backdrop-blur rounded-3xl shadow-2xl overflow-hidden border border-blue-100">
+
+            <!-- Editor Header -->
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div>
+                        <h2 class="text-2xl font-bold flex items-center">
+                            <i class="fas fa-magic mr-3"></i>
+                            Photo Enhancer Studio
+                        </h2>
+                        <p class="text-sm opacity-90 mt-1">Professional editing tools • Instant preview • No
+                            registration</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-sm">JPG</span>
+                        <span class="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-sm">PNG</span>
+                        <span class="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-sm">WebP</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 lg:p-8 space-y-8">
+
+                <!-- Upload Area with Progress -->
+                <div id="upload-area" class="upload-area rounded-2xl p-12 text-center relative group">
+                    <input type="file" id="file-input" accept="image/*" class="hidden">
+
+                    <div class="space-y-4">
+                        <div
+                            class="w-24 h-24 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition">
+                            <i class="fas fa-cloud-upload-alt text-4xl text-blue-600"></i>
+                        </div>
+                        <p class="text-xl font-semibold text-gray-700">
+                            <span class="text-blue-600">Click to upload</span> or drag & drop
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            <i class="fas fa-check-circle text-green-500 mr-1"></i>
+                            JPG, PNG, WebP • Max 16MP • Works offline • 100% private
+                        </p>
+                        <div id="upload-progress" class="hidden w-full max-w-md mx-auto">
+                            <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500" style="width: 0%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Info Bar -->
+                <div id="image-info"
+                    class="hidden bg-blue-50 p-4 rounded-xl flex flex-wrap items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <i class="fas fa-image text-blue-600 text-2xl"></i>
+                        <div>
+                            <span id="image-name" class="font-semibold text-gray-800"></span>
+                            <span id="image-size" class="text-sm text-gray-500 ml-2"></span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span id="image-dimensions" class="text-sm bg-white px-3 py-1 rounded-full"></span>
+                    </div>
+                </div>
+
+                <!-- Controls Section -->
+                <div id="controls" class="hidden space-y-8">
+
+                    <!-- Adjustment Sliders in Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <!-- Brightness -->
+                        <div class="slider-container">
+                            <span class="slider-label">
+                                <i class="fas fa-sun text-yellow-500"></i>
+                                Brightness
+                            </span>
+                            <input type="range" id="brightness" min="-100" max="100" value="0" step="1">
+                            <span id="b-val" class="slider-value">0</span>
+                        </div>
+
+                        <!-- Contrast -->
+                        <div class="slider-container">
+                            <span class="slider-label">
+                                <i class="fas fa-adjust text-purple-500"></i>
+                                Contrast
+                            </span>
+                            <input type="range" id="contrast" min="-100" max="100" value="0" step="1">
+                            <span id="c-val" class="slider-value">0</span>
+                        </div>
+
+                        <!-- Saturation -->
+                        <div class="slider-container">
+                            <span class="slider-label">
+                                <i class="fas fa-palette text-pink-500"></i>
+                                Saturation
+                            </span>
+                            <input type="range" id="saturation" min="-100" max="100" value="0" step="1">
+                            <span id="s-val" class="slider-value">0</span>
+                        </div>
+
+                        <!-- Sharpen -->
+                        <div class="slider-container">
+                            <span class="slider-label">
+                                <i class="fas fa-bolt text-orange-500"></i>
+                                Sharpen
+                            </span>
+                            <input type="range" id="sharpen" min="0" max="100" value="0" step="1">
+                            <span id="sh-val" class="slider-value">0</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button id="auto-enhance"
+                            class="btn-primary text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center">
+                            <i class="fas fa-magic mr-2"></i>
+                            Auto Enhance
+                        </button>
+                        <button id="reset"
+                            class="btn-secondary text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center">
+                            <i class="fas fa-undo mr-2"></i>
+                            Reset All
+                        </button>
+                    </div>
+
+                    <!-- Download Buttons -->
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button id="download-jpg"
+                            class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-xl font-bold hover:shadow-xl transform hover:scale-105 transition flex items-center">
+                            <i class="fas fa-image mr-2"></i>
+                            Download JPG
+                        </button>
+                        <button id="download-png"
+                            class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-xl font-bold hover:shadow-xl transform hover:scale-105 transition flex items-center">
+                            <i class="fas fa-file-image mr-2"></i>
+                            Download PNG
+                        </button>
+                    </div>
+
+                    <!-- Tip -->
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-xl text-center">
+                        <p class="text-sm text-gray-600">
+                            <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+                            <strong>Pro Tip:</strong> Click <span class="font-bold text-blue-600">Auto Enhance</span>
+                            for instant professional results, then fine-tune manually!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Before & After Preview -->
+                <div id="result" class="hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Before -->
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-xl font-bold text-gray-700 flex items-center">
+                                    <span class="w-3 h-3 bg-gray-400 rounded-full mr-2"></span>
+                                    Original
+                                </h3>
+                                <span class="text-xs bg-gray-100 px-2 py-1 rounded">Before</span>
+                            </div>
+                            <div class="preview-box border-4 border-gray-300">
+                                <img id="before-img" src="" alt="Original photo before editing">
+                            </div>
+                        </div>
+
+                        <!-- After -->
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <h3
+                                    class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 flex items-center">
+                                    <span class="w-3 h-3 bg-blue-600 rounded-full mr-2"></span>
+                                    Enhanced
+                                </h3>
+                                <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">After</span>
+                            </div>
+                            <div class="preview-box border-4 border-blue-500">
+                                <img id="after-img" src="" alt="Enhanced photo after editing">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="mt-12 bg-white rounded-2xl shadow-xl p-8 no-print">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                <i class="fas fa-question-circle text-blue-600 mr-3"></i>
+                How to Enhance Photos in 3 Simple Steps
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl">
+                    <div
+                        class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+                        1
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Upload Photo</h3>
+                    <p class="text-gray-600 text-sm">Click or drag & drop your image. Supports JPG, PNG, WebP up to
+                        16MP.</p>
+                </div>
+                <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl">
+                    <div
+                        class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+                        2
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Adjust Settings</h3>
+                    <p class="text-gray-600 text-sm">Use sliders or click Auto Enhance for instant professional results.
+                    </p>
+                </div>
+                <div class="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl">
+                    <div
+                        class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+                        3
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Download</h3>
+                    <p class="text-gray-600 text-sm">Save your enhanced photo as JPG or PNG with one click.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-4 no-print">
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <i class="fas fa-shield-alt text-3xl text-blue-600 mb-3"></i>
+                <h3 class="font-bold mb-2">100% Private</h3>
+                <p class="text-sm text-gray-600">All processing happens in your browser. Photos never leave your device.
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <i class="fas fa-bolt text-3xl text-yellow-600 mb-3"></i>
+                <h3 class="font-bold mb-2">Instant Processing</h3>
+                <p class="text-sm text-gray-600">Real-time preview as you adjust sliders. No waiting.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <i class="fas fa-infinity text-3xl text-purple-600 mb-3"></i>
+                <h3 class="font-bold mb-2">Unlimited Edits</h3>
+                <p class="text-sm text-gray-600">No limits, no watermarks, no registration. Edit as many photos as you
+                    want.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <i class="fas fa-mobile-alt text-3xl text-green-600 mb-3"></i>
+                <h3 class="font-bold mb-2">Mobile Friendly</h3>
+                <p class="text-sm text-gray-600">Works perfectly on phones, tablets, and desktop browsers.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-8 bg-white rounded-2xl shadow-xl p-8 no-print">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                <i class="fas fa-star text-blue-600 mr-3"></i>
+                Frequently Asked Questions
+            </h2>
+
+            <div class="space-y-4">
+                <div class="border rounded-lg p-4 hover:shadow-md transition">
+                    <h3 class="font-semibold text-lg mb-2 flex items-center">
+                        <i class="fas fa-chevron-right text-blue-500 mr-2 text-sm"></i>
+                        Is this photo editor really free?
+                    </h3>
+                    <p class="text-gray-600 ml-6">Yes, absolutely free! No hidden charges, no watermarks, no credit card
+                        required. You can enhance unlimited photos.</p>
+                </div>
+                <div class="border rounded-lg p-4 hover:shadow-md transition">
+                    <h3 class="font-semibold text-lg mb-2 flex items-center">
+                        <i class="fas fa-chevron-right text-blue-500 mr-2 text-sm"></i>
+                        Do you upload my photos to a server?
+                    </h3>
+                    <p class="text-gray-600 ml-6">No! All editing happens locally in your browser. Your photos never
+                        leave your device, ensuring complete privacy and security.</p>
+                </div>
+                <div class="border rounded-lg p-4 hover:shadow-md transition">
+                    <h3 class="font-semibold text-lg mb-2 flex items-center">
+                        <i class="fas fa-chevron-right text-blue-500 mr-2 text-sm"></i>
+                        What photo formats are supported?
+                    </h3>
+                    <p class="text-gray-600 ml-6">We support JPG, PNG, and WebP formats. Maximum image size is 16
+                        megapixels for optimal performance.</p>
+                </div>
+                <div class="border rounded-lg p-4 hover:shadow-md transition">
+                    <h3 class="font-semibold text-lg mb-2 flex items-center">
+                        <i class="fas fa-chevron-right text-blue-500 mr-2 text-sm"></i>
+                        Can I use this on mobile?
+                    </h3>
+                    <p class="text-gray-600 ml-6">Yes, the tool is fully responsive and works great on all devices -
+                        smartphones, tablets, and desktop computers.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Tools -->
+        <div class="mt-8 bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl shadow-lg no-print">
+            <h2 class="text-xl font-bold mb-4 text-gray-800 flex items-center">
+                <i class="fas fa-tools text-blue-600 mr-3"></i>
+                Popular Photo Tools
+            </h2>
+            <div class="flex flex-wrap gap-3">
+                <a href="/"
+                    class="bg-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 hover:text-white transition shadow-sm">Image
+                    Resizer</a>
+                <a href="/"
+                    class="bg-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 hover:text-white transition shadow-sm">Image
+                    Converter</a>
+                <a href="/"
+                    class="bg-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 hover:text-white transition shadow-sm">Crop
+                    Image</a>
+                <a href="/"
+                    class="bg-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 hover:text-white transition shadow-sm">Compress
+                    Image</a>
+                <a href="/"
+                    class="bg-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 hover:text-white transition shadow-sm">Filter
+                    Effects</a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 space-y-2"></div>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-12 py-6 border-t border-blue-100 no-print">
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-600">
+            <p>&copy; 2026 JanSeva Kendra Tools. All rights reserved. |
+                <a href="/legalpage/privacy.html" class="text-blue-600 hover:underline">Privacy Policy</a> |
+                <a href="/legalpage/terms.html" class="text-blue-600 hover:underline">Terms of Use</a> |
+                <a href="/legalpage/contact.html" class="text-blue-600 hover:underline">Contact Us</a>
+            </p>
+
+        </div>
+    </footer>
+
+
+</body>
+<script src="index.js"></script>
+
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>WhatsApp Ultimate Tool | Direct Message + QR Card For CSC Tools</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Complete WhatsApp tool: send messages without saving, generate QR business card, bulk messaging, link generator. Free for CSC VLE & businesses.">
+    <meta name="keywords"
+        content="whatsapp direct message, whatsapp qr code generator, whatsapp link generator, bulk whatsapp sender, csc whatsapp tool">
+    <meta name="author" content="JanSeva Kendra Tools">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="WhatsApp Ultimate Toolkit">
+    <meta property="og:description" content="QR Business Card, Direct Chat, Bulk Messaging – All in One">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind + Font Awesome + Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-50 font-sans antialiased relative">
+
+    <!-- Back to Home Button -->
+    <a href="/" class="back-home-btn">
+        <i class="fas fa-home text-[#25D366]"></i>
+        <span>Back to Home</span>
+        <i class="fas fa-arrow-right text-sm"></i>
+    </a>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 md:py-10 pt-20 md:pt-24">
+
+        <!-- Header with Stats -->
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center whatsapp-gradient p-4 rounded-full mb-4 shadow-lg">
+                <i class="fab fa-whatsapp text-4xl text-white"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 tracking-tight mb-2">
+                WhatsApp <span class="text-[#25D366]">Ultimate Toolkit</span>
+            </h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                Direct Message · QR Business Card · Bulk Messaging · Link Generator · Free for CSC VLE
+            </p>
+
+            <!-- Live Stats -->
+            <div class="flex flex-wrap justify-center gap-6 mt-4 text-sm">
+                <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
+                    <i class="fas fa-check-circle text-green-500"></i>
+                    <span>10,000+ Messages Sent</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
+                    <i class="fas fa-star text-yellow-500"></i>
+                    <span>4.9 Rating</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
+                    <i class="fas fa-users text-blue-500"></i>
+                    <span>500+ CSC Centers</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Grid: 2 columns -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <!-- LEFT COLUMN (2/3) - Main Tools -->
+            <div class="lg:col-span-2 space-y-6">
+
+                <!-- CARD 1: Direct Message + Number Input -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
+                    <h2 class="text-xl font-semibold text-gray-800 flex items-center gap-2 mb-5">
+                        <i class="fab fa-whatsapp text-[#25D366]"></i> Direct Message (No Save)
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-3">
+                        <div class="md:col-span-1">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Country</label>
+                            <select id="countryCode"
+                                class="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-[#25D366]">
+                                <option value="91">🇮🇳 +91 (India)</option>
+                                <option value="1">🇺🇸 +1 (USA)</option>
+                                <option value="44">🇬🇧 +44 (UK)</option>
+                                <option value="971">🇦🇪 +971 (UAE)</option>
+                                <option value="92">🇵🇰 +92 (Pakistan)</option>
+                                <option value="880">🇧🇩 +880 (Bangladesh)</option>
+                                <option value="other">🌐 Other</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-3">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">WhatsApp Number</label>
+                            <input type="tel" id="waNumber" placeholder="9876543210"
+                                class="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-[#25D366]">
+                        </div>
+                        <div class="md:col-span-1 flex items-end">
+                            <button id="sampleBtn"
+                                class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 p-3 rounded-xl flex items-center justify-center gap-2">
+                                <i class="fas fa-magic"></i> Sample
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Custom Message</label>
+                        <textarea id="customMessage" rows="2" placeholder="Type your message here..."
+                            class="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-[#25D366]"></textarea>
+                    </div>
+
+                    <!-- Templates Row -->
+                    <div class="mt-4">
+                        <p class="text-sm font-medium text-gray-700 mb-2 flex items-center gap-1">
+                            <i class="far fa-file-alt"></i> Quick Templates
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <button
+                                class="template-chip bg-green-50 hover:bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm border border-green-200"
+                                data-msg="Hello Sir, I am contacting you regarding CSC services.">Hello Sir</button>
+                            <button
+                                class="template-chip bg-green-50 hover:bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm border border-green-200"
+                                data-msg="Document received successfully. Thank you.">Document Received</button>
+                            <button
+                                class="template-chip bg-green-50 hover:bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm border border-green-200"
+                                data-msg="Payment received. Thanks for the transaction.">Payment Received</button>
+                            <button
+                                class="template-chip bg-green-50 hover:bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm border border-green-200"
+                                data-msg="CSC Service Completed. Please check and confirm.">CSC Completed</button>
+                            <button
+                                class="template-chip bg-green-50 hover:bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm border border-green-200"
+                                data-msg="Your Aadhaar/PAN is ready for collection.">Document Ready</button>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons Row -->
+                    <div class="flex flex-wrap gap-3 mt-5">
+                        <button id="sendMessageBtn"
+                            class="whatsapp-gradient text-white px-6 py-3 rounded-xl font-medium flex items-center gap-2 shadow-md hover-scale">
+                            <i class="fab fa-whatsapp"></i> Send Message
+                        </button>
+                        <button id="generateLinkBtn"
+                            class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-medium flex items-center gap-2 shadow-md hover-scale">
+                            <i class="fas fa-link"></i> Generate Link
+                        </button>
+                        <button id="resetBtn"
+                            class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-3 rounded-xl font-medium flex items-center gap-2 shadow-sm hover-scale">
+                            <i class="fas fa-undo-alt"></i> Reset
+                        </button>
+                    </div>
+
+                    <!-- Generated Link Display -->
+                    <div class="mt-4 p-4 bg-gray-50 rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between flex-wrap gap-2">
+                            <span class="text-sm font-medium text-gray-600">Generated Link:</span>
+                            <div class="flex items-center gap-2">
+                                <input id="generatedLink" type="text" readonly value="https://wa.me/..."
+                                    class="bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm w-64 md:w-80">
+                                <button id="copyLinkBtn"
+                                    class="bg-white border border-gray-300 hover:bg-gray-100 px-4 py-2 rounded-lg text-sm flex items-center gap-1">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2: QR Business Card Generator (Enhanced) -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
+                    <h2 class="text-xl font-semibold text-gray-800 flex items-center gap-2 mb-5">
+                        <i class="fas fa-qrcode text-[#25D366]"></i> QR Business Card Generator
+                    </h2>
+
+                    <!-- Business Info Row -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Business/Your Name</label>
+                            <input type="text" id="businessName" value="JanSeva Kendra Center"
+                                class="w-full border border-gray-300 rounded-xl p-3">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Tagline (optional)</label>
+                            <input type="text" id="tagline" value="Scan & WhatsApp me"
+                                class="w-full border border-gray-300 rounded-xl p-3">
+                        </div>
+                    </div>
+
+                    <!-- QR Business Card Preview -->
+                    <div id="qrBusinessCard"
+                        class="mx-auto bg-white rounded-3xl shadow-xl w-[300px] md:w-[320px] overflow-hidden border-2 border-gray-200 mb-5">
+                        <div class="p-5 flex flex-col items-center text-center">
+                            <!-- Top: Logo + WhatsApp + Account Required -->
+                            <div class="flex flex-col items-center mb-4">
+                                <div
+                                    class="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-md">
+                                    <i class="fab fa-whatsapp text-3xl"></i>
+                                </div>
+                                <div class="mt-2">
+                                    <div class="font-bold text-lg text-gray-800 flex items-center gap-1">
+                                        <i class="fab fa-whatsapp text-[#25D366] text-sm"></i>
+                                        <span id="cardBusinessName">JanSeva Kendra Center</span>
+                                    </div>
+                                    <p class="text-xs text-gray-500">Account Required</p>
+                                </div>
+                            </div>
+
+                            <!-- QR Code with Green Border -->
+                            <div class="w-full flex justify-center mb-4">
+                                <div class="border-4 border-[#25D366] rounded-2xl p-2 bg-white">
+                                    <canvas id="qrCanvas" width="160" height="160" class="block"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- SCAN QR CODE Button -->
+                            <div
+                                class="bg-gray-900 text-white font-semibold py-2.5 px-6 rounded-full text-sm tracking-wider shadow-md mb-4">
+                                SCAN QR CODE
+                            </div>
+
+                            <!-- Green Strip Instructions -->
+                            <div class="w-full bg-[#25D366] rounded-xl py-3 px-2 text-white text-xs">
+                                <div class="flex flex-col space-y-1">
+                                    <div class="flex items-center justify-center gap-2"><span
+                                            class="bg-white text-[#25D366] w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                                        Scan QR Code</div>
+                                    <div class="flex items-center justify-center gap-2"><span
+                                            class="bg-white text-[#25D366] w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+                                        Open WhatsApp Chat</div>
+                                    <div class="flex items-center justify-center gap-2"><span
+                                            class="bg-white text-[#25D366] w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+                                        Send us a message</div>
+                                </div>
+                            </div>
+                            <p class="text-[9px] text-gray-400 mt-2" id="cardTagline">Scan & WhatsApp me</p>
+                        </div>
+                    </div>
+
+                    <!-- QR Action Buttons -->
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <button id="generateQrBtn"
+                            class="whatsapp-gradient text-white px-5 py-2.5 rounded-xl flex items-center gap-2 shadow-md hover-scale">
+                            <i class="fas fa-sync-alt"></i> Generate QR
+                        </button>
+                        <button id="downloadQrPngBtn"
+                            class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl flex items-center gap-2 shadow-md hover-scale">
+                            <i class="fas fa-download"></i> Download PNG
+                        </button>
+                        <button id="printQrBtn"
+                            class="bg-gray-800 hover:bg-gray-900 text-white px-5 py-2.5 rounded-xl flex items-center gap-2 shadow-md hover-scale">
+                            <i class="fas fa-print"></i> Print Card
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 3: Bulk Messaging + File Guide -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Bulk Messaging -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
+                        <h3 class="font-semibold text-gray-800 flex items-center gap-2 mb-3">
+                            <i class="fas fa-users text-[#25D366]"></i> Bulk Messaging
+                        </h3>
+                        <p class="text-xs text-gray-500 mb-2">One number per line (with country code)</p>
+                        <textarea id="bulkNumbers" rows="4" placeholder="919876543210&#10;919123456789&#10;447911123456"
+                            class="w-full border border-gray-300 rounded-xl p-3 text-sm"></textarea>
+                        <button id="bulkSendBtn"
+                            class="mt-3 w-full bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-medium py-3 rounded-xl flex items-center justify-center gap-2">
+                            <i class="fas fa-play"></i> Open First 5 Chats
+                        </button>
+                        <p class="text-xs text-gray-400 mt-2">* Opens in new tabs (allow popups)</p>
+                    </div>
+
+                    <!-- File Send Guide -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
+                        <h3 class="font-semibold text-gray-800 flex items-center gap-2 mb-3">
+                            <i class="fas fa-paperclip text-[#25D366]"></i> File Send Guide
+                        </h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="bg-green-100 rounded-full p-1 w-6 h-6 flex items-center justify-center text-green-600 font-bold text-xs">
+                                    1</div>
+                                <p>After chat opens, tap <i class="fas fa-plus-circle"></i> attach icon</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="bg-green-100 rounded-full p-1 w-6 h-6 flex items-center justify-center text-green-600 font-bold text-xs">
+                                    2</div>
+                                <p>Choose Document / Gallery / Camera</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="bg-green-100 rounded-full p-1 w-6 h-6 flex items-center justify-center text-green-600 font-bold text-xs">
+                                    3</div>
+                                <p>Select file (PDF, image, video up to 2GB)</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="bg-green-100 rounded-full p-1 w-6 h-6 flex items-center justify-center text-green-600 font-bold text-xs">
+                                    4</div>
+                                <p>Add caption and send</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 bg-yellow-50 p-3 rounded-lg text-xs text-yellow-800">
+                            <i class="fas fa-lightbulb"></i> Pro tip: Compress large files before sending
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN (1/3) - SEO Content & Benefits -->
+            <div class="space-y-6">
+                <!-- Benefits Card -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 sticky top-4">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-star text-[#25D366]"></i>
+                        </div>
+                        <h2 class="text-xl font-semibold">Why CSC VLEs Love It</h2>
+                    </div>
+
+                    <ul class="space-y-4">
+                        <li class="flex gap-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-sm">Send updates without saving customer numbers</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-sm">Print QR card and display at your center</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-sm">Bulk messaging for camps and surveys</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-sm">Ready-made templates for PAN, Aadhaar, services</span>
+                        </li>
+                    </ul>
+
+                    <div class="border-t border-gray-200 my-6"></div>
+
+                    <!-- How to Use -->
+                    <h3 class="font-semibold flex items-center gap-2 mb-3">
+                        <i class="fas fa-compass text-[#25D366]"></i> How to Use
+                    </h3>
+                    <ol class="list-decimal pl-5 space-y-2 text-sm text-gray-700">
+                        <li>Enter WhatsApp number with country code</li>
+                        <li>Type or select a template message</li>
+                        <li>Click "Send Message" to open chat</li>
+                        <li>Generate QR card for your shop</li>
+                        <li>Download PNG or print and display</li>
+                    </ol>
+
+                    <!-- FAQ Mini -->
+                    <div class="border-t border-gray-200 my-6"></div>
+                    <h3 class="font-semibold flex items-center gap-2 mb-3">
+                        <i class="fas fa-question-circle text-[#25D366]"></i> Quick FAQ
+                    </h3>
+                    <div class="space-y-2 text-sm">
+                        <details class="bg-gray-50 p-3 rounded-lg">
+                            <summary class="font-medium cursor-pointer">Is it really free?</summary>
+                            <p class="mt-1 text-xs text-gray-600">100% free for everyone. No limits.</p>
+                        </details>
+                        <details class="bg-gray-50 p-3 rounded-lg">
+                            <summary class="font-medium cursor-pointer">Can I use on mobile?</summary>
+                            <p class="mt-1 text-xs text-gray-600">Fully responsive, works on all devices.</p>
+                        </details>
+                        <details class="bg-gray-50 p-3 rounded-lg">
+                            <summary class="font-medium cursor-pointer">How to print QR card?</summary>
+                            <p class="mt-1 text-xs text-gray-600">Click "Print Card" button, only card will print.</p>
+                        </details>
+                    </div>
+
+                    <!-- Testimonial -->
+                    <div class="mt-6 bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-xl">
+                        <p class="text-sm italic">"Best tool for my CSC center. Customers scan QR and message directly.
+                            Very professional!"</p>
+                        <p class="text-xs font-medium mt-2">— Ramesh, CSC VLE Bihar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Footer Section -->
+        <div class="mt-10 bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <i class="fab fa-whatsapp text-3xl text-[#25D366] mb-3"></i>
+                    <h4 class="font-bold mb-2">WhatsApp Direct Messaging</h4>
+                    <p class="text-sm text-gray-600">Message any WhatsApp number without saving to contacts. Perfect for
+                        businesses and CSC centers.</p>
+                </div>
+                <div>
+                    <i class="fas fa-qrcode text-3xl text-[#25D366] mb-3"></i>
+                    <h4 class="font-bold mb-2">QR Business Card</h4>
+                    <p class="text-sm text-gray-600">Create professional QR code cards with your business name. Print
+                        and display at your shop.</p>
+                </div>
+                <div>
+                    <i class="fas fa-rocket text-3xl text-[#25D366] mb-3"></i>
+                    <h4 class="font-bold mb-2">Boost CSC Business</h4>
+                    <p class="text-sm text-gray-600">Get more enquiries, send updates faster, and look professional with
+                        our toolkit.</p>
+                </div>
+            </div>
+            <p class="text-center text-xs text-gray-400 mt-8">© 2025 JanSeva Kendra Tools · WhatsApp Ultimate Toolkit · All
+                rights reserved</p>
+        </div>
+    </div>
+
+    <!-- JavaScript - Complete Functionality -->
+
+</body>
+<script src="index.js"></script>
+
+</html>
