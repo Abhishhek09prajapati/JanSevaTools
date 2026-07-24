@@ -99,7 +99,7 @@ body {
     }
 
     .callBtn {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .callBtn button {
