@@ -47,8 +47,8 @@ fetch(`https://opensheet.elk.sh/${sheet}/shop`)
 
         div.querySelector(".callBtn1").addEventListener("click", (e) => {
             e.stopPropagation();
-            alert(`${u.number}`)
-            // window.location.href = `tel:${u.number}`;
+            // alert(`${u.number}`)
+            window.location.href = `tel:${u.number}`;
         });
 
         div.querySelector(".ledgerBtn").addEventListener("click", (e) => {
