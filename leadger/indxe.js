@@ -1,15 +1,15 @@
 const sheet = "16Z4hqbx03qxABQIn8JtwvwjSlTrYxTzfcjjR7eULESU";
 
 fetch(`https://opensheet.elk.sh/${sheet}/shop`)
-.then(res => res.json())
-.then(data => {
+    .then(res => res.json())
+    .then(data => {
 
-    data.forEach(u => {
+        data.forEach(u => {
 
-        const div = document.createElement("div");
-        div.className = "contactdiv";
+            const div = document.createElement("div");
+            div.className = "contactdiv";
 
-        div.innerHTML = `
+            div.innerHTML = `
             <div>
                 <label>${u.number}</label>
                 <label> - ${u.name}</label>
@@ -22,42 +22,43 @@ fetch(`https://opensheet.elk.sh/${sheet}/shop`)
             </div>
         `;
 
-        let open = false;
+            let open = false;
 
-        div.addEventListener("click", () => {
+            div.addEventListener("click", () => {
 
-            const btns = div.querySelector(".callBtn");
+                const btns = div.querySelector(".callBtn");
 
-            if (!open) {
-                div.style.height = "80px";
-                btns.style.opacity = "1";
-                open = true;
-            } else {
-                div.style.height = "50px";
-                btns.style.opacity = "0";
-                open = false;
-            }
+                if (!open) {
+                    div.style.height = "100px";
+                    btns.style.opacity = "1";
+                    div.classList.toggle("active");
+                    open = true;
+                } else {
+                    div.style.height = "50px";
+                    btns.style.opacity = "0";
+                    open = false;
+                }
+
+            });
+            
+            div.querySelector(".whatsappBtn").addEventListener("click", (e) => {
+                e.stopPropagation();
+                window.open(`https://wa.me/91${u.number}`)
+            });
+
+            div.querySelector(".callBtn1").addEventListener("click", (e) => {
+                e.stopPropagation();
+                // alert(`${u.number}`)
+                window.location.href = `tel:${u.number}`;
+            });
+
+            div.querySelector(".ledgerBtn").addEventListener("click", (e) => {
+                e.stopPropagation();
+                alert("Ledger Click");
+            });
+
+            document.getElementById("mobilediv").appendChild(div);
 
         });
-
-        div.querySelector(".whatsappBtn").addEventListener("click", (e) => {
-            e.stopPropagation();
-            window.open(`https://wa.me/91${u.number}`)
-        });
-
-        div.querySelector(".callBtn1").addEventListener("click", (e) => {
-            e.stopPropagation();
-            // alert(`${u.number}`)
-            window.location.href = `tel:${u.number}`;
-        });
-
-        div.querySelector(".ledgerBtn").addEventListener("click", (e) => {
-            e.stopPropagation();
-            alert("Ledger Click");
-        });
-
-        document.getElementById("mobilediv").appendChild(div);
 
     });
-
-});
