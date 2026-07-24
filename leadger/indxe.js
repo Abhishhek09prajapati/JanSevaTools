@@ -1,5 +1,5 @@
 const sheet = "16Z4hqbx03qxABQIn8JtwvwjSlTrYxTzfcjjR7eULESU";
-
+document.getElementById("leadgeediv").style.display = "none"
 fetch(`https://opensheet.elk.sh/${sheet}/shop`)
     .then(res => res.json())
     .then(data => {
@@ -40,7 +40,7 @@ fetch(`https://opensheet.elk.sh/${sheet}/shop`)
                 }
 
             });
-            
+
             div.querySelector(".whatsappBtn").addEventListener("click", (e) => {
                 e.stopPropagation();
                 window.open(`https://wa.me/91${u.number}`)
@@ -53,8 +53,8 @@ fetch(`https://opensheet.elk.sh/${sheet}/shop`)
             });
 
             div.querySelector(".ledgerBtn").addEventListener("click", (e) => {
-                e.stopPropagation();
-                alert("Ledger Click");
+                document.getElementById("leadgeediv").style.display = ""
+                userfilter(u.leadger)
             });
 
             document.getElementById("mobilediv").appendChild(div);
@@ -62,3 +62,38 @@ fetch(`https://opensheet.elk.sh/${sheet}/shop`)
         });
 
     });
+
+document.getElementById("closeBtn").addEventListener("click", (e) => {
+    document.getElementById("leadgeediv").style.display = "none"
+})
+
+function userfilter(a) {
+    fetch(`https://opensheet.elk.sh/${sheet}/leadger`)
+        .then(res => res.json())
+        .then(data => {
+
+
+            document.getElementById("leadager").innerHTML = '';
+
+            data.forEach((u, i) => {
+                if (!u[a]) return
+
+                var arr = JSON.parse(u[a])
+
+
+                document.getElementById("leadager").innerHTML += `
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td>${arr[1]}</td>
+                        <td>${arr[0]}</td>                        
+                        <td>${arr[2]}</td>
+                        <td>${arr[3]}</td>
+                        <td>${arr[4]}</td>
+                    </tr>
+                `;
+            })
+
+
+            console.log(userleadager)
+        })
+}
