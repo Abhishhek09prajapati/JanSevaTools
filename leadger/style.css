@@ -1,0 +1,32 @@
+.mobilediv {
+    width: 500px;
+    height: 700px;
+    border: 1px solid black;
+    margin: 10px auto;
+    background-image: radial-gradient(rgb(250, 235, 235), rgb(243, 237, 237), rgb(240, 130, 130));
+}
+
+.contactdiv {
+    width: 100%;
+    border: 1px solid black;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    transition: height 0.3s;
+    padding: 10px;
+    box-sizing: border-box;
+
+}
+.contactdiv label{
+    font-size: 15px;
+}
+.callBtn{
+    background-color: yellow;
+    padding: 8px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
