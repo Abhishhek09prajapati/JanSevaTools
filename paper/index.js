@@ -70,9 +70,13 @@ document.getElementById("showResult").addEventListener('click', () => {
 
 var resulttable = document.getElementById("resulttable")
 
+var l = localStorage.getItem("username")
+var l1 = localStorage.getItem("number")
+
 document.getElementById("scoceCadr").addEventListener('click', () => {
     document.getElementById("resultClient").style.display = "block"
     document.getElementById("urResult").innerHTML = `Your Result : ${resultScore} / 10`;
+    document.getElementById("nameOfUser").innerHTML =`Name : ${l} , Roll Number :  ${l1} `
     document.getElementById("scoceCadr").disabled = true;
     for (let i = 0; i < questionpop.length; i++) {
         var tr = document.createElement('tr')
