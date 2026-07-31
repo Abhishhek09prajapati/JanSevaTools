@@ -59,3 +59,12 @@ body{
 #lockBtn:hover{
     background: darkgreen;
 }
+#showResult{
+    width: 30%;
+    padding: 10px;
+    background-color: blue;
+    display: block;
+    margin: 20px auto;
+    color: white;
+    border: none;
+}
