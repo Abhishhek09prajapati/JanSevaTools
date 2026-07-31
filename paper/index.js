@@ -3,6 +3,10 @@ var question = document.getElementById("mobileView")
 var resultScore = 0;
 var questionpop = [];
 var clinetAnswer = [];
+var realAnswer = [];
+document.getElementById("scoceCadr").style.display = "none";
+document.getElementById("resultClient").style.display = "none";
+let p = parseInt(localStorage.getItem("testing"))
 
 fetch(`https://opensheet.elk.sh/${sheet}/test`)
     .then(res => res.json())
@@ -31,10 +35,11 @@ fetch(`https://opensheet.elk.sh/${sheet}/test`)
                 if (answerClient.value === k.answer) {
                     questionpop.push(k.question)
                     clinetAnswer.push(answerClient.value)
+                    realAnswer.push(k.answer)
                     alert("Save Successfully");
-                    console.log(questionpop, clinetAnswer)
                     resultScore++;
                 } else {
+                    realAnswer.push(k.answer)
                     questionpop.push(k.question)
                     clinetAnswer.push(answerClient.value)
                     alert("Save Successfully");
@@ -51,5 +56,31 @@ fetch(`https://opensheet.elk.sh/${sheet}/test`)
 
 
 document.getElementById("showResult").addEventListener('click', () => {
-    alert("Show Reult")
+    fetch(`https://api.npoint.io/d4ea357d5f25c8f772bc?t=${Date.now()}`)
+        .then(res => res.json())
+        .then(data => {
+            p = data[0].second
+            if (data[0].answer === "SHOW") {
+                document.getElementById("scoceCadr").style.display = ""
+            } else {
+                document.getElementById("scoceCadr").style.display = "none"
+            }
+        })
+})
+
+var resulttable = document.getElementById("resulttable")
+
+document.getElementById("scoceCadr").addEventListener('click', () => {
+    document.getElementById("resultClient").style.display = "block"
+    document.getElementById("urResult").innerHTML = `Your Result : ${resultScore} / 10`;
+    document.getElementById("scoceCadr").disabled = true;
+    for (let i = 0; i < questionpop.length; i++) {
+        var tr = document.createElement('tr')
+
+        tr.innerHTML = `<td>${questionpop[i]}</td>
+                        <td>${clinetAnswer[i]}</td>
+                        <td>${realAnswer[i]}</td>`
+        resulttable.append(tr)
+
+    }
 })

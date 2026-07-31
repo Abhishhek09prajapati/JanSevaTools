@@ -7,16 +7,66 @@
     <title>Hygia Test Paper</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <body>
-    <div class="mobileView" id="mobileView">
-        <h3 style="text-align: center;">Hygia Per Day Objective Test</h3>
-    </div>
-    <div id="resultClient" class="resultClient">
 
+    <div class="userData" id="userData">
+        <div>
+            <label for="">Enter Your Name</label>
+            <input id="namee" type="text">
+        </div>
+        <div>
+            <label for="">Enter Your RollNumber</label>
+            <input id="numberr" type="text">
+        </div>
+        <button id="startdiv">Start</button>
+        <label id="aalert" for=""></label>
     </div>
-    <button id="showResult">Show Result</button>
+
+
+
+
+
+
+
+
+    <div id="hideen">
+        <div class="mobileView" id="mobileView">
+            <h3 style="text-align: center;">Hygia Per Day Objective Test</h3>
+            <h4 id="timout"></h4>
+        </div>
+        <button id="showResult" class="showResult">Show Result</button>
+        <div class="scoreCard" id="scoreCard">
+
+
+            <button class="scoceCadr" id="scoceCadr">Result</button>
+
+
+            <div id="resultClient" class="resultClient">
+                <h1 class="urResult" id="urResult"></h1>
+                <table class="tablereuslt">
+                    <thead>
+                        <tr>
+                            <th>Question</th>
+                            <th>Your Answer</th>
+                            <th>Correct Answer</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resulttable"></tbody>
+                </table>
+
+
+                <button class="downloadPDF" id="downloadPDF">Download PDF</button>
+
+
+            </div>
+        </div>
+    </div>
+
 </body>
 <script src="index.js"></script>
+<script src="control.js"></script>
 
 </html>
