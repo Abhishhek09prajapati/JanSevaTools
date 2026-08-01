@@ -67,7 +67,7 @@ document.getElementById("startdiv").addEventListener('click', () => {
 function nahitoh() {
     setInterval(function () {
         p--;
-        var po = document.getElementById("timout")
+        var po = document.getElementById("timout") || 120 ;
         po.style.color = "red"
         po.innerHTML = `Timing Remaing - ${p} s `
         if (p === 0) {
