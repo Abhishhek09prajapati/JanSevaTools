@@ -61,7 +61,7 @@ body {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 30px;
+    
 }
 
 table thead {
@@ -72,9 +72,9 @@ table thead {
 table th,
 table td {
     border: 1px solid #d8d8d8;
-    padding: 14px;
+    padding: 5px;
     text-align: center;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 table tbody tr:nth-child(even) {
@@ -147,10 +147,6 @@ table td:first-child {
     border-radius: 5px;
     cursor: pointer;
 }
-
-
-
-
 #formdata div {
     width: 100%;
     display: flex;
