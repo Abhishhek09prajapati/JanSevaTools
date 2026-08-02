@@ -122,7 +122,7 @@ table td:first-child {
 }
 
 #formdata {
-    width: 70%;
+    width: 95%;
     height: 50%;
     background: #e45959;
     position: fixed;
@@ -163,13 +163,15 @@ table td:first-child {
 #formdata div label {
     width: 200px;
     text-align: left;
+    font-size: 14px;
 }
 
 #formdata div input {
-    width: 300px;
+    width: 200px;
     padding: 5px;
     border-radius: 5px;
     border: none;
+    padding : 10px;
 }
 
 .checkBtn {
