@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.Pharm Marksheet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="resultMarksheet">
+        <h2>D.Pharm Result (Practics in Code)</h2>
+        <p>Board of Technical Education, Uttar Pradesh, Lucknow</p>
+        <div class="info">
+            <span><strong>Institute :</strong></span>
+            <span id="institute">HYGIA INSTITUTE OF PHARMACEUTICAL EDUCATION AND RESEARCH, LUCKNOW (Code - 2776)</span>
+        </div>
+        <div class="info">
+            <span><strong>Branch :</strong></span>
+            <span>[214] First Year Diploma Course in Pharmacy</span>
+        </div>
+        <div class="info">
+            <span><strong>Student Name :</strong></span>
+            <span id="studentName"></span>
+        </div>
+        <div class="info">
+            <span><strong>Father's Name :</strong></span>
+            <span id="fatherName"></span>
+        </div>
+        <div class="info">
+            <span><strong>Enrollment No. :</strong></span>
+            <span id="rollNumber"></span>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Paper Name</th>
+                    <th>Theory Marks (80)</th>
+                    <th>Sessional (20)</th>
+                    <th>Practical (80)</th>
+                    <th>Practical Sessional (20)</th>
+                    <th>Total (200)</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>PHARMACEUTICS</td>
+                    <td><span class="marks"></span> / 80</td>
+                    <td><span class="marks"></span> / 20</td>
+                    <td><span class="marks"></span> / 80</td>
+                    <td><span class="marks"></span> / 20</td>
+                    <td><span class="marks"></span> / 200</td>
+                </tr>
+
+                <tr>
+                    <td>PHARMACEUTICAL CHEMISTRY</td>
+                    <td><span class="marks"></span> / 80</td>
+                    <td><span class="marks"></span> / 20</td>
+                    <td><span class="marks"></span> / 80</td>
+                    <td><span class="marks"></span> / 20</td>
+                    <td><span class="marks"></span> / 200</td>
+                </tr>
+
+                <tr>
+                    <td>PHARMACOGNOSY</td>
+                    <td><span class="marks"></span> / 80</td>
+                    <td><span class="marks"></span> / 20</td>
+                    <td><span class="marks"></span> / 80</td>
+                    <td><span class="marks"></span> / 20</td>
+                    <td><span class="marks"></span> / 200</td>
+                </tr>
+
+                <tr>
+                    <td>HUMAN ANATOMY &amp; PHYSIOLOGY</td>
+                    <td><span class="marks"></span> / 80</td>
+                    <td><span class="marks"></span> / 20</td>
+                    <td><span class="marks"></span> / 80</td>
+                    <td><span class="marks"></span> / 20</td>
+                    <td><span class="marks"></span> / 200</td>
+                </tr>
+
+                <tr>
+                    <td>SOCIAL PHARMACY</td>
+                    <td><span class="marks"></span> / 80</td>
+                    <td><span class="marks"></span> / 20</td>
+                    <td><span class="marks"></span> / 80</td>
+                    <td><span class="marks"></span> / 20</td>
+                    <td><span class="marks"></span> / 200</td>
+                </tr>
+                <tr>
+                    <td>Games</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="game"></span> / 30</td>
+                </tr>
+                <tr>
+                    <td>Discipline</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="displan"></span>/20</td>
+                </tr>
+                <tr>
+                    <td>Total Marks</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="totals"></span>/1050</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+
+
+        <div class="disclamer" id="disclamer"></div>        
+        <br>
+
+        <div class="numberdaalo" id="numberdaalo">Set Your Number</div>
+
+        
+        <div id="formdata">
+            <span id="closeBtn">X</span>
+            <div>
+                <label for="phone">Institute :</label>
+                <input id="z1" placeholder="Enter Your Buliding Name" type="text">
+            </div>
+            <div>
+                <label for="phone">Student Name:</label>
+                <input id="z2" placeholder="Enter Your Name" type="text">
+            </div>
+            <div>
+                <label for="phone">Father Name</label>
+                <input id="z3" placeholder="Enter Your Father Name" type="text">
+            </div>
+            <div>
+                <label for="phone">Enrollment No. :</label>
+                <input id="z4" placeholder="Enter Your Enrollment No. :" type="text">
+            </div>
+
+
+            <!-- 22 ka data  -->
+            <div>
+                <label for="phone">PHARMACEUTICS</label>
+                <input id="p1" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">PHARMACEUTICS (SESSIONAL)</label>
+                <input id="p2" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">PHARMACEUTICAL CHEMISTRY</label>
+                <input id="p3" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">PHARMACEUTICAL CHEMISTRY (SESSIONAL)</label>
+                <input id="p4" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">PHARMACOGNOSY</label>
+                <input id="p5" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">PHARMACOGNOSY (SESSIONAL)</label>
+                <input id="p6" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">HUMAN ANATOMY & PHYSIOLOGY</label>
+                <input id="p7" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">HUMAN ANATOMY & PHYSIOLOGY (SESSIONAL)</label>
+                <input id="p8" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">SOCIAL PHARMACY</label>
+                <input id="p9" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">SOCIAL PHARMACY (SESSIONAL)</label>
+                <input id="p10" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">PHARMACEUTICS</label>
+                <input id="p11" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">PHARMACEUTICS (SESSIONAL)</label>
+                <input id="p12" placeholder="Enter Your Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">PHARMACEUTICAL CHEMISTRY</label>
+                <input id="p13" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">PHARMACEUTICAL CHEMISTRY (SESSIONAL)</label>
+                <input id="p14" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">PHARMACOGNOSY</label>
+                <input id="p15" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">PHARMACOGNOSY (SESSIONAL)</label>
+                <input id="p16" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">HUMAN ANATOMY & PHYSIOLOGY</label>
+                <input id="p17" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">HUMAN ANATOMY & PHYSIOLOGY (SESSIONAL)</label>
+                <input id="p18" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">SOCIAL PHARMACY</label>
+                <input id="p19" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">SOCIAL PHARMACY (SESSIONAL)</label>
+                <input id="p20" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">GAMES</label>
+                <input id="p21" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <div>
+                <label for="phone">DISCIPLINE</label>
+                <input id="p22" placeholder="Enter Obtained Marks" type="number">
+            </div>
+            <button id="checkBtn" class="checkBtn">Check it</button>
+
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>

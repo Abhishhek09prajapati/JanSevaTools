@@ -146,8 +146,6 @@ var l = localStorage.getItem("username")
 
 var l1 = localStorage.getItem("number")
 
-
-
 document.getElementById("scoceCadr").addEventListener('click', () => {
 
 document.getElementById("resultClient").style.display = "block"

@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #eef2f7;
+    padding: 40px 15px;
+}
+
+.resultMarksheet {
+    max-width: 1100px;
+    margin: auto;
+    background: #fff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+    border-top: 8px solid #0d6efd;
+}
+
+.resultMarksheet h2 {
+    text-align: center;
+    color: #0d6efd;
+    font-size: 30px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.resultMarksheet p {
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* Student Details */
+
+.info {
+    display: flex;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.info span:first-child {
+    width: 220px;
+    font-weight: bold;
+    color: #333;
+}
+
+.info span:last-child {
+    flex: 1;
+    color: #555;
+}
+
+/* Table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+table thead {
+    background: #0d6efd;
+    color: white;
+}
+
+table th,
+table td {
+    border: 1px solid #d8d8d8;
+    padding: 14px;
+    text-align: center;
+    font-size: 15px;
+}
+
+table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+table tbody tr:hover {
+    background: #eaf3ff;
+    transition: .3s;
+}
+
+table th {
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+table td:first-child {
+    text-align: left;
+    font-weight: 600;
+}
+
+.disclamer {
+    width: 100%;
+    text-align: center;
+    background: #0d6efd;
+    color: #fff;
+    height: max-content;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.numberdaalo {
+    width: 100%;
+    text-align: center;
+    background: #0e9e32;
+    color: #fff;
+    height: max-content;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+#formdata {
+    width: 70%;
+    height: 50%;
+    background: #e45959;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#formdata span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fff;
+    color: #e45959;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+#formdata div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#formdata div label {
+    width: 200px;
+    text-align: left;
+}
+
+#formdata div input {
+    width: 300px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.checkBtn {
+  /* Layout & Centering */
+  display: block;
+  margin: 20px auto; /* Centers the button horizontally */
+  width: 140px; /* Slightly wider for better visual balance */  
+  /* Styling & Colors */
+  background: linear-gradient(135deg, #2a8002, #38ad03); /* Subtle vibrant gradient */
+  color: #ffffff; /* Clean white text */
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px; /* Smooth rounded corners */  
+  /* Visual Effects */
+  box-shadow: 0 4px 12px rgba(42, 128, 2, 0.25);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover effect - grows slightly & brightens */
+.checkBtn:hover {
+  background: linear-gradient(135deg, #329902, #40c404);
+  box-shadow: 0 6px 16px rgba(42, 128, 2, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Click/Active effect - subtle push down */
+.checkBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(42, 128, 2, 0.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive */
+
+@media(max-width:768px) {
+
+    .resultMarksheet {
+        padding: 20px;
+    }
+
+    .info {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .info span:first-child {
+        width: 100%;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .resultMarksheet h2 {
+        font-size: 22px;
+    }
+
+    .resultMarksheet p {
+        font-size: 14px;
+    }
+}
